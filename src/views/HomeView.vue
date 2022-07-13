@@ -2,8 +2,9 @@
 import LatestRes from '@/components/Home/LatestRes.vue';
 
 export default{
+  components: {LatestRes},
   setup() {
-    component: {LatestRes}
+    
   }
 }
 </script>
