@@ -1,5 +1,10 @@
 <template>
-<div>
-  <h1>Home</h1>
-</div>
+  <MainComp />
 </template>
+<script>
+import MainComp from "../components/Home/MainComp.vue";
+
+export default {
+  components: { MainComp },
+};
+</script>
