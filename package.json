@@ -8,6 +8,11 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.1",
     "autoprefixer": "^10",
     "pinia": "^2.0.14",
     "postcss": "^8",
