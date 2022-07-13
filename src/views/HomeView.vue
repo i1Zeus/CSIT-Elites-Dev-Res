@@ -1,4 +1,5 @@
 <script setup>
+import LatestRes from './components/LatestRes.vue';
 
 </script>
 
