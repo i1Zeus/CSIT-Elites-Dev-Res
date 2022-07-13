@@ -1,16 +1,17 @@
+<template>
+<div>
+  <LatestRes/>
+</div>
+</template>
+
+
+
+
 <script>
-import LatestRes from '@/components/Home/LatestRes.vue';
+import LatestRes from '../components/Home/LatestRes.vue';
 
 export default{
-  setup() {
-    component: {LatestRes}
-  }
+    components: {LatestRes}
 }
 </script>
 
-<template>
-<div>
-  <h1>Home</h1>
-  <LatestRes></LatestRes>
-</div>
-</template>
