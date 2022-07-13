@@ -1,14 +1,17 @@
 <template>
-  <h1>Home</h1>
-  <LatestRes></LatestRes>
-  <MainComp />
+<div>
+  <LatestRes/>
+</div>
 </template>
 
-<script>
-import MainComp from "../components/Home/MainComp.vue";
-import LatestRes from '@/components/Home/LatestRes.vue';
 
-export default {
-  components: { MainComp , LatestRes },
-};
+
+
+<script>
+import LatestRes from '../components/Home/LatestRes.vue';
+
+export default{
+    components: {LatestRes}
+}
 </script>
+
