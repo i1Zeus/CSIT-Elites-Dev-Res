@@ -1,9 +1,6 @@
 <template>
-  <div class="gap-10 bg-blue-900 h-screen">
-    <!-- <img
-      class="h-screen w-full bg-gray-600 relative flex"
-      src="@/assets/img/MainCom.jpg"
-    /> -->
+  <div class="gap-10 h-screen bg-cover bg-center relative">
+    <img src="@/assets/img/MainCom.jpg" class="h-screen w-full object-cover absolute mix-blend-overlay" />
     <div>
       <button
         class="bg-transparent border-2 border-white text-white hover:bg-black rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
@@ -137,7 +134,7 @@
                         JavaScript
                       </td>
                     </tr>
-                          <tr>
+                    <tr>
                       <td
                         class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                       >
