@@ -29,7 +29,7 @@
         </p>
       </div>
       <!-- =========> Search Bar and submit button <========= -->
-      <div class="w-1/2">
+      <div class="flex flex-col w-1/2 gap-6">
         <form>
           <label
             for="default-search"
@@ -70,7 +70,56 @@
             </button>
           </div>
         </form>
-
+        <div class="flex flex-col">
+          <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+              <div class="overflow-hidden">
+                <table class="min-w-full text-center bg-white rounded-md">
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        class="text-sm font-medium text-gray-900 px-6 py-4"
+                      >
+                        Tags
+                      </th>
+                      <th
+                        scope="col"
+                        class="text-sm font-medium text-gray-900 px-6 py-4"
+                      >
+                        Certified Resources
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        HTML
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        CSS
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        Tailwind CSS
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        JavaScript
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
