@@ -23,9 +23,9 @@
       </div>
       <!-- =========> Users / Resources  <========= -->
       <div>
-        <p class="text-2xl text-white font-thin">
-          <font-awesome-icon icon="fa-solid fa-book-open-reader" />12000 Res
-          <font-awesome-icon icon="fa-solid fa-users" /> 1000 Users
+        <p class="text-2xl text-white font-mono">
+          <font-awesome-icon icon="fa-solid fa-book-open-reader" /> 12000 Res
+          <font-awesome-icon icon="fa-solid fa-users" />  1000 Users
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->

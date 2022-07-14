@@ -42,6 +42,29 @@
                   placeholder="Add a Link"
                 />
               </div>
+              <div class="flex gap-14">
+                <div class="flex flex-col">
+                  <label class="leading-loose">Tags</label>
+                  <input
+                    type="text"
+                    class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    placeholder="Add Tags"
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <label class="leading-loose">Category</label>
+                  <div class="relative inline-flex">
+                    <select
+                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    >
+                      <option>Choose a Category</option>
+                      <option>Front End</option>
+                      <option>Back End</option>
+                      <option>Mobile Application</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
               <div class="flex flex-col">
                 <label class="leading-loose">Resource Description</label>
                 <textarea
