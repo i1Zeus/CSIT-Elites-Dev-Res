@@ -1,9 +1,10 @@
 <template>
   <div>
     <h1>Home</h1>
+    <MainComp />
     <LatestRes />
   </div>
-  <MainComp />
+  
 </template>
 
 <script>
