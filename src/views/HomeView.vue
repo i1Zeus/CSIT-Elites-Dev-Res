@@ -13,3 +13,8 @@ export default {
   components: { MainComp, LatestRes },
 };
 </script>
+
+
+
+
+
