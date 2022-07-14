@@ -29,7 +29,7 @@
         </p>
       </div>
       <!-- =========> Search Bar and submit button <========= -->
-      <div class="flex flex-col w-1/2 gap-6">
+      <div class="flex flex-col w-1/2 gap-16">
         <form>
           <label
             for="default-search"
@@ -70,6 +70,7 @@
             </button>
           </div>
         </form>
+        <!--========> Tags/Res Table <======== -->
         <div class="flex flex-col">
           <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -93,6 +94,50 @@
                   </thead>
                   <tbody>
                     <tr>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        HTML
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        CSS
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        Tailwind CSS
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        JavaScript
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        HTML
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        CSS
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        Tailwind CSS
+                      </td>
+                      <td
+                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                      >
+                        JavaScript
+                      </td>
+                    </tr>
+                          <tr>
                       <td
                         class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                       >
