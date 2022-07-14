@@ -12,7 +12,9 @@
 
     <div
       class="bg-gray-100 rounded-2xl grid md:grid-cols-2 mx- md:mx-14 lg:mx-32 my-5 md:my-10">
-      <div class="bg-white rounded-2xl grid grid-cols-12 m-4 h-32">
+
+      <a href="/Resource">
+        <div class="bg-white rounded-2xl grid grid-cols-12 m-4 h-32">
         <div class="col-span-4">
           <img
             class="h-full w-full rounded-2xl object-cover p-3"
@@ -34,14 +36,16 @@
           </p>
         </div>
       </div>
+      </a>
+      
 
-      <div class="bg-white rounded-2xl grid grid-cols-12 m-4 h-32">
+      <a href="/Resource">
+        <div class="bg-white rounded-2xl grid grid-cols-12 m-4 h-32">
         <div class="col-span-4">
           <img
             class="h-full w-full rounded-2xl object-cover p-3"
             src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg"
-            alt=""
-          />
+            alt=""/>
         </div>
         <div class="col-span-7 mx-3">
           <p class="mt-3 mr-3 font-semibold">
@@ -58,6 +62,7 @@
           </p>
         </div>
       </div>
+      </a>
     </div>
   </div>
 </template>
