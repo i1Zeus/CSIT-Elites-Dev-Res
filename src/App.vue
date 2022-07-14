@@ -1,3 +1,5 @@
 <template>
- <router-view/>
+    <div id="app" class="font-poppins">
+        <router-view />
+    </div>
 </template>

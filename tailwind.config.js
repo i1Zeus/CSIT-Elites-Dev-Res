@@ -4,8 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        noto: ["Noto Sans Arabic", "sans-serif"],
-        NotoKufi: ["Noto Kufi Arabic , sans-serif"],
+        poppins: ["Poppins, sans-serif"]
       },
 
       //Border Color
