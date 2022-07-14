@@ -7,7 +7,7 @@
             <i class="fa-solid fa-angle-right"></i>
         </a> -->
         </div>
-        <div class="grid grid-cols-3 bg-gray-100 rounded-lg mt-2 place-items-center py-5">
+        <div class="grid grid-cols-3 bg-gray-100 rounded-lg mt-2 mx-5 place-items-center py-5">
             <CategoryCard class="grid-cols-1" />
             <CategoryCard class="grid-cols-1" />
             <CategoryCard class="grid-cols-1" />
