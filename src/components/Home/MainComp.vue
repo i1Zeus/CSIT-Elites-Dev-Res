@@ -21,6 +21,7 @@
       <div>
         <p class="text-6xl text-white font-semibold">Search,Find & Learn</p>
       </div>
+      <!-- =========> Users / Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-thin">
           <font-awesome-icon icon="fa-solid fa-book-open-reader" />12000 Res
@@ -69,6 +70,7 @@
             </button>
           </div>
         </form>
+
       </div>
     </div>
   </div>
