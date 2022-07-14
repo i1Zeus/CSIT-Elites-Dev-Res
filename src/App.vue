@@ -1,7 +1,3 @@
 <template>
-<div class="text-center">
-    <router-view />
-</div>
-
+ <router-view/>
 </template>
-
