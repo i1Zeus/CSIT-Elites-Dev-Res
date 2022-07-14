@@ -58,8 +58,8 @@
                       class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     >
                       <option>Choose a Category</option>
-                      <option>Front End</option>
-                      <option>Back End</option>
+                      <option>Front-End</option>
+                      <option>Back-End</option>
                       <option>Mobile Application</option>
                     </select>
                   </div>
