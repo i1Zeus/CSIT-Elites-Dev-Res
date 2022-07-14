@@ -31,3 +31,8 @@ export default {
   components: { MainComp, LatestRes, CategoryCard },
 };
 </script>
+
+
+
+
+
