@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     
     {path: "/", name: "home", component: HomeView },
-    {path: "/Resorces", name: "ResShow", component: ResShow},
+    {path: "/Resource", name: "ResShow", component: ResShow},
   ],
 });
 

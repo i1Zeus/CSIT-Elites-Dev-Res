@@ -28,7 +28,7 @@
         </div>
         <div>
           <p class="col-span-1 text-green-500 mt-12">
-            <a href="/Resorces">
+            <a href="/Resource">
             <font-awesome-icon icon="fa-solid fa-angle-right" />
             </a>
           </p>
@@ -52,7 +52,7 @@
         </div>
         <div>
           <p class="col-span-1 text-green-500 mt-12">
-            <a href="/Resorces">
+            <a href="/Resource">
             <font-awesome-icon icon="fa-solid fa-angle-right" />
             </a>
           </p>
