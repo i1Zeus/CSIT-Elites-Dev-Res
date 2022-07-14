@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import CategoryShow from "../views/CategoryShow.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,11 +10,10 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/category",
-      name: "category",
-      component: CategoryShow,
+      path:'/add-rec',
+      name:'addrec',
+      component:()=>import('../views/AddRec.vue')
     },
-
   ],
 });
 
