@@ -1,4 +1,13 @@
 @import "./base.css";
+li {
+  float: left;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
 
 #app {
   max-width: 1280px;
