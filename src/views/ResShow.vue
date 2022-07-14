@@ -25,14 +25,20 @@
             quia, eligendi quos?
           </p>
         </div>
-        <div class="flex ">
-          <button class="bg-green-500 ml-16 mt-10 h-8 w-16 rounded hover:bg-green-600 hover:text-white">
+        <div class="flex flex-col">
+          <!-- <button class="bg-green-500 ml-16 mt-10 h-8 w-16 rounded hover:bg-green-600 hover:text-white">
             <span class="m-2 ">Visit</span>
-          </button>
+          </button> -->
+            <ul class="list-disc mt-10 ml-16 ">
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+            </ul>
 
-          <button class="bg-green-500 ml-6 mt-10  h-8 w-16 rounded text-white hover:border hover:border-green-500 hover:bg-white hover:text-green-500">
-            <span class="m-2 ">Back</span>
-          </button>
+            <button class="bg-green-500 ml-16 mt-10  h-8 w-16 rounded text-white hover:border hover:border-green-500 hover:bg-white hover:text-green-500">
+                <span class="m-2 ">Back</span>
+            </button>
+          
         </div>
       </div>
     </div>

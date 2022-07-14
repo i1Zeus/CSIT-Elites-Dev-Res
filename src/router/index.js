@@ -22,10 +22,10 @@ const router = createRouter({
       component:()=>import('../views/AddRec.vue')
     },
     {
-      path: "/Resorces",
-     name: "ResShow",
-      component: ResShow
-    },
+      path: "/resource",
+       name: "ResShow",
+        component: ResShow
+      },
   ],
 });
 
