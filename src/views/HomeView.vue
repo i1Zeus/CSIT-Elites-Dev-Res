@@ -12,11 +12,6 @@ import LatestRes from "@/components/Home/LatestRes.vue";
 import CategoryCard from "@/components/Home/CategoryCard.vue";
 
 export default {
-  components: { MainComp, LatestRes , CategoryCard},
+  components: { MainComp, LatestRes, CategoryCard },
 };
 </script>
-
-
-
-
-
