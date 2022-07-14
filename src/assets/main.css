@@ -1,12 +1,8 @@
 @import "./base.css";
-li {
-  float: left;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-a {
-  display: block;
-  padding: 8px;
-  background-color: #dddddd;
+html, body {
+  font-family: 'Poppins', sans-serif;
 }
 
 #app {
@@ -15,6 +11,7 @@ a {
   padding: 2rem;
 
   font-weight: normal;
+  font-family: 'Poppins', sans-serif;
 }
 
 a,
