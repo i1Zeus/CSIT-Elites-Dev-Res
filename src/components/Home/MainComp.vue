@@ -51,7 +51,7 @@
               id="default-search"
               class="block p-5 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-emerald-500 focus:border-green-500"
               placeholder="Search Resources, Courses..."
-              required=""
+              required
             />
             <button
               type="submit"
