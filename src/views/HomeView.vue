@@ -1,20 +1,17 @@
 <template>
-  <div class="mx-10">
-    <h1>Home</h1>
+  <div>
     <MainComp />
-    <CategoryShow />
-    <LatestRes/>
-
+    <CategoryCard />
+    <LatestRes />
   </div>
-  
 </template>
 
 <script>
-import MainComp from "../components/Home/MainComp.vue";
-import LatestRes from '@/components/Home/LatestRes.vue';
-import CategoryShow from '@/components/Category/CategoryShow.vue';
+import MainComp from "@/components/Home/MainComp.vue";
+import LatestRes from "@/components/Home/LatestRes.vue";
+import CategoryCard from "@/components/Home/CategoryCard.vue";
 
 export default {
-  components: { MainComp, LatestRes, CategoryShow },
+  components: { MainComp, LatestRes, CategoryCard },
 };
 </script>
