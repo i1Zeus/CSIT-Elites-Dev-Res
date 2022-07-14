@@ -10,9 +10,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path:'/form',
-      name:'form',
-      component:()=>import('../views/FormView.vue')
+      path:'/add-rec',
+      name:'addrec',
+      component:()=>import('../views/AddRec.vue')
     },
   ],
 });
