@@ -1,16 +1,16 @@
 <template>
-<div>
-  <h1>Home</h1>
-  <LatestRes></LatestRes>
-</div>
+  <div>
+    <h1>Home</h1>
+    <LatestRes />
+  </div>
   <MainComp />
 </template>
 
 <script>
 import MainComp from "../components/Home/MainComp.vue";
-import LatestRes from '@/components/Home/LatestRes.vue';
+import LatestRes from "@/components/Home/LatestRes.vue";
 
 export default {
-  components: { MainComp , LatestRes },
+  components: { MainComp, LatestRes },
 };
 </script>
