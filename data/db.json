@@ -1,0 +1,15 @@
+
+{
+    "maincomp": [
+      {
+        "id": 1,
+        "title": "welcome to the new blog",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "tags": [
+          "webdev",
+          "coding",
+          "news"
+        ]
+      }
+    ]
+  }
