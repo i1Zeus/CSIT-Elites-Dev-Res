@@ -15,7 +15,7 @@ const router = createRouter({
       name: "category",
       component: CategoryShow,
     },
-
+    {
       path:'/form',
       name:"form",
       component:()=>import('../views/FormView.vue')
