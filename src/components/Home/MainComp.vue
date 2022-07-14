@@ -1,7 +1,7 @@
 <template>
   <!-- =====> Image <====== -->
   <div
-    class="bg-[url('../src/assets/img/MainCom.jpg')] gap-10 h-screen bg-cover bg-center object-cover relative"
+    class="bg-[url('../src/assets/img/MainCom.jpg')] h-screen bg-cover bg-center object-cover relative"
   >
     <!-- ======> Buttons <======  -->
     <div>
@@ -16,20 +16,20 @@
         <span>login</span>
       </button>
     </div>
-    <div class="flex flex-col gap-36 items-center mt-10">
+    <div class="flex flex-col gap-24 items-center mt-24">
       <!-- =========> Paragraph  <========= -->
       <div>
-        <p class="text-6xl text-white font-semibold">Search,Find & Learn</p>
+        <p class="text-6xl text-white font-semibold">Search,Find & Learn!</p>
       </div>
       <!-- =========> Users / Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-mono">
           <font-awesome-icon icon="fa-solid fa-book-open-reader" /> 12000 Res
-          <font-awesome-icon icon="fa-solid fa-users" />  1000 Users
+          <font-awesome-icon icon="fa-solid fa-users" /> 1000 Users
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->
-      <div class="flex flex-col w-1/2 gap-16">
+      <div class="flex flex-col w-1/2 gap-10">
         <form>
           <label
             for="default-search"
