@@ -3,14 +3,14 @@
 
 <template>
   <div class="flex-col">
-    <div class="bg-white flex justify-between mt-5 mx-32">
+    <div class="bg-white flex justify-between mt-5 mx-10 md:mx-14 lg:mx-32">
       <div class="text-black text-lg font-semibold">Latest Res.</div>
       <div class="text-green-500 font-semibold">
         <u><a href="">See more></a></u>
       </div>
     </div>
 
-    <div class="bg-gray-100 rounded-2xl grid grid-cols-2 mx-32 my-10">
+    <div class="bg-gray-100 rounded-2xl grid md:grid-cols-2 mx-2 md:mx-14 lg:mx-32 my-5 md:my-10 ">
 
       <div class="bg-white rounded-2xl grid grid-cols-12 m-4 h-32">
         <div class="col-span-4  ">
