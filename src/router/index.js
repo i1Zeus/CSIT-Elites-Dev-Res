@@ -14,6 +14,12 @@ const router = createRouter({
       name:'addrec',
       component:()=>import('../views/AddRec.vue')
     },
+
+    {
+      path:'/category',
+      name:'category',
+      component:()=>import('../views/CategoryShow.vue')
+    },
   ],
 });
 
