@@ -35,11 +35,11 @@
                 <li>Link 2</li>
                 <li>Link 3</li>
             </ul>
-
+            <a href="/">
             <button class="bg-green-500 ml-16 mt-6  h-10 w-20 rounded text-white hover:border hover:border-green-500 hover:bg-white hover:text-green-500">
                 <span class="text-lg">Back</span>
             </button>
-          
+            </a>
         </div>
       </div>
     </div>

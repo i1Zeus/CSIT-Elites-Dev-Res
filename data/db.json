@@ -11,6 +11,24 @@
         
       }
     ],
+    "Resourse": [
+      {
+        "id": 1,
+        "title": "How to hack Hassan K. in one min",
+        "name": "mosa nameer",
+        "discription": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
+        "publishDate": "23/11/2022",
+        "subCategory": " "
+      },
+      {
+        "id": 2,
+        "title": "How to hack Mosa N. in one sec",
+        "name": "Ahmed 3bd",
+        "discription": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
+        "publishDate": "23/11/2022",
+        "subCategory": " "
+      }
+    ],
     "main": {
         "id": 1,
         "title": "Frontend developer",
