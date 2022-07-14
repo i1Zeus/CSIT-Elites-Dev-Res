@@ -6,12 +6,12 @@
     /> -->
     <div>
       <button
-        class="bg-transparent border-2 border-white text-white hover:bg-black rounded-md text-grey-darkest font-bold mt-3 ml-2 py-1.5 px-8 duration-200"
+        class="bg-transparent border-2 border-white text-white hover:bg-black rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
       >
         <span>Register</span>
       </button>
       <button
-        class="bg-transparent border-2 border-transparent hover:border-white text-white rounded-md text-grey-darkest font-bold mt-3 ml-2 py-1.5 px-8 duration-200"
+        class="bg-transparent border-2 border-transparent hover:border-white text-white rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
       >
         <span>login</span>
       </button>
