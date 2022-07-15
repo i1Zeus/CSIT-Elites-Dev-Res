@@ -88,7 +88,7 @@
               cx="225.46401"
               cy="427.41999"
               r="6.902"
-              fill="#5bb543"
+              fill="#000"
             />
             <rect
               id="ff33d889-4c74-4b91-85ef-b4882cc8fe76"
@@ -118,7 +118,7 @@
               cx="247.97799"
               cy="427.41999"
               r="6.902"
-              fill="#5bb543"
+              fill="#bb53"
             />
             <circle
               id="f58f497e-6949-45c8-be5f-eee2aa0f6586"
@@ -126,7 +126,7 @@
               cx="270.492"
               cy="427.41999"
               r="6.902"
-              fill="#5bb543"
+              fill="#543"
             />
             <circle
               id="b4d4939a-c6e6-4f4d-ba6c-e8b05485017d"
@@ -134,7 +134,7 @@
               cx="247.97799"
               cy="496.43702"
               r="6.902"
-              fill="#5bb543"
+              fill="#5bb5"
             />
             <circle
               id="aff120b1-519b-4e96-ac87-836aa55663de"
@@ -210,12 +210,15 @@
         <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
           <div class="text-center mb-10">
             <h1 class="font-bold text-3xl text-gray-900">LOGIN</h1>
-            <p>Enter your information to login</p>
+            <p>
+              Enter your information to login *Please note that the login
+              function only works for <b>Admins</b>
+            </p>
           </div>
-          <div>
+          <form @submit.prevent="login">
             <div class="flex -mx-3">
               <div class="w-full px-3 mb-5">
-                <label for="" class="text-xs font-semibold px-1">Email</label>
+                <label for="" class="text-sm font-semibold px-1">Email</label>
                 <div class="flex">
                   <div
                     class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
@@ -223,16 +226,18 @@
                     <i class="mdi mdi-email-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
+                    required
+                    v-model="email"
                     type="email"
                     class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-primary-500"
-                    placeholder="husseinnajah@example.com"
+                    placeholder="Admin@example.com"
                   />
                 </div>
               </div>
             </div>
             <div class="flex -mx-3">
               <div class="w-full px-3 mb-12">
-                <label for="" class="text-xs font-semibold px-1"
+                <label for="" class="text-sm font-semibold px-1"
                   >Password</label
                 >
                 <div class="flex">
@@ -242,6 +247,8 @@
                     <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
+                    required
+                    v-model="password"
                     type="password"
                     class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-primary-500"
                     placeholder="Password"
@@ -250,17 +257,41 @@
               </div>
             </div>
             <div class="flex -mx-3">
-              <div class="w-full px-3 mb-5">
+              <div class="flex w-full px-3 mb-5">
+                <GoBack class="h-12"/>
                 <button
-                  class="block w-full max-w-xs mx-auto bg-primary-500 hover:bg-primary-700 focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500  focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
                 >
                   LOGIN
                 </button>
+                
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import GoBack from "../components/GoBack.vue";
+export default {
+  components: {
+    GoBack,
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      window.user = this.username;
+      const redirectPath = this.$route.query.redirect || "/";
+      this.$router.push(redirectPath);
+    },
+  },
+};
+</script>

@@ -5,16 +5,9 @@
   >
     <!-- ======> Buttons <======  -->
     <div class="flex justify-end mr-5">
-      <router-link to="/register">
-        <button
-          class="bg-transparent border-2 border-transparent hover:border-white text-white rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
-        >
-          <p>Register</p>
-        </button>
-      </router-link>
       <router-link to="/login">
         <button
-          class="border-2 border-white text-white hover:bg-black rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
+          class="bg-transparent border-2 border-transparent hover:bg-black border-r-white hover:border-white text-white rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
         >
           <p>login</p>
         </button>
@@ -28,8 +21,9 @@
       <!-- =========> Users / Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-mono">
-          <font-awesome-icon icon="fa-solid fa-book-open-reader" /> 12000 Res
-          <font-awesome-icon icon="fa-solid fa-users" /> 1000 Users
+          <font-awesome-icon icon="fa-solid fa-book-open-reader" />
+          {{ Info.res }} Res <font-awesome-icon icon="fa-solid fa-users" />
+          {{ Info.users }} Users
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->
@@ -53,13 +47,13 @@
             <input
               type="search"
               id="default-search"
-              class="block p-5 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-emerald-500 focus:border-green-500"
+              class="block p-5 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
               placeholder="Search Resources, Courses..."
               required
             />
             <button
               type="submit"
-              class="text-white absolute right-2.5 bottom-2.5 bg-emerald-600 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-3"
+              class="text-white absolute right-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
             >
               Search
             </button>
@@ -164,3 +158,17 @@
     </div>
   </div>
 </template>
+
+<script>
+import getInfo from "../../composables/getInfo";
+
+export default {
+  component: {},
+  setup() {
+    const { Info, error, load } = getInfo();
+
+    load();
+    return { Info, error };
+  },
+};
+</script>
