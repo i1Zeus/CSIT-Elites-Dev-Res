@@ -9,19 +9,23 @@
         </a> -->
         </div>
         <div class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5">
+            <SubCategoryCard class="grid-cols-1" />
+            <SubCategoryCard class="grid-cols-1" />
+            <SubCategoryCard class="grid-cols-1" />
+            <SubCategoryCard class="grid-cols-1" />
+
+            <!-- <CategoryCard class="grid-cols-1" />
             <CategoryCard class="grid-cols-1" />
-            <CategoryCard class="grid-cols-1" />
-            <CategoryCard class="grid-cols-1" />
-            <CategoryCard class="grid-cols-1" />
+            <CategoryCard class="grid-cols-1" /> -->
         </div>
     </div>
 
 </template>
 
 <script>
-import CategoryCard from '@/components/Category/CategoryCard.vue';
+import SubCategoryCard from '@/components/Category/SubCategoryCard.vue';
 
 export default {
-    components: { CategoryCard },
+    components: { SubCategoryCard },
 };
 </script>

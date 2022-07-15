@@ -34,6 +34,25 @@
         "subCategory": " "
       }
     ],
+
+    "SubCategory": [
+      {
+        "id": 1,
+        "title": "HTML",
+        "res":  5,
+        "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
+      },
+
+      {
+        "id": 2,
+        "title": "Laravel",
+        "res":  1,
+        "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
+      }
+    ],
+    
     "main": {
         "id": 1,
         "title": "Frontend developer",
