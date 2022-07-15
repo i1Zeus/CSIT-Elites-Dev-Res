@@ -25,18 +25,18 @@
 <script>
 // import sourceData from "@/data/db.json";
 import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
-import getSubCategoryId from "../composables/getSubCategoryId";
+import getSubCategory from "../composables/getSubCategory";
 import GoBack from "../components/GoBack.vue";
 
 export default {
   components: { SubCategoryCard, GoBack },
-  props: ["id"],
-  setup(props) {
-    const { SubCategoryId, error, load } = getSubCategoryId(props.id);
+  props: [],
+  setup() {
+    const { subcategories, error, load } = getSubCategory();
 
     load();
 
-    return { SubCategoryId, error };
+    return { subcategories, error };
   },
 };
 </script>
