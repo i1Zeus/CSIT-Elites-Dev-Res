@@ -49,7 +49,7 @@
         </div>
       </a>
 
-      <a href="/Resource">
+      <!-- <a href="/Resource">
         <div class="bg-white rounded-2xl grid grid-cols-12 m-4 h-32">
           <div class="col-span-4">
             <img
@@ -73,7 +73,7 @@
             </p>
           </div>
         </div>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>
