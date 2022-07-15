@@ -8,11 +8,11 @@
       >
         <form class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
-            <button
+            <div
               type=""
               placeholder="Image"
-              class="h-16 w-16 bg-green-200 hover:bg-green-300 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400  text-3xl font-mono"
-            >i</button>
+              class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400  text-3xl font-mono"
+            >i</div>
             <div
               class="block pl-2 font-semibold text-xl self-start text-gray-700"
             >
@@ -135,7 +135,7 @@ export default {
   },
   methods: {
     async add() {
-      let results = await fetch("http://localhost:8000/addedRec", {
+      let results = await fetch("http://localhost:8000/AddedRec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
