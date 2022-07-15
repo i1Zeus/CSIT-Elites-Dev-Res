@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CategoryShow from "../components/Category/CategoryShow.vue";
+import SubCategoryShow from "../views/CategoryShow.vue";
+import SubCategoryCard from "../components/Category/SubCategoryCard.vue";
 import ResShow from "../views/ResShow.vue";
 
 const router = createRouter({
@@ -15,6 +17,16 @@ const router = createRouter({
       path: "/category",
       name: "category",
       component: CategoryShow,
+    },
+    {
+      path: "/subcategory",
+      name: "subcategory",
+      component: SubCategoryShow,
+    },
+    {
+      path: "/subcategorycard",
+      name: "subcategorycard",
+      component: SubCategoryCard,
     },
     {
       path: "/add-rec",
