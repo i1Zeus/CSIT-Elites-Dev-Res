@@ -44,12 +44,19 @@
       </div>
     </div>
   </div>
+</div>
+  
 </template>
 <script>
-import GoBack from "@/components/GoBack.vue";
-export default {
-  components: {
-    GoBack,
-  },
-};
+  import getLatestRes from '../composables/getLatestRes';
+
+  export default {
+    component: {},
+    setup() {
+      const {latestRes, error, load} = getLatestRes();
+
+      load()
+      return {latestRes, error }
+    }, 
+  };
 </script>

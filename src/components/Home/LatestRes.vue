@@ -10,13 +10,12 @@
     </div>
 
     <div
-      class="bg-gray-100 rounded-2xl grid md:grid-cols-2 mx- md:mx-14 lg:mx-32 my-5 md:my-10"
+      class="bg-gray-100 rounded-2xl grid md:grid-cols-2 md:mx-14 lg:mx-32 my-5 md:my-10"
     >
       <a
         href="/Resource"
         v-for="latestReses in latestRes"
         :key="latestReses.id"
-        :to="latestReses.subCategory"
       >
         <div class="bg-white rounded-2xl grid grid-cols-12 m-4 h-32">
           <div class="col-span-4">
