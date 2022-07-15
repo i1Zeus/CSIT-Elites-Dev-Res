@@ -210,9 +210,12 @@
         <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
           <div class="text-center mb-10">
             <h1 class="font-bold text-3xl text-gray-900">LOGIN</h1>
-            <p>Enter your information to login</p>
+            <p>
+              Enter your information to login *Please note that the login
+              function only works for <b>Admins</b>
+            </p>
           </div>
-          <div>
+          <form @submit.prevent="login">
             <div class="flex -mx-3">
               <div class="w-full px-3 mb-5">
                 <label for="" class="text-xs font-semibold px-1">Email</label>
@@ -223,6 +226,8 @@
                     <i class="mdi mdi-email-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
+                    required
+                    v-model="email"
                     type="email"
                     class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-primary-500"
                     placeholder="husseinnajah@example.com"
@@ -242,6 +247,8 @@
                     <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
+                    required
+                    v-model="password"
                     type="password"
                     class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-primary-500"
                     placeholder="Password"
@@ -250,17 +257,41 @@
               </div>
             </div>
             <div class="flex -mx-3">
-              <div class="w-full px-3 mb-5">
+              <div class="flex w-full px-3 mb-5">
+                <GoBack class="h-12"/>
                 <button
-                  class="block w-full max-w-xs mx-auto bg-primary-500 hover:bg-primary-700 focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500  focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
                 >
                   LOGIN
                 </button>
+                
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import GoBack from "../components/GoBack.vue";
+export default {
+  components: {
+    GoBack,
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      window.user = this.username;
+      const redirectPath = this.$route.query.redirect || "/";
+      this.$router.push(redirectPath);
+    },
+  },
+};
+</script>

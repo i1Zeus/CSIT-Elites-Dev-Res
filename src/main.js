@@ -11,12 +11,12 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* =======> Here We Add FontAwsome Icons <======= */
-import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 import { faBookOpenReader } from "@fortawesome/free-solid-svg-icons";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
+
 /* =======> Remember to mention the newest icon in the Library <======= */
-library.add(faUserSecret, faBookOpenReader, faUsers, faPen);
+library.add(faBookOpenReader, faUsers, faPen);
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
