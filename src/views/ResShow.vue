@@ -1,4 +1,5 @@
 <template>
+<!-- title green same bold . delete cat title . go back component .center the items  -->
   <div class="h-screen flex items-center bg-gray-600 p-16">
     <div class="grid grid-cols-12 bg-white p-8 rounded-lg">
       <div class="col-span-6">
@@ -14,9 +15,6 @@
             <p class="mt-4 ml-16 text-lg">{{ latestR.discription }}</p>
           </div>
           <div class="flex flex-col">
-            <!-- <button class="bg-green-500 ml-16 mt-10 h-8 w-16 rounded hover:bg-green-600 hover:text-white">
-            <span class="m-2 ">Visit</span>
-          </button> -->
             <ul class="list-disc mt-10 ml-16 text-lg">
               <li>Link 1</li>
               <li>Link 2</li>
