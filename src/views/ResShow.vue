@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 p-16">
+  <div class="h-screen flex items-center bg-gray-600 p-16">
     <div class="grid grid-cols-12 bg-white p-8 rounded-lg">
       <div class="col-span-6">
         <div class="flex flex-col">
@@ -32,8 +32,7 @@
               <li>Link 3</li>
             </ul>
 
-            <GoBack class="ml-10 mt-4 "/>
-
+            <GoBack class="ml-10 mt-4" />
           </div>
         </div>
       </div>
