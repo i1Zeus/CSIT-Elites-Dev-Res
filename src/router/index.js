@@ -17,15 +17,25 @@ const router = createRouter({
       component: CategoryShow,
     },
     {
-      path:'/add-rec',
-      name:'addrec',
-      component:()=>import('../views/AddRec.vue')
+      path: "/add-rec",
+      name: "addrec",
+      component: () => import("../views/AddRec.vue"),
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("@/views/LoginView.vue"),
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: () => import("@/views/RegisterView.vue"),
     },
     {
       path: "/resource",
-       name: "ResShow",
-        component: ResShow
-      },
+      name: "ResShow",
+      component: ResShow,
+    },
   ],
 });
 

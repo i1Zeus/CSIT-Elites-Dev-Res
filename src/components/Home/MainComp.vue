@@ -5,16 +5,20 @@
   >
     <!-- ======> Buttons <======  -->
     <div class="flex justify-end mr-5">
-      <button
-        class="bg-transparent border-2 border-transparent hover:border-white text-white rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
-      >
-        <p>Register</p>
-      </button>
-      <button
-        class="border-2 border-white text-white hover:bg-black rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
-      >
-        <p>login</p>
-      </button>
+      <router-link to="/register">
+        <button
+          class="bg-transparent border-2 border-transparent hover:border-white text-white rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
+        >
+          <p>Register</p>
+        </button>
+      </router-link>
+      <router-link to="/login">
+        <button
+          class="border-2 border-white text-white hover:bg-black rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
+        >
+          <p>login</p>
+        </button>
+      </router-link>
     </div>
     <div class="flex flex-col gap-14 items-center mt-40">
       <!-- =========> Paragraph  <========= -->
