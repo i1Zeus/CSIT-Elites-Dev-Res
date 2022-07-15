@@ -1,7 +1,7 @@
 import { ref } from "vue";
 
 const getSubCategory = () => {
-  const SubCategory = ref([]);
+  const subcategories = ref([]);
   const error = ref(null);
 
   const load = async () => {
@@ -14,13 +14,13 @@ const getSubCategory = () => {
       if (!data.ok) {
         throw Error("no data here");
       } else {
-        SubCategory.value = await data.json();
+        subcategories.value = await data.json();
       }
     } catch (err) {
       error.value = err.message;
       console.log(error.value);
     }
   };
-  return { SubCategory, error, load };
+  return { subcategories, error, load };
 };
 export default getSubCategory;
