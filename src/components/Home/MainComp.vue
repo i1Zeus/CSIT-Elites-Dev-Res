@@ -28,8 +28,9 @@
       <!-- =========> Users / Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-mono">
-          <font-awesome-icon icon="fa-solid fa-book-open-reader" /> {{Info.res}} Res
-          <font-awesome-icon icon="fa-solid fa-users" /> {{Info.users}} Users
+          <font-awesome-icon icon="fa-solid fa-book-open-reader" />
+          {{ Info.res }} Res <font-awesome-icon icon="fa-solid fa-users" />
+          {{ Info.users }} Users
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->
