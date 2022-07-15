@@ -223,7 +223,8 @@
                     <i class="mdi mdi-email-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
-                    v-model="username"
+                    required
+                    v-model="email"
                     type="email"
                     class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-primary-500"
                     placeholder="husseinnajah@example.com"
@@ -243,6 +244,7 @@
                     <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
+                    required
                     v-model="password"
                     type="password"
                     class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-primary-500"
@@ -270,7 +272,7 @@
 export default {
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
     };
   },
