@@ -6,13 +6,13 @@
       <div
         class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10"
       >
-        <div class="max-w-md mx-auto">
+        <form class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
-            <button
-              class="h-32 w-32 bg-green-200 hover:bg-green-300 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-black text-2xl font-mono"
-            >
-              Image
-            </button>
+            <input
+              type="file"
+              placeholder="Image"
+              class="h-32 w-40 bg-green-200 hover:bg-green-300 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-transparent text-2xl font-mono"
+            />
             <div
               class="block pl-2 font-semibold text-xl self-start text-gray-700"
             >
@@ -29,6 +29,8 @@
               <div class="flex flex-col">
                 <label class="leading-loose">Resource Title</label>
                 <input
+                  required
+                  v-model="title"
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Resource title"
@@ -37,6 +39,8 @@
               <div class="flex flex-col">
                 <label class="leading-loose">Resource Link</label>
                 <input
+                  required
+                  v-model="link"
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Add a Link"
@@ -46,6 +50,8 @@
                 <div class="flex flex-col">
                   <label class="leading-loose">Tags</label>
                   <input
+                    required
+                    v-model="tags"
                     type="text"
                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     placeholder="Add Tags"
@@ -55,6 +61,8 @@
                   <label class="leading-loose">Category</label>
                   <div class="relative inline-flex">
                     <select
+                      required
+                      v-model="category"
                       class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     >
                       <option>Choose a Category</option>
@@ -68,6 +76,8 @@
               <div class="flex flex-col">
                 <label class="leading-loose">Resource Description</label>
                 <textarea
+                  required
+                  v-model="description"
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Remember to add a description"
@@ -97,14 +107,51 @@
                 </button>
               </router-link>
               <button
+                v-on:click="add()"
+                type="submit"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
               >
                 Create
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "AddRec",
+  data() {
+    return {
+      title: "",
+      link: "",
+      tags: "",
+      category: "",
+      description: "",
+      image: "",
+    };
+  },
+  methods: {
+    async add() {
+      let results = await fetch("http://localhost:8000/addedRec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: this.title,
+          link: this.link,
+          tags: this.tags,
+          category: this.category,
+          description: this.description,
+          image: this.image,
+        }),
+      });
+      return results.json();
+    },
+  },
+};
+</script>
