@@ -5,7 +5,9 @@
     <div class="bg-white flex justify-between mt-5">
       <div class="text-black text-lg font-semibold">Latest Res.</div>
       <div class="text-green-500 font-semibold">
-        <u><a href="">See more></a></u>
+        <router-link :to="{name: 'Resource' }">
+          <u><a href="">See more></a></u>
+        </router-link>
       </div>
     </div>
 
