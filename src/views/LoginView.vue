@@ -212,7 +212,7 @@
             <h1 class="font-bold text-3xl text-gray-900">LOGIN</h1>
             <p>Enter your information to login</p>
           </div>
-          <div>
+          <form @submit.prevent="login">
             <div class="flex -mx-3">
               <div class="w-full px-3 mb-5">
                 <label for="" class="text-xs font-semibold px-1">Email</label>
@@ -223,6 +223,7 @@
                     <i class="mdi mdi-email-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
+                    v-model="username"
                     type="email"
                     class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-primary-500"
                     placeholder="husseinnajah@example.com"
@@ -242,6 +243,7 @@
                     <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
+                    v-model="password"
                     type="password"
                     class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-primary-500"
                     placeholder="Password"
@@ -258,9 +260,26 @@
                 </button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      window.user = this.username;
+      const redirectPath = this.$route.query.redirect || "/";
+      this.$router.push(redirectPath);
+    },
+  },
+};
+</script>
