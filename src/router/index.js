@@ -32,7 +32,7 @@ const router = createRouter({
       component: () => import("@/views/RegisterView.vue"),
     },
     {
-      path: "/resource/:id",
+      path: "/resource",
       name: "ResShow",
       component: ResShow,
     },
