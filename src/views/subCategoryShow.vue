@@ -15,7 +15,6 @@
       <SubCategoryCard
         :title="subcategory.title"
         :sub="subcategory.sub"
-        :description="subcategory.description"
         :img="subcategory.img"
       />
     </div>
