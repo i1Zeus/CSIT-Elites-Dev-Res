@@ -6,21 +6,12 @@
           <p class="font-semibold text-4xl ml-16 mt-10">Front-End Source</p>
           <div class="mr-20">
             <p class="text-green-500 text-3xl mt-10 ml-16">
-              How to hack Hassan K. in one min
+              {{ latestR.title }}
             </p>
 
             <p class="text-green-500 ml-16">Jawi & Manar</p>
 
-            <p class="mt-4 ml-16 text-lg">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              officia ea officiis qui laborum quisquam! Excepturi, sunt
-              cupiditate! Repellat facere corporis delectus? Voluptates et
-              incidunt nam sint eaque laboriosam suscipit. Lorem ipsum dolor
-              sit, amet consectetur adipisicing elit. Delectus consequatur
-              officia neque explicabo dolore doloremque ipsum. Commodi ut optio
-              consequuntur ipsam repellendus et, dicta recusandae incidunt
-              nostrum quia, eligendi quos?
-            </p>
+            <p class="mt-4 ml-16 text-lg">{{ latestR.discription }}</p>
           </div>
           <div class="flex flex-col">
             <!-- <button class="bg-green-500 ml-16 mt-10 h-8 w-16 rounded hover:bg-green-600 hover:text-white">
@@ -32,31 +23,28 @@
               <li>Link 3</li>
             </ul>
 
-            <GoBack class="ml-10 mt-4 "/>
-
+            <GoBack class="ml-10 mt-4" />
           </div>
         </div>
       </div>
       <div class="col-span-6 h-auto">
         <div class="mr-10 mt-10">
-          <img src="../assets/img/imgRes.png" />
+          <img :src="latestR.img" />
         </div>
       </div>
     </div>
   </div>
-</div>
-  
 </template>
 <script>
-  import getLatestRes from '../composables/getLatestRes';
+import getLatestR from "../composables/getLatestR";
 
-  export default {
-    component: {},
-    setup() {
-      const {latestRes, error, load} = getLatestRes();
+export default {
+  props: ["id"],
+  setup(props) {
+    const { latestR, error, load } = getLatestR(props.id);
 
-      load()
-      return {latestRes, error }
-    }, 
-  };
+    load();
+    return { latestR, error };
+  },
+};
 </script>

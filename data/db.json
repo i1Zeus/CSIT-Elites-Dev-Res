@@ -22,7 +22,8 @@
       "name": "mosa nameer",
       "discription": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
       "publishDate": "23/11/2022",
-      "subCategory": " "
+      "subCategory": " ",
+      "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
     },
     {
       "id": 2,
@@ -30,7 +31,8 @@
       "name": "Ahmed 3bd",
       "discription": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
       "publishDate": "23/11/2022",
-      "subCategory": " "
+      "subCategory": " ",
+      "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
     }
   ],
   "main": {

@@ -30,6 +30,7 @@ const router = createRouter({
       path: "/resource/:id",
       name: "ResShow",
       component: ResShow,
+      props: true,
     },
   ],
 });
