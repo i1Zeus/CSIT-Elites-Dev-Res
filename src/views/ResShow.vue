@@ -52,3 +52,18 @@
 </div>
   
 </template>
+
+
+<script>
+  import getLatestRes from '../composables/getLatestRes';
+
+  export default {
+    component: {},
+    setup() {
+      const {latestRes, error, load} = getLatestRes();
+
+      load()
+      return {latestRes, error }
+    }, 
+  };
+</script>

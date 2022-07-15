@@ -16,14 +16,17 @@
         rounded-2xl
         grid
         md:grid-cols-2
-        mx-
         md:mx-14
         lg:mx-32
         my-5
         md:my-10
       "
     >
-      <a href="/Resource" v-for="latestReses in latestRes" :key="latestReses.id" :to="latestReses.subCategory">
+      <a
+        href="/Resource"
+        v-for="latestReses in latestRes"
+        :key="latestReses.id"
+      >
         <div class="bg-white rounded-2xl grid grid-cols-12 m-4 h-32">
           <div class="col-span-4">
             <img
@@ -34,10 +37,10 @@
           </div>
           <div class="col-span-7 mx-3">
             <p class="mt-3 mr-3 font-semibold">
-              {{latestReses.title}}
+              {{ latestReses.title }}
             </p>
-            <p class="text-gray-400">{{latestReses.name}}</p>
-            <p class="text-gray-400">{{latestReses.publishDate}}</p>
+            <p class="text-gray-400">{{ latestReses.name }}</p>
+            <p class="text-gray-400">{{ latestReses.publishDate }}</p>
           </div>
           <div>
             <p class="col-span-1 text-green-500 mt-12">
@@ -79,15 +82,15 @@
 </template>
 
 <script>
-  import getLatestRes from '../../composables/getLatestRes';
+import getLatestRes from "../../composables/getLatestRes";
 
-  export default {
-    component: {},
-    setup() {
-      const {latestRes, error, load} = getLatestRes();
+export default {
+  component: {},
+  setup() {
+    const { latestRes, error, load } = getLatestRes();
 
-      load()
-      return {latestRes, error }
-    }, 
-  };
+    load();
+    return { latestRes, error };
+  },
+};
 </script>
