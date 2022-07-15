@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import CategoryShow from "../views/CategoryShow.vue";
 import ResShow from "../views/ResShow.vue";
 import Resource from "../views/Resource.vue";
+import NotFound from "../views/NotFound.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -36,6 +37,12 @@ const router = createRouter({
       path: "/resource",
       name: "Resource",
       component: Resource,
+      
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: NotFound,
       
     },
   ],
