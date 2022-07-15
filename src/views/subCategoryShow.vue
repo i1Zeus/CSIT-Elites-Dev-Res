@@ -3,6 +3,7 @@
     <h2 class="text-center font-bold text-4xl text-green-600 mt-10">
       Chose Your Path & Let's Start
     </h2>
+    <GoBack />
     <div class="grid grid-cols-2 mx-10">
       <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
     </div>
@@ -24,15 +25,18 @@
 <script>
 // import sourceData from "@/data/db.json";
 import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
-import getSubCategory from "../composables/getSubCategory";
+import getSubCategoryId from "../composables/getSubCategoryId";
+import GoBack from "../components/GoBack.vue";
+
 export default {
-  components: { SubCategoryCard },
-  setup() {
-    const { subcategories, error, load } = getSubCategory();
+  components: { SubCategoryCard, GoBack },
+  props: ["id"],
+  setup(props) {
+    const { SubCategoryId, error, load } = getSubCategoryId(props.id);
 
     load();
 
-    return { subcategories, error };
+    return { SubCategoryId, error };
   },
 };
 </script>
