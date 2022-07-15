@@ -6,8 +6,13 @@
         </div>
 
         <div class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5"
-            v-for="subCategory in categories" :key="subCategory.id">
-            <SubCategoryCard />
+            v-for="subcategory in subcategories" :key="subcategory.id">
+            <SubCategoryCard 
+            :title="subcategory.title"
+            :sub="subcategory.sub"
+            :description="subcategory.description"
+            :img="subcategory.img"
+            />
         </div>
     </div>
 </template>
@@ -15,15 +20,15 @@
 <script>
 // import sourceData from "@/data/db.json";
 import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
-import getCategory from "../composables/getCategory";
+import getSubCategory from "../composables/getSubCategory";
 export default {
     components: { SubCategoryCard },
     setup() {
-        const { categories, error, load } = getCategory();
+        const { subcategories, error, load } = getSubCategory();
 
         load();
 
-        return { categories, error };
+        return { subcategories, error };
     },
 };
 </script>
