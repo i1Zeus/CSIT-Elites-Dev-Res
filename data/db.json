@@ -6,14 +6,76 @@
         "title": "Frontend developer",
         "sub": 5,
         "res":  10,
-        "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
+        "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg", 
+        "subCategory": [
+          {
+            "id": 1,
+            "title": "HTML",
+            "res":  5,
+            "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
+          },
+          
+          {
+            "id": 2,
+            "title": "Tailwind",
+            "res":  1,
+            "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
+          }
+
+        ]
       },
       {
         "id": 2,
         "title": "backend developer",
         "sub": 90,
         "res":  2,
-        "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
+        "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg",
+        "subCategory": [
+          {
+            "id": 1,
+            "title": "JS",
+            "res":  5,
+            "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
+          },
+          
+          {
+            "id": 2,
+            "title": "Laravel",
+            "res":  1,
+            "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
+          }
+
+        ]
+      },
+
+      {
+        "id": 3,
+        "title": "FullStack developer",
+        "sub": 5,
+        "res":  10,
+        "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg", 
+        "subCategory": [
+          {
+            "id": 1,
+            "title": "HTML",
+            "res":  5,
+            "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
+          },
+          
+          {
+            "id": 2,
+            "title": "Tailwind",
+            "res":  1,
+            "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
+          }
+
+        ]
       }
     ],
     "Resourse": [
@@ -32,24 +94,6 @@
         "discription": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
         "publishDate": "23/11/2022",
         "subCategory": " "
-      }
-    ],
-
-    "SubCategory": [
-      {
-        "id": 1,
-        "title": "HTML",
-        "res":  5,
-        "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
-      },
-
-      {
-        "id": 2,
-        "title": "Laravel",
-        "res":  1,
-        "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
       }
     ],
     
