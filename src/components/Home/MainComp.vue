@@ -28,8 +28,8 @@
       <!-- =========> Users / Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-mono">
-          <font-awesome-icon icon="fa-solid fa-book-open-reader" /> 12000 Res
-          <font-awesome-icon icon="fa-solid fa-users" /> 1000 Users
+          <font-awesome-icon icon="fa-solid fa-book-open-reader" /> {{Info.res}} Res
+          <font-awesome-icon icon="fa-solid fa-users" /> {{Info.users}} Users
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->
@@ -164,3 +164,17 @@
     </div>
   </div>
 </template>
+
+<script>
+import getInfo from "../../composables/getInfo";
+
+export default {
+  component: {},
+  setup() {
+    const { Info, error, load } = getInfo();
+
+    load();
+    return { Info, error };
+  },
+};
+</script>
