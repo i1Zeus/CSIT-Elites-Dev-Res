@@ -1,7 +1,7 @@
 import { ref } from "vue";
 
-const getCategory = () => {
-  const categories = ref([]);
+const getLatestRes = () => {
+  const latestRes = ref([]);
   const error = ref(null);
 
   const load = async () => {
@@ -10,17 +10,17 @@ const getCategory = () => {
       //     setTimeout(resolve, 2000);
       // });
 
-      let data = await fetch("http://localhost:8000/Category");
+      let data = await fetch("http://localhost:8000/Resourse");
       if (!data.ok) {
         throw Error("no data here");
       } else {
-        categories.value = await data.json();
+        latestRes.value = await data.json();
       }
     } catch (err) {
       error.value = err.message;
       console.log(error.value);
     }
   };
-  return { categories, error, load };
+  return { latestRes, error, load };
 };
-export default getCategory;
+export default getLatestRes;
