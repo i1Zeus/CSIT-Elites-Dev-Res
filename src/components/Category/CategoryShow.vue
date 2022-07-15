@@ -16,6 +16,7 @@
           :title="category.title"
           :sub="category.sub"
           :res="category.res"
+          :img="category.img"
         />
       </div>
     </div>

@@ -5,13 +5,15 @@
         "id": 1,
         "title": "Frontend developer",
         "sub": 5,
-        "res":  10
+        "res":  10,
+        "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
       },
       {
         "id": 2,
         "title": "backend developer",
         "sub": 90,
-        "res":  2
+        "res":  2,
+        "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
       }
     ],
     "Resourse": [
