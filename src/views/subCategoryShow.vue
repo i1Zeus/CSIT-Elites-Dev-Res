@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="text-center font-bold text-4xl text-green-600 mt-10">Chose Your Path & Let's Start </h2>
-        <div class="grid grid-cols-2 mx-10">
+        <div class="mx-10">
             <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
         </div>
 
@@ -9,8 +9,7 @@
             v-for="subcategory in subcategories" :key="subcategory.id">
             <SubCategoryCard 
             :title="subcategory.title"
-            :sub="subcategory.sub"
-            :description="subcategory.description"
+            :res="subcategory.res"
             :img="subcategory.img"
             />
         </div>

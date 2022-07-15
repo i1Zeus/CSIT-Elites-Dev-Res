@@ -31,10 +31,9 @@
     "subCategory": [
       {
         "id": 1,
-        "title": "JS",
+        "title": "JavaScript",
         "slug": "js",
         "res":  5,
-        "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
       },
       
@@ -43,12 +42,11 @@
         "title": "Laravel",
         "slug": "laravel",
         "res":  1,
-        "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
       }
 
     ],
-    
+
     "Resourse": [
       {
         "id": 1,

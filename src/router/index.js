@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CategoryShow from "../components/Category/CategoryShow.vue";
-import SubCategoryShow from "../views/CategoryShow.vue";
+import SubCategoryShow from "../views/subCategoryShow.vue";
 import SubCategoryCard from "../components/Category/SubCategoryCard.vue";
 import ResShow from "../views/ResShow.vue";
 
