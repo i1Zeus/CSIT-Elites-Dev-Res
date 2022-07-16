@@ -114,29 +114,18 @@
   },
   "AddedRec": [
     {
-      "title": "twyeu",
-      "link": "fuck you mosa",
-      "tags": [
-        "rtyui",
-        "yuio'"
-      ],
-      "description": "fyuiol",
-      "category": "Back-End",
-      "id": 1
-    },
-    {
-      "title": "sdssd",
+      "title": "Hussein Najah",
       "links": [
-        "dsdsd",
-        "ssds"
+        "https://github.com/i1Zeus/CSIT-Elites-Dev-Res/branches"
       ],
       "tags": [
-        "sdsds",
-        "sdsd"
+        "CSS",
+        "HTML",
+        "VueJS"
       ],
-      "description": "sdwdwdd",
-      "category": "Back-End",
-      "id": 2
+      "description": "He is a front end man",
+      "category": "Front-End",
+      "id": 1
     }
   ]
 }

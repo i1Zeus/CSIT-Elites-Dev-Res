@@ -55,11 +55,11 @@
                 class="flex flex-row-reverse items-center justify-between"
               >
                 <button
-                  class="rounded-lg font-bold text-gray-500 hover:text-red-500"
+                  class="font-bold text-gray-500 hover:text-red-500"
                   @click="deleteLink(link)"
                 >
                   <font-awesome-icon
-                    icon="fa-solid fa-square-xmark"
+                    icon="fa-solid fa-xmark"
                     size="lg"
                     class="px-1"
                   />
@@ -71,7 +71,7 @@
                 </a>
               </div>
               <div class="flex gap-14">
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-1">
                   <label class="leading-loose">Tags</label>
                   <input
                     @keydown.enter.prevent="addTags"
@@ -80,8 +80,22 @@
                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     placeholder="Add Tags"
                   />
+                  <div
+                    v-for="tag in tags"
+                    :key="tag"
+                    class="flex flex-row items-center justify-between"
+                  >
+                    <p class="w-full items-baseline bg-gray-100 px-2 rounded-lg">#{{ tag }}</p>
+                    <button @click="deleteTag(tag)">
+                      <font-awesome-icon
+                        icon="fa-solid fa-xmark"
+                        size="md"
+                        class="px-1 font-bold text-gray-500 hover:text-red-500"
+                      />
+                    </button>
+                  </div>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-1">
                   <label class="leading-loose">Category</label>
                   <div class="relative inline-flex">
                     <select
@@ -94,9 +108,6 @@
                       <option>Mobile Application</option>
                     </select>
                   </div>
-                </div>
-                <div v-for="tag in tags" :key="tag" class="bg-red-500">
-                  <div @click="deleteTag(tag)">#{{ tag }}</div>
                 </div>
               </div>
               <div class="flex flex-col">
