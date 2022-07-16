@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CategoryShow from "../components/Category/CategoryShow.vue";
-import SubCategoryShow from "../views/CategoryShow.vue";
-import SubCategoryCard from "../components/Category/SubCategoryCard.vue";
+import SubCategoryShow from "../views/subCategoryShow.vue";
 import ResShow from "../views/ResShow.vue";
-
+import Resource from "../views/Resource.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -24,11 +23,6 @@ const router = createRouter({
       component: SubCategoryShow,
     },
     {
-      path: "/subcategorycard",
-      name: "subcategorycard",
-      component: SubCategoryCard,
-    },
-    {
       path: "/add-rec",
       name: "addrec",
       component: () => import("../views/AddRec.vue"),
@@ -43,6 +37,12 @@ const router = createRouter({
       name: "ResShow",
       component: ResShow,
       props: true,
+    },
+    {
+      path: "/resource",
+      name: "Resource",
+      component: Resource,
+      
     },
   ],
 });
