@@ -8,11 +8,11 @@
       >
         <form class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
-            <input
-              type="file"
+            <button
+              type=""
               placeholder="Image"
-              class="h-32 w-40 bg-green-200 hover:bg-green-300 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-transparent text-2xl font-mono"
-            />
+              class="h-16 w-16 bg-green-200 hover:bg-green-300 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400  text-3xl font-mono"
+            >i</button>
             <div
               class="block pl-2 font-semibold text-xl self-start text-gray-700"
             >
@@ -65,7 +65,6 @@
                       v-model="category"
                       class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     >
-                      <option>Choose a Category</option>
                       <option>Front-End</option>
                       <option>Back-End</option>
                       <option>Mobile Application</option>
