@@ -1,5 +1,4 @@
 <template>
-  <!-- .center the items  -->
   <div class="h-screen flex items-center bg-gray-600 p-16">
     <div class="grid grid-cols-12 bg-white p-8 rounded-lg">
       <div class="col-span-6">
@@ -8,17 +7,17 @@
             {{ latestR.title }}
           </p>
           <div class="mr-20">
-            <p class="text-green-500 ml-16">Jawi & Manar</p>
+            <p class="text-green-500 ml-16">{{latestR.name}}</p>
 
-            <p class="mt-4 ml-16 text-lg">{{ latestR.discription }}</p>
+            <p class="mt-4 ml-16 text-lg">{{ latestR.description }}</p>
           </div>
-          <div class="flex flex-col">
+          <!-- <div class="flex flex-col">
             <ul class="list-disc mt-10 ml-16 text-lg">
               <li>Link 1</li>
               <li>Link 2</li>
               <li>Link 3</li>
             </ul>
-          </div>
+          </div> -->
         </div>
         <GoBack class="ml-10 mt-14" />
       </div>
