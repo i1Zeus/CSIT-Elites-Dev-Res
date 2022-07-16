@@ -41,19 +41,22 @@
               <div class="flex flex-col">
                 <label class="leading-loose">Resource Link</label>
                 <input
-                  required
+                  @keydown.enter.prevent="addLink"
                   v-model="link"
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Add a Link"
                 />
               </div>
+              <div v-for="link in links" :key="link">
+                <div @click="deleteLink(link)">{{ link }}</div>
+              </div>
               <div class="flex gap-14">
                 <div class="flex flex-col">
                   <label class="leading-loose">Tags</label>
                   <input
-                    required
-                    v-model="tags"
+                    @keydown.enter.prevent="addTags"
+                    v-model="tag"
                     type="text"
                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     placeholder="Add Tags"
@@ -72,6 +75,9 @@
                       <option>Mobile Application</option>
                     </select>
                   </div>
+                </div>
+                <div v-for="tag in tags" :key="tag" class="bg-red-500">
+                  <div @click="deleteTag(tag)">#{{ tag }}</div>
                 </div>
               </div>
               <div class="flex flex-col">
@@ -130,14 +136,40 @@ export default {
   setup() {
     const title = ref("");
     const link = ref("");
-    const tags = ref("");
+    const links = ref([]);
+    const tag = ref("");
+    const tags = ref([]);
     const description = ref("");
     const category = ref("");
 
+    const addTags = () => {
+      if (!tags.value.includes(tag.value)) {
+        tag.value = tag.value.replace(/\s/, "");
+        tags.value.push(tag.value);
+      }
+      tag.value = "";
+    };
+    const deleteTag = (tag) => {
+      tags.value = tags.value.filter((item) => {
+        return tag !== item;
+      });
+    };
+    const addLink = () => {
+      if (!links.value.includes(link.value)) {
+        link.value = link.value.replace(/\s/, "");
+        links.value.push(link.value);
+      }
+      link.value = "";
+    };
+    const deleteLink = (link) => {
+      links.value = links.value.filter((item) => {
+        return link !== item;
+      });
+    };
     const add = () => {
       const data = {
         title: title.value,
-        link: link.value,
+        links: links.value,
         tags: tags.value,
         description: description.value,
         category: category.value,
@@ -153,11 +185,17 @@ export default {
 
     return {
       title: title,
-      links: link,
+      links: links,
       tags: tags,
       description: description,
       category: category,
       add,
+      tag,
+      addTags,
+      link,
+      addLink,
+      deleteTag,
+      deleteLink,
     };
   },
 };
