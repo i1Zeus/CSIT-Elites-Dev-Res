@@ -45,7 +45,6 @@
 
 
 
-
 <script>
 import getLatestR from "../composables/getLatestR";
 import GoBack from "../components/GoBack.vue";
