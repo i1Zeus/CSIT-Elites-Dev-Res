@@ -112,14 +112,5 @@
       "FontAwesome Doc"
     ]
   },
-  "AddedRec": [
-    {
-      "title": "Test Title",
-      "link": "",
-      "tags": "Test Tags",
-      "description": "Test Description",
-      "category": "Back-End",
-      "id": 1
-    }
-  ]
+  "AddedRec": []
 }
