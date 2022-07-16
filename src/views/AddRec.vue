@@ -8,13 +8,13 @@
       >
         <form class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
-            <div
-              type=""
+            <button
+              type="file" @change="onFileSelected"
               placeholder="Image"
               class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400 text-3xl font-mono"
             >
               i
-            </div>
+            </button>
             <div
               class="block pl-2 font-semibold text-xl self-start text-gray-700"
             >
