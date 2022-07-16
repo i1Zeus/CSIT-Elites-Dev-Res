@@ -11,8 +11,10 @@
             <div
               type=""
               placeholder="Image"
-              class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400  text-3xl font-mono"
-            >i</div>
+              class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400 text-3xl font-mono"
+            >
+              i
+            </div>
             <div
               class="block pl-2 font-semibold text-xl self-start text-gray-700"
             >
@@ -121,36 +123,42 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   name: "AddRec",
-  data() {
-    return {
-      title: "",
-      link: "",
-      tags: "",
-      category: "",
-      description: "",
-      image: "",
-    };
-  },
-  methods: {
-    async add() {
-      let results = await fetch("http://localhost:8000/AddedRec", {
+  setup() {
+    const title = ref("");
+    const link = ref("");
+    const tags = ref("");
+    const description = ref("");
+    const category = ref("");
+
+    const add = () => {
+      const data = {
+        title: title.value,
+        link: link.value,
+        tags: tags.value,
+        description: description.value,
+        category: category.value,
+      };
+      fetch("http://localhost:8000/AddedRec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          title: this.title,
-          link: this.link,
-          tags: this.tags,
-          category: this.category,
-          description: this.description,
-          image: this.image,
-        }),
+        body: JSON.stringify(data),
       });
-      return results.json();
-    },
+    };
+
+    return {
+      title: title,
+      links: link,
+      tags: tags,
+      description: description,
+      category: category,
+      add,
+    };
   },
 };
 </script>
