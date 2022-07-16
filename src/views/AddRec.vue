@@ -85,7 +85,11 @@
                     :key="tag"
                     class="flex flex-row items-center justify-between"
                   >
-                    <p class="w-full items-baseline bg-gray-100 px-2 rounded-lg">#{{ tag }}</p>
+                    <p
+                      class="w-full items-baseline bg-gray-100 px-2 rounded-lg"
+                    >
+                      #{{ tag }}
+                    </p>
                     <button @click="deleteTag(tag)">
                       <font-awesome-icon
                         icon="fa-solid fa-xmark"
