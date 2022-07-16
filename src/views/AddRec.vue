@@ -9,7 +9,8 @@
         <form class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
             <button
-              type="file" @change="onFileSelected"
+              type="file"
+              @change="onFileSelected"
               placeholder="Image"
               class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400 text-3xl font-mono"
             >
@@ -48,8 +49,26 @@
                   placeholder="Add a Link"
                 />
               </div>
-              <div v-for="link in links" :key="link">
-                <div @click="deleteLink(link)">{{ link }}</div>
+              <div
+                v-for="link in links"
+                :key="link"
+                class="flex flex-row-reverse items-center justify-between"
+              >
+                <button
+                  class="rounded-lg font-bold text-gray-500 hover:text-red-500"
+                  @click="deleteLink(link)"
+                >
+                  <font-awesome-icon
+                    icon="fa-solid fa-square-xmark"
+                    size="lg"
+                    class="px-1"
+                  />
+                </button>
+                <a :href="link" target="_blank">
+                  <p class="bg-gray-100 px-5 rounded-lg">
+                    {{ link }}
+                  </p>
+                </a>
               </div>
               <div class="flex gap-14">
                 <div class="flex flex-col">
