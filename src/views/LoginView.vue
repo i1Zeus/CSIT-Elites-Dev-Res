@@ -215,7 +215,7 @@
               function only works for <b>Admins</b>
             </p>
           </div>
-          <form @submit.prevent="login">
+          <form @submit.prevent="submit">
             <div class="flex -mx-3">
               <div class="w-full px-3 mb-5">
                 <label for="" class="text-sm font-semibold px-1">Email</label>
@@ -260,6 +260,7 @@
               <div class="flex w-full px-3 mb-5">
                 <GoBack class="h-12" />
                 <button
+                  type="submit"
                   class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500 focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
                 >
                   LOGIN
@@ -291,7 +292,7 @@ export default {
     const router = useRouter();
 
     const submit = async () => {
-      await fetch("http://localhost:8000/api/login", {
+      await fetch("http://localhost:8000/Logininfo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
