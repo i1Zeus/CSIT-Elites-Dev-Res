@@ -66,31 +66,37 @@
               <div class="overflow-hidden">
                 <div class="min-w-full text-center bg-white rounded-2xl">
                   <div>
-                    <div class="flex">
-                      <div
+                    <div class="flex gap-2">
+                      <button
                         @click="tagsshow = true"
                         scope="col"
                         class="text-sm font-medium border-b-2 border-green-400 text-gray-900 px-6 py-4"
                       >
                         Tags
-                      </div>
-                      <div
+                      </button>
+                      <button
                         @click="tagsshow = false"
                         scope="col"
                         class="text-sm font-medium border-b-2 border-green-400 text-gray-900 px-6 py-4"
                       >
                         Certified Resources
-                      </div>
+                      </button>
                     </div>
                   </div>
                   <div>
-                    <div v-if="tagsshow" class="grid grid-cols-4 gap-4 w-full">
-                      <div v-for="tag in Info.tags" :key="tag">{{ tag }}</div>
+                    <div
+                      v-if="tagsshow"
+                      class="grid grid-cols-4 gap-4 w-full p-2"
+                    >
+                      <a v-for="tag in Info.tags" :key="tag">#{{ tag }}</a>
                     </div>
-                    <div v-if="!tagsshow" class="grid grid-cols-4 gap-4 w-full">
-                      <div v-for="res in Info.CertifiedRes" :key="res">
+                    <div
+                      v-if="!tagsshow"
+                      class="grid grid-cols-4 gap-4 w-full p-2"
+                    >
+                      <a href="/" v-for="res in Info.CertifiedRes" :key="res">
                         {{ res }}
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </div>

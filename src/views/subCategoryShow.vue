@@ -8,16 +8,17 @@
       <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
     </div>
 
-    <div class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5">
+    <div
+      class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5"
+    >
       <div v-for="subcategory in subcategories" :key="subcategory.id">
-        <SubCategoryCard 
-        :title="subcategory.title" 
-        :sub="subcategory.sub" 
-        :img="subcategory.img"
-        :res="subcategory.res"
-         />
+        <SubCategoryCard
+          :title="subcategory.title"
+          :sub="subcategory.sub"
+          :img="subcategory.img"
+          :res="subcategory.res"
+        />
       </div>
-
     </div>
   </div>
 </template>
