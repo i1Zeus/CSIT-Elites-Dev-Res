@@ -10,7 +10,7 @@ const getLogin = () => {
       //     setTimeout(resolve, 2000);
       // });
 
-      let data = await fetch("http://127.0.0.1:8001/api/auth/login");
+      let data = await fetch("http://127.0.0.1:8000/api/auth/login");
       if (!data.ok) {
         throw Error("no data here");
       } else {
