@@ -28,8 +28,8 @@
   "subCategory": [
     {
       "id": 1,
-      "title": "JS",
-      "slug": "js",
+      "title": "JavaScript",
+      "slug": "javascript",
       "res": 5,
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
     },
