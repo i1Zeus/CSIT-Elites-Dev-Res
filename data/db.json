@@ -28,17 +28,17 @@
   "subCategory": [
     {
       "id": 1,
-      "title": "JS",
-      "slug": "js",
+      "title": "JavaScript",
+      "slug": "javascript",
       "res": 5,
-      "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
+      "img": "http://alfa-cyber.com/wp-content/uploads/2021/06/What-is-JavaScript.jpg"
     },
     {
       "id": 2,
       "title": "Laravel",
       "slug": "laravel",
       "res": 1,
-      "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
+      "img": "https://laravelnews.imgix.net/images/laravel-featured.png?ixlib=php-3.3.1"
     }
   ],
   "Resourse": [
@@ -50,11 +50,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": [
-        "Html",
-        "JavaScript",
-        "tailwind"
-      ]
+      "tags": ["Html", "JavaScript", "tailwind"]
     },
     {
       "id": 2,
@@ -64,11 +60,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg",
-      "tags": [
-        "Html",
-        "JavaScript",
-        "Css"
-      ]
+      "tags": ["Html", "JavaScript", "Css"]
     },
     {
       "id": 3,
@@ -78,11 +70,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": [
-        "Html",
-        "Css",
-        "react"
-      ]
+      "tags": ["Html", "Css", "react"]
     },
     {
       "id": 4,
@@ -92,10 +80,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": [
-        "Html",
-        "Css"
-      ]
+      "tags": ["Html", "Css"]
     },
     {
       "id": 5,
@@ -105,10 +90,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": [
-        "Html",
-        "tailwind"
-      ]
+      "tags": ["Html", "tailwind"]
     }
   ],
   "main": {
@@ -158,27 +140,14 @@
     ]
   },
   "AddedRec": [
+    
+  ],
+  "Logininfo": [
     {
-      "title": "Hussein Najah",
-      "links": [
-        "https://github.com/i1Zeus/CSIT-Elites-Dev-Res/branches"
-      ],
-      "tags": [
-        "CSS",
-        "HTML",
-        "VueJS"
-      ],
-      "description": "He is a front end man",
-      "category": "Front-End",
-      "id": 1
-    },
-    {
-      "title": "",
-      "links": [],
-      "tags": [],
-      "description": "",
-      "category": "",
-      "id": 2
+      "id": 1,
+      "name": "Hussein Najah",
+      "email": "hussein@gmail.com",
+      "password": "123456789"
     }
   ]
 }
