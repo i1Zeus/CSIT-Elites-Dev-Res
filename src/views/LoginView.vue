@@ -258,13 +258,12 @@
             </div>
             <div class="flex -mx-3">
               <div class="flex w-full px-3 mb-5">
-                <GoBack class="h-12"/>
+                <GoBack class="h-12" />
                 <button
-                  class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500  focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500 focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
                 >
                   LOGIN
                 </button>
-                
               </div>
             </div>
           </form>
@@ -288,7 +287,7 @@ export default {
   },
   methods: {
     login() {
-      window.user = this.username;
+      window.user = this.email;
       const redirectPath = this.$route.query.redirect || "/";
       this.$router.push(redirectPath);
     },

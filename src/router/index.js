@@ -26,6 +26,9 @@ const router = createRouter({
       path: "/add-rec",
       name: "addrec",
       component: () => import("../views/AddRec.vue"),
+      meta: {
+        requiresAuth: true,
+      },
     },
     {
       path: "/login",
