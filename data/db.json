@@ -158,25 +158,7 @@
     ]
   },
   "AddedRec": [],
-  "Logininfo": [
-    {
-      "id": 1,
-      "name": "Hussein Najah",
-      "email": "hussein@gmail.com",
-      "password": "123456789"
-    },
-    {
-      "__v_isShallow": false,
-      "__v_isRef": true,
-      "_rawValue": {
-        "email": "",
-        "password": ""
-      },
-      "_value": {
-        "email": "",
-        "password": ""
-      },
-      "id": 2
-    }
+  "Login": [
+    
   ]
 }
