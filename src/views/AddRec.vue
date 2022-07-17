@@ -9,7 +9,8 @@
         <form class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
             <button
-              type="file" @change="onFileSelected"
+              type="file"
+              @change="onFileSelected"
               placeholder="Image"
               class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400 text-3xl font-mono"
             >
@@ -48,11 +49,29 @@
                   placeholder="Add a Link"
                 />
               </div>
-              <div v-for="link in links" :key="link">
-                <div @click="deleteLink(link)">{{ link }}</div>
+              <div
+                v-for="link in links"
+                :key="link"
+                class="flex flex-row-reverse items-center justify-between"
+              >
+                <button
+                  class="font-bold text-gray-500 hover:text-red-500"
+                  @click="deleteLink(link)"
+                >
+                  <font-awesome-icon
+                    icon="fa-solid fa-xmark"
+                    size="lg"
+                    class="px-1"
+                  />
+                </button>
+                <a :href="link" target="_blank">
+                  <p class="bg-gray-100 px-5 rounded-lg">
+                    {{ link }}
+                  </p>
+                </a>
               </div>
               <div class="flex gap-14">
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-1">
                   <label class="leading-loose">Tags</label>
                   <input
                     @keydown.enter.prevent="addTags"
@@ -61,8 +80,25 @@
                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     placeholder="Add Tags"
                   />
+                  <div
+                    v-for="tag in tags"
+                    :key="tag"
+                    class="flex flex-row items-center justify-between"
+                  >
+                    <p
+                      class="w-full items-baseline bg-gray-100 px-2 rounded-lg"
+                    >
+                      #{{ tag }}
+                    </p>
+                    <button @click="deleteTag(tag)">
+                      <font-awesome-icon
+                        icon="fa-solid fa-xmark"
+                        class="px-1 font-bold text-gray-500 hover:text-red-500"
+                      />
+                    </button>
+                  </div>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-1">
                   <label class="leading-loose">Category</label>
                   <div class="relative inline-flex">
                     <select
@@ -75,9 +111,6 @@
                       <option>Mobile Application</option>
                     </select>
                   </div>
-                </div>
-                <div v-for="tag in tags" :key="tag" class="bg-red-500">
-                  <div @click="deleteTag(tag)">#{{ tag }}</div>
                 </div>
               </div>
               <div class="flex flex-col">
@@ -113,7 +146,22 @@
                   Cancel
                 </button>
               </router-link>
+              <div
+                v-if="
+                  !(
+                    title &&
+                    category &&
+                    tags.length &&
+                    links.length &&
+                    description
+                  )
+                "
+                class="bg-gray-400 focus:ring-2 focus:outline-none justify-center items-center text-center w-full text-white px-4 py-3 rounded-lg"
+              >
+                Create
+              </div>
               <button
+                v-else
                 v-on:click="add()"
                 type="submit"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
@@ -145,7 +193,7 @@ export default {
     const addTags = () => {
       if (!tags.value.includes(tag.value)) {
         tag.value = tag.value.replace(/\s/, "");
-        tags.value.push(tag.value);
+        tags.value.unshift(tag.value);
       }
       tag.value = "";
     };
@@ -157,7 +205,7 @@ export default {
     const addLink = () => {
       if (!links.value.includes(link.value)) {
         link.value = link.value.replace(/\s/, "");
-        links.value.push(link.value);
+        links.value.unshift(link.value);
       }
       link.value = "";
     };
