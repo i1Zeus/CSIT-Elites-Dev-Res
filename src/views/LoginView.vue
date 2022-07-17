@@ -275,22 +275,55 @@
 
 <script>
 import GoBack from "../components/GoBack.vue";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
 export default {
   components: {
     GoBack,
   },
-  data() {
-    return {
+  name: "Login",
+  setup() {
+    const data = ref({
       email: "",
       password: "",
+    });
+    const router = useRouter();
+
+    const submit = async () => {
+      await fetch("http://localhost:8000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(data),
+      });
+
+      await router.push("/");
+    };
+
+    return {
+      data,
+      submit,
     };
   },
-  methods: {
-    login() {
-      window.user = this.email;
-      const redirectPath = this.$route.query.redirect || "/";
-      this.$router.push(redirectPath);
-    },
-  },
 };
+// export default {
+
+//   components: {
+//     GoBack,
+//   },
+//   data() {
+//     return {
+//       email: "",
+//       password: "",
+//     };
+//   },
+//   methods: {
+//     login() {
+//       window.user = this.email;
+//       const redirectPath = this.$route.query.redirect || "/";
+//       this.$router.push(redirectPath);
+//     },
+//   },
+// };
 </script>
