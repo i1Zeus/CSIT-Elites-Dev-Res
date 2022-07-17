@@ -28,7 +28,7 @@
           </div>
 
           <div
-            class="grid grid-cols-2 justify-evenly mt-10 font-semibold text-primary-500 gap-10 pl-28"
+            class="grid grid-cols-2 justify-evenly mt-10 font-semibold text-primary-500 gap-10 pl-14 md:pl-28"
           >
             <span v-for="tag in latestR.tags" :key="tag">
               {{ tag }}
@@ -37,21 +37,21 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-2 justify-between">
+      <div class="grid grid-cols-2 justify-between mb-10 md:mb-0">
         <div class="col-span-1">
           <GoBack class="mt-10 ml-16" />
         </div>
-        <div class="col-span-1 flex gap-10 mt-10">
-          <button
-            class="bg-red-600 flex justify-center h-10 w-20 text-white hover:border hover:border-red-700 hover:bg-red-700 rounded-lg"
-          >
-            <span class="mt-2">Delete</span>
-          </button>
-
+        <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
           <button
             class="bg-blue-500 flex justify-center h-10 w-20 text-white hover:border hover:border-blue-600 hover:bg-blue-600 rounded-lg"
           >
             <span class="mt-2">Edit</span>
+          </button>          
+          
+          <button
+            class="bg-red-600 flex justify-center h-10 w-20 text-white hover:border hover:border-red-700 hover:bg-red-700 rounded-lg"
+          >
+            <span class="mt-2">Delete</span>
           </button>
         </div>
       </div>
