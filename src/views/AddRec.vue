@@ -193,7 +193,7 @@ export default {
     const addTags = () => {
       if (!tags.value.includes(tag.value)) {
         tag.value = tag.value.replace(/\s/, "");
-        tags.value.push(tag.value);
+        tags.value.unshift(tag.value);
       }
       tag.value = "";
     };
