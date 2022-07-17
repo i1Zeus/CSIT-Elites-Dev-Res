@@ -93,7 +93,6 @@
                     <button @click="deleteTag(tag)">
                       <font-awesome-icon
                         icon="fa-solid fa-xmark"
-                        size="md"
                         class="px-1 font-bold text-gray-500 hover:text-red-500"
                       />
                     </button>
@@ -147,7 +146,23 @@
                   Cancel
                 </button>
               </router-link>
+              <div
+                v-if="
+                  !(
+                    title &&
+                    category &&
+                    tags.length &&
+                    links.length &&
+                    description
+                  )
+                "
+                disabled
+                class="bg-gray-400 focus:ring-2 focus:outline-none justify-center items-center text-center w-full text-white px-4 py-3 rounded-lg"
+              >
+                Create
+              </div>
               <button
+                v-else
                 v-on:click="add()"
                 type="submit"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
@@ -191,7 +206,7 @@ export default {
     const addLink = () => {
       if (!links.value.includes(link.value)) {
         link.value = link.value.replace(/\s/, "");
-        links.value.push(link.value);
+        links.value.unshift(link.value);
       }
       link.value = "";
     };
