@@ -50,11 +50,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": [
-        "Html",
-        "JavaScript",
-        "tailwind"
-      ]
+      "tags": ["Html", "JavaScript", "tailwind"]
     },
     {
       "id": 2,
@@ -64,11 +60,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg",
-      "tags": [
-        "Html",
-        "JavaScript",
-        "Css"
-      ]
+      "tags": ["Html", "JavaScript", "Css"]
     },
     {
       "id": 3,
@@ -78,11 +70,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": [
-        "Html",
-        "Css",
-        "react"
-      ]
+      "tags": ["Html", "Css", "react"]
     },
     {
       "id": 4,
@@ -92,10 +80,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": [
-        "Html",
-        "Css"
-      ]
+      "tags": ["Html", "Css"]
     },
     {
       "id": 5,
@@ -105,10 +90,7 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": [
-        "Html",
-        "tailwind"
-      ]
+      "tags": ["Html", "tailwind"]
     }
   ],
   "main": {
@@ -136,20 +118,17 @@
       "javascript",
       "typescript",
       "python",
-      "ruby",
-      "c++",
-      "c#",
-      "c",
-      "java",
-      "go",
-      "rust",
-      "django",
-      "flask",
-      "symfony",
-      "laravel",
-      "asp.net"
+      "ruby"
     ],
     "CertifiedRes": [
+      "ww3",
+      "tailwind css",
+      "laravel Doc",
+      "vue Doc",
+      "react Doc",
+      "angular Doc",
+      "nodejs Doc",
+      "FontAwesome Doc",
       "ww3",
       "tailwind css",
       "laravel Doc",
@@ -161,27 +140,14 @@
     ]
   },
   "AddedRec": [
+    
+  ],
+  "Logininfo": [
     {
-      "title": "Hussein Najah",
-      "links": [
-        "https://github.com/i1Zeus/CSIT-Elites-Dev-Res/branches"
-      ],
-      "tags": [
-        "CSS",
-        "HTML",
-        "VueJS"
-      ],
-      "description": "He is a front end man",
-      "category": "Front-End",
-      "id": 1
-    },
-    {
-      "title": "",
-      "links": [],
-      "tags": [],
-      "description": "",
-      "category": "",
-      "id": 2
+      "id": 1,
+      "name": "Hussein Najah",
+      "email": "hussein@gmail.com",
+      "password": "123456789"
     }
   ]
 }

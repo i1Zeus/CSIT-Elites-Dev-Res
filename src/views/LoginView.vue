@@ -258,13 +258,12 @@
             </div>
             <div class="flex -mx-3">
               <div class="flex w-full px-3 mb-5">
-                <GoBack class="h-12"/>
+                <GoBack class="h-12" />
                 <button
-                  class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500  focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500 focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
                 >
                   LOGIN
                 </button>
-                
               </div>
             </div>
           </form>
@@ -276,22 +275,55 @@
 
 <script>
 import GoBack from "../components/GoBack.vue";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
 export default {
   components: {
     GoBack,
   },
-  data() {
-    return {
+  name: "Login",
+  setup() {
+    const data = ref({
       email: "",
       password: "",
+    });
+    const router = useRouter();
+
+    const submit = async () => {
+      await fetch("http://localhost:8000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(data),
+      });
+
+      await router.push("/");
+    };
+
+    return {
+      data,
+      submit,
     };
   },
-  methods: {
-    login() {
-      window.user = this.username;
-      const redirectPath = this.$route.query.redirect || "/";
-      this.$router.push(redirectPath);
-    },
-  },
 };
+// export default {
+
+//   components: {
+//     GoBack,
+//   },
+//   data() {
+//     return {
+//       email: "",
+//       password: "",
+//     };
+//   },
+//   methods: {
+//     login() {
+//       window.user = this.email;
+//       const redirectPath = this.$route.query.redirect || "/";
+//       this.$router.push(redirectPath);
+//     },
+//   },
+// };
 </script>

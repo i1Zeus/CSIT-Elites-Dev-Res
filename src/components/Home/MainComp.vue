@@ -64,92 +64,42 @@
           <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
               <div class="overflow-hidden">
-                <table class="min-w-full text-center bg-white rounded-2xl">
-                  <thead>
-                    <tr>
-                      <th
+                <div class="min-w-full text-center bg-white rounded-2xl">
+                  <div>
+                    <div class="flex gap-2">
+                      <button
+                        @click="tagsshow = true"
                         scope="col"
                         class="text-sm font-medium border-b-2 border-green-400 text-gray-900 px-6 py-4"
                       >
                         Tags
-                      </th>
-                      <th
+                      </button>
+                      <button
+                        @click="tagsshow = false"
                         scope="col"
                         class="text-sm font-medium border-b-2 border-green-400 text-gray-900 px-6 py-4"
                       >
                         Certified Resources
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td
-                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                      >
-                        HTML
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        CSS
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        Tailwind CSS
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        JavaScript
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                      >
-                        HTML
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        CSS
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        Tailwind CSS
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        JavaScript
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                      >
-                        HTML
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        CSS
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        Tailwind CSS
-                      </td>
-                      <td
-                        class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                      >
-                        JavaScript
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      v-if="tagsshow"
+                      class="grid grid-cols-4 gap-4 w-full p-2"
+                    >
+                      <a v-for="tag in Info.tags" :key="tag">#{{ tag }}</a>
+                    </div>
+                    <div
+                      v-if="!tagsshow"
+                      class="grid grid-cols-4 gap-4 w-full p-2"
+                    >
+                      <a href="/" v-for="res in Info.CertifiedRes" :key="res">
+                        {{ res }}
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -160,15 +110,17 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import getInfo from "../../composables/getInfo";
 
 export default {
   component: {},
   setup() {
+    const tagsshow = ref(true);
     const { Info, error, load } = getInfo();
 
     load();
-    return { Info, error };
+    return { Info, error, tagsshow };
   },
 };
 </script>
