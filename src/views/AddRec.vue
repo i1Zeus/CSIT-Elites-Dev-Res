@@ -156,7 +156,6 @@
                     description
                   )
                 "
-                disabled
                 class="bg-gray-400 focus:ring-2 focus:outline-none justify-center items-center text-center w-full text-white px-4 py-3 rounded-lg"
               >
                 Create
