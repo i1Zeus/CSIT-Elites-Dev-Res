@@ -14,10 +14,10 @@
         <router-link :to="{ name: 'subcategory' }">
           <CategoryCard
             class="grid-cols-1"
-            :title="category.title"
-            :sub="category.sub"
-            :res="category.res"
-            :img="category.img"
+            :title="category.name"
+            :sub="category.subsections_count"
+            :res="category.resources_count"
+            :img="category.image"
           />
         </router-link>
       </div>
