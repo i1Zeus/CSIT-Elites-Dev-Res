@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="grid grid-cols-2">
-      <h1 class="text-left font-semibold mt-5 text-2xl text-primary-500">CATEGORY</h1>
+      <h1 class="text-left font-semibold mt-5 text-xl">Category</h1>
       <!-- <a href="" class="pt-6 text-right mr-3 text-primary-500">
             see more
             <i class="fa-solid fa-angle-right"></i>
@@ -14,10 +14,10 @@
         <router-link :to="{ name: 'subcategory' }">
           <CategoryCard
             class="grid-cols-1"
-            :name="category.name"
-            :subsections_count="category.subsections_count"
-            :resources_count="category.resources_count"
-            :image="category.image"
+            :title="category.name"
+            :sub="category.subsections_count"
+            :res="category.resources_count"
+            :img="category.image"
           />
         </router-link>
       </div>

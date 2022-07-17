@@ -50,7 +50,11 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": ["Html", "JavaScript", "tailwind"]
+      "tags": [
+        "Html",
+        "JavaScript",
+        "tailwind"
+      ]
     },
     {
       "id": 2,
@@ -60,7 +64,11 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg",
-      "tags": ["Html", "JavaScript", "Css"]
+      "tags": [
+        "Html",
+        "JavaScript",
+        "Css"
+      ]
     },
     {
       "id": 3,
@@ -70,7 +78,11 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": ["Html", "Css", "react"]
+      "tags": [
+        "Html",
+        "Css",
+        "react"
+      ]
     },
     {
       "id": 4,
@@ -80,7 +92,10 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": ["Html", "Css"]
+      "tags": [
+        "Html",
+        "Css"
+      ]
     },
     {
       "id": 5,
@@ -90,7 +105,10 @@
       "publishDate": "23/11/2022",
       "subCategory": " ",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
-      "tags": ["Html", "tailwind"]
+      "tags": [
+        "Html",
+        "tailwind"
+      ]
     }
   ],
   "main": {
@@ -139,15 +157,8 @@
       "FontAwesome Doc"
     ]
   },
-  "AddedRec": [
+  "AddedRec": [],
+  "Login": [
     
-  ],
-  "Logininfo": [
-    {
-      "id": 1,
-      "name": "Hussein Najah",
-      "email": "hussein@gmail.com",
-      "password": "123456789"
-    }
   ]
 }
