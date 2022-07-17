@@ -2,7 +2,7 @@
   <div>
     <GoBack class="mt-10 ml-10" />
     <h2 class="text-center font-bold text-4xl text-primary-600">
-      Chose Your Path & Let's Start
+      CHOSE YOUR PATH & LET'S START
     </h2>
     <div class="grid grid-cols-2 mx-10">
       <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
