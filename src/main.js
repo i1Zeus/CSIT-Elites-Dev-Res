@@ -13,10 +13,12 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faBookOpenReader } from "@fortawesome/free-solid-svg-icons";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons"
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 /* =======> Remember to mention the newest icon in the Library <======= */
-library.add(faBookOpenReader, faUsers, faPen , faAngleRight);
+library.add(faBookOpenReader, faUsers, faPen, faAngleRight, faSquareXmark , faXmark);
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
