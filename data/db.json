@@ -31,7 +31,6 @@
       "title": "JS",
       "slug": "js",
       "res": 5,
-      "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
       "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
     },
     {
@@ -39,7 +38,6 @@
       "title": "Laravel",
       "slug": "laravel",
       "res": 1,
-      "description": "lorem ipsum dolor sit amet consectetur adipisicing elit.",
       "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
     }
   ],
@@ -51,7 +49,12 @@
       "description": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
       "publishDate": "23/11/2022",
       "subCategory": " ",
-      "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
+      "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
+      "tags": [
+        "Html",
+        "JavaScript",
+        "tailwind"
+      ]
     },
     {
       "id": 2,
@@ -60,7 +63,52 @@
       "description": "Lorehacking is my game of chose.",
       "publishDate": "23/11/2022",
       "subCategory": " ",
-      "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
+      "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg",
+      "tags": [
+        "Html",
+        "JavaScript",
+        "Css"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "How to hack Hassan K. in one min",
+      "name": "mosa nameer",
+      "discription": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
+      "publishDate": "23/11/2022",
+      "subCategory": " ",
+      "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
+      "tags": [
+        "Html",
+        "Css",
+        "react"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "How to hack Hassan K. in one min",
+      "name": "mosa nameer",
+      "discription": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
+      "publishDate": "23/11/2022",
+      "subCategory": " ",
+      "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
+      "tags": [
+        "Html",
+        "Css"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "How to hack Hassan K. in one min",
+      "name": "mosa nameer",
+      "discription": "Lorem  ipsum dolor sit amet consectetur adipisicing elit.",
+      "publishDate": "23/11/2022",
+      "subCategory": " ",
+      "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg",
+      "tags": [
+        "Html",
+        "tailwind"
+      ]
     }
   ],
   "main": {
@@ -88,20 +136,17 @@
       "javascript",
       "typescript",
       "python",
-      "ruby",
-      "c++",
-      "c#",
-      "c",
-      "java",
-      "go",
-      "rust",
-      "django",
-      "flask",
-      "symfony",
-      "laravel",
-      "asp.net"
+      "ruby"
     ],
     "CertifiedRes": [
+      "ww3",
+      "tailwind css",
+      "laravel Doc",
+      "vue Doc",
+      "react Doc",
+      "angular Doc",
+      "nodejs Doc",
+      "FontAwesome Doc",
       "ww3",
       "tailwind css",
       "laravel Doc",
@@ -126,6 +171,14 @@
       "description": "He is a front end man",
       "category": "Front-End",
       "id": 1
+    },
+    {
+      "title": "",
+      "links": [],
+      "tags": [],
+      "description": "",
+      "category": "",
+      "id": 2
     }
   ]
 }
