@@ -46,7 +46,7 @@
 
 <script>
 import getLatestR from "../composables/getLatestR";
-import GoBack from "../components/GoBack.vue";
+import GoBack from "../components/button/GoBack.vue";
 export default {
   components: {
     GoBack,
