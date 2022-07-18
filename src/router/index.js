@@ -19,7 +19,7 @@ const router = createRouter({
       component: CategoryShow,
     },
     {
-      path: "/:id",
+      path: "/category/:id",
       name: "categories",
       component: SubCategoryShow,
       props: true,

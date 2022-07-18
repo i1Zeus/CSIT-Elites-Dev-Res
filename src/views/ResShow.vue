@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen flex items-center bg-gray-600 p-16">
     <div class="bg-white p-4 rounded-lg">
-      <div class="grid grid-cols-12 ">
+      <div class="grid grid-cols-12">
         <div class="col-span-6">
           <div class="flex flex-col">
             <p class="font-semibold text-4xl ml-16 mt-10 text-primary-500">
@@ -13,12 +13,12 @@
               <p class="mt-5 text-right mr-4">{{ latestR.updated_time }}</p>
             </div>
             <div class="flex flex-col">
-            <ul class="list-disc mt-10 ml-16 text-lg">
-              <li>Link 1</li>
-              <li>Link 2</li>
-              <li>Link 3</li>
-            </ul>
-          </div>
+              <ul class="list-disc mt-10 ml-16 text-lg">
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+              </ul>
+            </div>
           </div>
         </div>
         <!-- <div class="col-span-6 mt-12">
@@ -39,9 +39,9 @@
           <GoBack class="mt-10 ml-16" />
         </div>
         <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
-          <div class="flex ">
+          <div class="flex">
             <editButton></editButton>
-            <deleteButton  class="ml-5 "></deleteButton>
+            <deleteButton class="ml-5"></deleteButton>
           </div>
         </div>
       </div>
