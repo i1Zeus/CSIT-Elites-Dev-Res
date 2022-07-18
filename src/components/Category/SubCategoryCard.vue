@@ -57,6 +57,6 @@ import editButton from "@/components/button/editButton.vue";
 import deleteButton from "@/components/button/deleteButton.vue";
 export default {
   components: { editButton, deleteButton },
-  props: ["title", "res", "img"],
+  props: ["name", "res", "image"],
 };
 </script>
