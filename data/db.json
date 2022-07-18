@@ -136,20 +136,17 @@
       "javascript",
       "typescript",
       "python",
-      "ruby",
-      "c++",
-      "c#",
-      "c",
-      "java",
-      "go",
-      "rust",
-      "django",
-      "flask",
-      "symfony",
-      "laravel",
-      "asp.net"
+      "ruby"
     ],
     "CertifiedRes": [
+      "ww3",
+      "tailwind css",
+      "laravel Doc",
+      "vue Doc",
+      "react Doc",
+      "angular Doc",
+      "nodejs Doc",
+      "FontAwesome Doc",
       "ww3",
       "tailwind css",
       "laravel Doc",
@@ -160,28 +157,8 @@
       "FontAwesome Doc"
     ]
   },
-  "AddedRec": [
-    {
-      "title": "Hussein Najah",
-      "links": [
-        "https://github.com/i1Zeus/CSIT-Elites-Dev-Res/branches"
-      ],
-      "tags": [
-        "CSS",
-        "HTML",
-        "VueJS"
-      ],
-      "description": "He is a front end man",
-      "category": "Front-End",
-      "id": 1
-    },
-    {
-      "title": "",
-      "links": [],
-      "tags": [],
-      "description": "",
-      "category": "",
-      "id": 2
-    }
+  "AddedRec": [],
+  "Login": [
+    
   ]
 }
