@@ -5,7 +5,7 @@
     <div class="bg-white flex justify-between mt-5">
       <div class="text-black text-lg font-semibold">Latest Res.</div>
       <div class="text-green-500 font-semibold">
-        <router-link :to="{name: 'Resource' }">
+        <router-link :to="{ name: 'Resource' }">
           <u><a href="">See more></a></u>
         </router-link>
       </div>
@@ -20,27 +20,26 @@
             <div class="col-span-4">
               <img
                 class="h-full w-full rounded-2xl object-cover p-3"
-                src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg"
+                src="{{latestReses.image_url}}"
                 alt=""
               />
             </div>
             <div class="col-span-7 mx-3">
-            <div>
-              <p class="mt-3 mr-3 font-semibold">
-                {{ latestReses.title }}
-              </p>
-            </div>
+              <div>
+                <p class="mt-3 mr-3 font-semibold">
+                  {{ latestReses.name }}
+                </p>
+              </div>
               <div class="flex justify-between">
                 <div class="mt-7">
-                  <p class="text-gray-400">{{ latestReses.publishDate }}</p>
+                  <p class="text-gray-400">23/11/2001</p>
                 </div>
-                <div class="text-xs font-semibold text-primary-500 mr-5">
+                <!-- <div class="text-xs font-semibold text-primary-500 mr-5">
                   <div v-for="tag in latestReses.tags" :key="tag">
-                    {{tag}}
+                    {{ tag }}
                   </div>
-                </div>
+                </div> -->
               </div>
-              
             </div>
             <div>
               <p class="col-span-1 text-green-500 mt-12">
