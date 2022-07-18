@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CategoryShow from "../components/Category/CategoryShow.vue";
-import SubCategoryShow from "../views/CategoryShow.vue";
-import SubCategoryCard from "../components/Category/SubCategoryCard.vue";
+import SubCategoryShow from "../views/subCategoryShow.vue";
 import ResShow from "../views/ResShow.vue";
 import Resource from "../views/Resource.vue";
 import NotFound from "../views/NotFound.vue";
@@ -25,11 +24,6 @@ const router = createRouter({
       component: SubCategoryShow,
     },
     {
-      path: "/subcategorycard",
-      name: "subcategorycard",
-      component: SubCategoryCard,
-    },
-    {
       path: "/add-rec",
       name: "addrec",
       component: () => import("../views/AddRec.vue"),
@@ -49,7 +43,11 @@ const router = createRouter({
       path: "/resource",
       name: "Resource",
       component: Resource,
-      
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: () => import("@/views/NotFound.vue"),
     },
     {
       path: "/:pathMatch(.*)*",

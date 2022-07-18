@@ -9,10 +9,13 @@
         <form class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
             <button
-              type=""
+              type="file"
+              @change="onFileSelected"
               placeholder="Image"
-              class="h-16 w-16 bg-green-200 hover:bg-green-300 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400  text-3xl font-mono"
-            >i</button>
+              class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400 text-3xl font-mono"
+            >
+              i
+            </button>
             <div
               class="block pl-2 font-semibold text-xl self-start text-gray-700"
             >
@@ -39,25 +42,63 @@
               <div class="flex flex-col">
                 <label class="leading-loose">Resource Link</label>
                 <input
-                  required
+                  @keydown.enter.prevent="addLink"
                   v-model="link"
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Add a Link"
                 />
               </div>
+              <div
+                v-for="link in links"
+                :key="link"
+                class="flex flex-row-reverse items-center justify-between"
+              >
+                <button
+                  class="font-bold text-gray-500 hover:text-red-500"
+                  @click="deleteLink(link)"
+                >
+                  <font-awesome-icon
+                    icon="fa-solid fa-xmark"
+                    size="lg"
+                    class="px-1"
+                  />
+                </button>
+                <a :href="link" target="_blank">
+                  <p class="bg-gray-100 px-5 rounded-lg">
+                    {{ link }}
+                  </p>
+                </a>
+              </div>
               <div class="flex gap-14">
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-1">
                   <label class="leading-loose">Tags</label>
                   <input
-                    required
-                    v-model="tags"
+                    @keydown.enter.prevent="addTags"
+                    v-model="tag"
                     type="text"
                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     placeholder="Add Tags"
                   />
+                  <div
+                    v-for="tag in tags"
+                    :key="tag"
+                    class="flex flex-row items-center justify-between"
+                  >
+                    <p
+                      class="w-full items-baseline bg-gray-100 px-2 rounded-lg"
+                    >
+                      #{{ tag }}
+                    </p>
+                    <button @click="deleteTag(tag)">
+                      <font-awesome-icon
+                        icon="fa-solid fa-xmark"
+                        class="px-1 font-bold text-gray-500 hover:text-red-500"
+                      />
+                    </button>
+                  </div>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-1">
                   <label class="leading-loose">Category</label>
                   <div class="relative inline-flex">
                     <select
@@ -105,7 +146,22 @@
                   Cancel
                 </button>
               </router-link>
+              <div
+                v-if="
+                  !(
+                    title &&
+                    category &&
+                    tags.length &&
+                    links.length &&
+                    description
+                  )
+                "
+                class="bg-gray-400 focus:ring-2 focus:outline-none justify-center items-center text-center w-full text-white px-4 py-3 rounded-lg"
+              >
+                Create
+              </div>
               <button
+                v-else
                 v-on:click="add()"
                 type="submit"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
@@ -121,36 +177,74 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   name: "AddRec",
-  data() {
-    return {
-      title: "",
-      link: "",
-      tags: "",
-      category: "",
-      description: "",
-      image: "",
+  setup() {
+    const title = ref("");
+    const link = ref("");
+    const links = ref([]);
+    const tag = ref("");
+    const tags = ref([]);
+    const description = ref("");
+    const category = ref("");
+
+    const addTags = () => {
+      if (!tags.value.includes(tag.value)) {
+        tag.value = tag.value.replace(/\s/, "");
+        tags.value.unshift(tag.value);
+      }
+      tag.value = "";
     };
-  },
-  methods: {
-    async add() {
-      let results = await fetch("http://localhost:8000/addedRec", {
+    const deleteTag = (tag) => {
+      tags.value = tags.value.filter((item) => {
+        return tag !== item;
+      });
+    };
+    const addLink = () => {
+      if (!links.value.includes(link.value)) {
+        link.value = link.value.replace(/\s/, "");
+        links.value.unshift(link.value);
+      }
+      link.value = "";
+    };
+    const deleteLink = (link) => {
+      links.value = links.value.filter((item) => {
+        return link !== item;
+      });
+    };
+    const add = () => {
+      const data = {
+        title: title.value,
+        links: links.value,
+        tags: tags.value,
+        description: description.value,
+        category: category.value,
+      };
+      fetch("http://localhost:8000/AddedRec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          title: this.title,
-          link: this.link,
-          tags: this.tags,
-          category: this.category,
-          description: this.description,
-          image: this.image,
-        }),
+        body: JSON.stringify(data),
       });
-      return results.json();
-    },
+    };
+
+    return {
+      title: title,
+      links: links,
+      tags: tags,
+      description: description,
+      category: category,
+      add,
+      tag,
+      addTags,
+      link,
+      addLink,
+      deleteTag,
+      deleteLink,
+    };
   },
 };
 </script>

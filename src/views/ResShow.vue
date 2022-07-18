@@ -1,39 +1,24 @@
 <template>
-  <!-- .center the items  -->
-  <div class="h-auto flex items-center md:p-16 bg-gray-600">
-    <div class="bg-white md:p-4 rounded-lg">
-      <div class="md:grid md:grid-cols-12 bg-white p-4">
-        <div class="col-span-6">
-          <div class="flex flex-col ml-5 md:ml-12">
-            <p class="font-semibold text-4xl mt-10 text-primary-500">
-              {{ latestR.title }}
-            </p>
-            <div class="md:mr-20">
-              <p class="text-green-500">{{ latestR.name }}</p>
+  <div class="h-screen flex items-center bg-gray-600 p-16">
+    <div class="grid grid-cols-12 bg-white p-8 rounded-lg">
+      <div class="col-span-6">
+        <div class="flex flex-col">
+          <p class="font-semibold text-4xl ml-16 mt-10 text-primary-500">
+            {{ latestR.title }}
+          </p>
+          <div class="mr-20">
+            <p class="text-primary-500 text-lg font-semibold ml-16">{{latestR.name}}</p>
+            <p class="ml-16">{{latestR.publishDate}}</p>
 
-              <p class="mt-4 text-lg">{{ latestR.discription }}</p>
-            </div>
-            <div class="flex flex-col">
-              <ul class="list-disc mt-10 ml-4 text-lg">
-                <li>Link 1</li>
-                <li>Link 2</li>
-                <li>Link 3</li>
-              </ul>
-            </div>
+            <p class="mt-4 ml-16 text-lg">{{ latestR.description }}</p>
           </div>
-        </div>
-        <div class="col-span-6 h-auto mt-4 ">
-          <div>
-            <img class="relative rounded-md h-auto p-5 md:p-0" :src="latestR.img" />
-          </div>
-
-          <div
-            class="grid grid-cols-2 justify-evenly mt-10 font-semibold text-primary-500 gap-10 pl-14 md:pl-28"
-          >
-            <span v-for="tag in latestR.tags" :key="tag">
-              {{ tag }}
-            </span>
-          </div>
+          <!-- <div class="flex flex-col">
+            <ul class="list-disc mt-10 ml-16 text-lg">
+              <li>Link 1</li>
+              <li>Link 2</li>
+              <li>Link 3</li>
+            </ul>
+          </div> -->
         </div>
       </div>
 
