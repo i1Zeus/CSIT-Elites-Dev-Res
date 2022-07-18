@@ -28,7 +28,7 @@
 
 <script>
 import CategoryCard from "@/components/Category/CategoryCard.vue";
-import getCategory from "../../composables/getCategory";
+import getCategory from "../../composables/Category/getCategory";
 export default {
   components: { CategoryCard },
   setup() {

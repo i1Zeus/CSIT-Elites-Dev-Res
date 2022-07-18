@@ -25,10 +25,9 @@
 </template>
 
 <script>
-// import sourceData from "@/data/db.json";
 import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
-import getSubCategory from "../composables/getSubCategory";
-import GoBack from "../components/button/GoBack.vue";
+import getSubCategory from "../../composables/Category/getSubCategory";
+import GoBack from "../../components/button/GoBack.vue";
 
 export default {
   components: { SubCategoryCard, GoBack },

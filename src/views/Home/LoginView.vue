@@ -275,7 +275,7 @@
 </template>
 
 <script>
-import GoBack from "../components/button/GoBack.vue";
+import GoBack from "../../components/button/GoBack.vue";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
