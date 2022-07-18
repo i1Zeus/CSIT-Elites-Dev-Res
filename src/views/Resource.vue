@@ -11,8 +11,8 @@
           <router-link :to="{ name: 'ResShow', params: { id: resources.id } }">
             <ResourceCard 
             :title="resources.name"
-            :publishDate="resources.publishDate"
-            :tags="resources.tags[1].name"/>
+            :publishDate="resources.created_time"
+            :tags="resources.tags"/>
           </router-link>
         </div>
       </div>

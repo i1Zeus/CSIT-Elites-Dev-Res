@@ -4,11 +4,11 @@
       <div class="col-span-6">
         <div class="flex flex-col">
           <p class="font-semibold text-4xl ml-16 mt-10 text-primary-500">
-            {{ latestR.title }}
+            {{ latestR.name }}
           </p>
           <div class="mr-20">
-            <p class="text-primary-500 text-lg font-semibold ml-16">{{latestR.name}}</p>
-            <p class="ml-16">{{latestR.publishDate}}</p>
+            <!-- <p class="text-primary-500 text-lg font-semibold ml-16">{{latestR.name}}</p> -->
+            <p class="ml-16">{{latestR.updated_time}}</p>
 
             <p class="mt-4 ml-16 text-lg">{{ latestR.description }}</p>
           </div>

@@ -20,7 +20,7 @@
             <div class="col-span-4">
               <img
                 class="h-full w-full rounded-2xl object-cover p-3"
-                src="{{latestReses.image_url}}"
+                src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg"
                 alt=""
               />
             </div>
@@ -31,8 +31,8 @@
                 </p>
               </div>
               <div class="flex justify-between">
-                <div class="mt-7">
-                  <p class="text-gray-400">23/11/2001</p>
+                <div class="mt-14">
+                  <p class="text-gray-400">{{latestReses.created_time}}</p>
                 </div>
                 <!-- <div class="text-xs font-semibold text-primary-500 mr-5">
                   <div v-for="tag in latestReses.tags" :key="tag">
@@ -42,7 +42,7 @@
               </div>
             </div>
             <div>
-              <p class="col-span-1 text-green-500 mt-12">
+              <p class="col-span-1 text-green-500 mt-14">
                 <a href="/Resource">
                   <font-awesome-icon icon="fa-solid fa-angle-right" />
                 </a>
