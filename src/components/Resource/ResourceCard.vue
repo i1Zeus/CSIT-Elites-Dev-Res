@@ -27,7 +27,7 @@
   <div class="wrapper bg-whiite antialiased text-gray-900 m-6 rounded">
     <div>
       <img
-        src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg"
+        :src="image"
         class="w-full object-cover object-center rounded-lg shadow-md"
       />
       <div class="relative px-4 -mt-16">
