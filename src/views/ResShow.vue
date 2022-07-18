@@ -20,30 +20,29 @@
             </ul>
           </div> -->
         </div>
-        <GoBack class="ml-10 mt-14" />
       </div>
 
-      <div class="col-span-6 h-auto">
-        <div >
-          <img class="relative rounded-md" :src="latestR.img" />
+      <div class="grid grid-cols-2 justify-between mb-10 md:mb-0">
+        <div class="col-span-1">
+          <GoBack class="mt-10 ml-16" />
         </div>
-
-        <div class="flex gap-5 mt-14 ">
-          <button class="bg-red-600 flex justify-center h-10 w-20 text-white hover:border hover:border-red-700 hover:bg-red-700 rounded-lg">
+        <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
+          <button
+            class="bg-blue-500 flex justify-center h-10 w-20 text-white hover:border hover:border-blue-600 hover:bg-blue-600 rounded-lg"
+          >
+            <span class="mt-2">Edit</span>
+          </button>          
+          
+          <button
+            class="bg-red-600 flex justify-center h-10 w-20 text-white hover:border hover:border-red-700 hover:bg-red-700 rounded-lg"
+          >
             <span class="mt-2">Delete</span>
           </button>
-
-          <button class="bg-blue-500 flex justify-center h-10 w-20 text-white hover:border hover:border-blue-600 hover:bg-blue-600 rounded-lg">
-            <span class="mt-2">Edit</span>
-          </button>
-        </div>        
-      </div>      
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
-
-
 
 <script>
 import getLatestR from "../composables/getLatestR";

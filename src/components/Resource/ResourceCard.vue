@@ -16,13 +16,13 @@
       </h5>
     </div>
     <div class="flex justify-between h-20 mb-2">
-      <div class="grid ml-2 text-primary-500 font-semibold">
+      <div class="grid ml-3 text-primary-500 font-semibold">
         <div v-for="tag in tags" :key="tag">
           <span class=""> {{ tag }} </span>
         </div>
       </div>
 
-      <div class="flex gap-1 justify-end mt-14 ">
+      <div class="flex gap-1 justify-end mt-14">
         <span class="">Published in </span>
         <span class="">{{ publishDate }}</span>
       </div>

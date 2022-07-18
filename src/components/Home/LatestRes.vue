@@ -25,11 +25,22 @@
               />
             </div>
             <div class="col-span-7 mx-3">
+            <div>
               <p class="mt-3 mr-3 font-semibold">
                 {{ latestReses.title }}
               </p>
-              <p class="text-gray-400">{{ latestReses.name }}</p>
-              <p class="text-gray-400">{{ latestReses.publishDate }}</p>
+            </div>
+              <div class="flex justify-between">
+                <div class="mt-7">
+                  <p class="text-gray-400">{{ latestReses.publishDate }}</p>
+                </div>
+                <div class="text-xs font-semibold text-primary-500 mr-5">
+                  <div v-for="tag in latestReses.tags" :key="tag">
+                    {{tag}}
+                  </div>
+                </div>
+              </div>
+              
             </div>
             <div>
               <p class="col-span-1 text-green-500 mt-12">
