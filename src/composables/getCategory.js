@@ -10,7 +10,7 @@ const getCategory = () => {
       //     setTimeout(resolve, 2000);
       // });
 
-      let data = await fetch("http://127.0.0.1:8001/api/categories");
+      let data = await fetch("http://127.0.0.1:8000/api/categories");
       if (!data.ok) {
         throw Error("no data here");
       } else {
@@ -21,6 +21,7 @@ const getCategory = () => {
       console.log(error.value);
     }
   };
+
   return { categories, error, load };
 };
 export default getCategory;

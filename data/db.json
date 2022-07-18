@@ -28,17 +28,17 @@
   "subCategory": [
     {
       "id": 1,
-      "title": "JS",
-      "slug": "js",
+      "title": "JavaScript",
+      "slug": "javascript",
       "res": 5,
-      "img": "https://e3arabi.com/wp-content/uploads/2020/12/Front-End-Development-Bundle.jpg"
+      "img": "http://alfa-cyber.com/wp-content/uploads/2021/06/What-is-JavaScript.jpg"
     },
     {
       "id": 2,
       "title": "Laravel",
       "slug": "laravel",
       "res": 1,
-      "img": "https://alterrasoft.com/wp-content/uploads/2019/05/backend-for-article-2.jpg"
+      "img": "https://laravelnews.imgix.net/images/laravel-featured.png?ixlib=php-3.3.1"
     }
   ],
   "Resourse": [
