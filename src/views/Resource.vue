@@ -13,7 +13,7 @@
               :title="resources.name"
               :publishDate="resources.updated_time"
               :tags="resources.tags"
-              :image="resources.image_url"
+              :image="resources.screenShot"
             />
           </router-link>
         </div>
