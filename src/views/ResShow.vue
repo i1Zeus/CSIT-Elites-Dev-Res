@@ -21,6 +21,9 @@
           </div> -->
         </div>
       </div>
+      <div class="col-span-6 rounded-lg">
+        <img src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg" alt="">
+      </div>
 
       <div class="grid grid-cols-2 justify-between mb-10 md:mb-0">
         <div class="col-span-1">
