@@ -21,6 +21,7 @@ const getCategory = () => {
       console.log(error.value);
     }
   };
+
   return { categories, error, load };
 };
 export default getCategory;
