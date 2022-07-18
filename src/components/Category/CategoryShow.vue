@@ -10,14 +10,15 @@
     <div
       class="grid grid-cols-3 bg-gray-100 rounded-lg mt-2 mx-5 place-items-center py-5"
     >
+
       <div v-for="category in categories" :key="category.id">
         <router-link :to="{ name: 'subcategory' }">
           <CategoryCard
             class="grid-cols-1"
-            :title="category.name"
-            :sub="category.subsections_count"
-            :res="category.resources_count"
-            :img="category.image"
+            :name="category.name"
+            :subsections_count="category.subsections_count"
+            :resources_count="category.resources_count"
+            :image="category.image"
           />
         </router-link>
       </div>

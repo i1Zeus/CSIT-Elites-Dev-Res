@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h2 class="text-center font-bold text-4xl text-green-600 mt-10">
-      Chose Your Path & Let's Start
+    <GoBack class="mt-10 ml-10" />
+    <h2 class="text-center font-bold text-4xl text-primary-600">
+      CHOSE YOUR PATH & LET'S START
     </h2>
-    <GoBack />
     <div class="grid grid-cols-2 mx-10">
       <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
     </div>
@@ -11,11 +11,10 @@
     <div
       class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5"
     >
-      <div v-for="subcategory in subcategories" :key="subcategory.id">
+      <div v-for="subcategory in subcategories.data" :key="subcategory.id">
         <SubCategoryCard
-          :title="subcategory.title"
-          :sub="subcategory.sub"
-          :img="subcategory.img"
+          :name="subcategory.name"
+          :image="subcategory.image"
           :res="subcategory.res"
         />
       </div>
