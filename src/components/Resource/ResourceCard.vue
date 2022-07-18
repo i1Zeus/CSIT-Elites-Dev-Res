@@ -16,7 +16,7 @@
       </h5>
     </div>
     <div class="flex justify-between h-20 mb-2">
-      <div class="grid ml-3 text-primary-500 font-semibold">
+      <div class="grid grid-flow-col ml-3 text-primary-500 font-semibold">
         <div v-for="tag in tags" :key="tag">
           <span class=""> {{ tag }} </span>
         </div>

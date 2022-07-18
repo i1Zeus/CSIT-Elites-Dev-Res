@@ -10,9 +10,9 @@
         <div v-for="resources in resource" :key="resources.id">
           <router-link :to="{ name: 'ResShow', params: { id: resources.id } }">
             <ResourceCard 
-            :title="resources.title"
+            :title="resources.name"
             :publishDate="resources.publishDate"
-            :tags="resources.tags"/>
+            :tag="resources.tags[0].name"/>
           </router-link>
         </div>
       </div>
