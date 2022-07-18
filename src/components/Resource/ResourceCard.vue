@@ -3,7 +3,7 @@
 
   <div class="bg-gray-50 rounded-lg border border-gray-200 shadow-md m-10 p-3">
     <div>
-      <img class="rounded-t-lg bg-cover" :src="image" alt="" />
+      <img class="rounded-t-lg bg-cover" src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg" alt="" />
     </div>
 
     <div class="p-3">
@@ -19,11 +19,11 @@
       </div>
 
       <div class="flex gap-1 justify-end mt-14">
-        <!-- <span class="">Published in </span> -->
         <span class="">{{ publishDate }}</span>
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
