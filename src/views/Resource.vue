@@ -12,7 +12,7 @@
             <ResourceCard 
             :title="resources.name"
             :publishDate="resources.publishDate"
-            :tag="resources.tags[0].name"/>
+            :tags="resources.tags[1].name"/>
           </router-link>
         </div>
       </div>
