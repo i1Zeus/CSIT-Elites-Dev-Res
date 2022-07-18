@@ -4,7 +4,7 @@ import CategoryShow from "../components/Category/CategoryShow.vue";
 import SubCategoryShow from "../views/subCategoryShow.vue";
 import ResShow from "../views/ResShow.vue";
 import Resource from "../views/Resource.vue";
-import NotFound from "../views/NotFound.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -51,12 +51,6 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: () => import("@/views/NotFound.vue"),
-    },
-    {
-      path: "/:pathMatch(.*)*",
-      name: "NotFound",
-      component: NotFound,
-      
     },
   ],
 });
