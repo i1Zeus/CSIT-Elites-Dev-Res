@@ -34,11 +34,11 @@
                 <div class="mt-14">
                   <p class="text-gray-400">{{latestReses.created_time}}</p>
                 </div>
-                <!-- <div class="text-xs font-semibold text-primary-500 mr-5">
+                <div class="text-xs font-semibold text-primary-500 mr-5">
                   <div v-for="tag in latestReses.tags" :key="tag">
                     {{ tag }}
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
             <div>
