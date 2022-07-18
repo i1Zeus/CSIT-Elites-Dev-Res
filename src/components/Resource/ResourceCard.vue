@@ -23,7 +23,7 @@
       </div>
 
       <div class="flex gap-1 justify-end mt-14">
-        <span class="">Published in </span>
+        <!-- <span class="">Published in </span> -->
         <span class="">{{ publishDate }}</span>
       </div>
     </div>
