@@ -11,11 +11,10 @@
     <div
       class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5"
     >
-      <div v-for="subcategory in subcategories" :key="subcategory.id">
+      <div v-for="subcategory in subcategories.data" :key="subcategory.id">
         <SubCategoryCard
-          :title="subcategory.title"
-          :sub="subcategory.sub"
-          :img="subcategory.img"
+          :name="subcategory.name"
+          :image="subcategory.image"
           :res="subcategory.res"
         />
       </div>

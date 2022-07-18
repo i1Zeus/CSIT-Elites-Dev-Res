@@ -24,7 +24,7 @@
   >
     <a href="">
       <img
-        :src="img"
+        :src="image"
         alt=""
         class=" rounded-lg h-48  ease-in duration-200"
       />
@@ -37,7 +37,7 @@
           class="absolute left-0 bottom-0 px-2 mb-2 pr-3 flex items-center justify-between w-full"
         >
           <h3 class="font-semibold text-center text-white text-3xl">
-            {{ title }}
+            {{ name }}
           </h3>
 
           <div class="rounded-full px-2 bg-white text-black">{{ res }} Res</div>
@@ -45,8 +45,9 @@
       </div>
 
       <div class="flex gap-2 rounded-xl absolute top-0 right-0">
-        <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" />
-        
+        <!-- <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" /> -->
+        <editButton />
+        <deleteButton />
       </div>
     </a>
   </div>
