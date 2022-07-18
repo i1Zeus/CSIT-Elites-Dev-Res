@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import CategoryShow from "../components/Category/CategoryShow.vue";
-import SubCategoryShow from "../views/subCategoryShow.vue";
-import ResShow from "../views/ResShow.vue";
-import Resource from "../views/Resource.vue";
-import NotFound from "../views/NotFound.vue";
+import HomeView from "../views/Home/HomeView.vue";
+import CategoryShow from "../views/Category/CategoryShow.vue";
+import SubCategoryShow from "../views/Category/subCategoryShow.vue";
+import ResShow from "../views/Resource/ResShow.vue";
+import Resource from "../views/Resource/Resource.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,7 +32,7 @@ const router = createRouter({
     {
       path: "/add-rec",
       name: "addrec",
-      component: () => import("../views/AddRec.vue"),
+      component: () => import("../views/Resource/AddRec.vue"),
       meta: {
         requiresAuth: true,
       },
@@ -40,7 +40,7 @@ const router = createRouter({
     {
       path: "/login",
       name: "login",
-      component: () => import("@/views/LoginView.vue"),
+      component: () => import("@/views/Home/LoginView.vue"),
     },
     {
       path: "/resource/:id",
@@ -57,12 +57,6 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: () => import("@/views/NotFound.vue"),
-    },
-    {
-      path: "/:pathMatch(.*)*",
-      name: "NotFound",
-      component: NotFound,
-      
     },
   ],
 });

@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import ResourceCard from "../components/Resource/ResourceCard.vue";
-import getResource from "../composables/getResource";
+import ResourceCard from "../../components/Resource/ResourceCard.vue";
+import getResource from "../../composables/Resource/getResource";
 
 export default {
   components: { ResourceCard },

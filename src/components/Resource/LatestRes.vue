@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import getLatestRes from "../../composables/getLatestRes";
+import getLatestRes from "../../composables/Resource/getLatestRes";
 
 export default {
   component: {},
