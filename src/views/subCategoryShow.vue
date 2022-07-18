@@ -32,9 +32,9 @@ import GoBack from "../components/button/GoBack.vue";
 
 export default {
   components: { SubCategoryCard, GoBack },
-  props: [],
-  setup() {
-    const { subcategories, error, load } = getSubCategory();
+  props: ["id"],
+  setup(props) {
+    const { subcategories, error, load } = getSubCategory(props.id);
 
     load();
 
