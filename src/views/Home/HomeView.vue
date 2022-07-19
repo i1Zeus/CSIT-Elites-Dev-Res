@@ -11,7 +11,7 @@
 <script>
 import MainComp from "../../components/Home/MainComp.vue";
 import LatestRes from "@/components/Resource/LatestRes.vue";
-import CategoryShow from "@/views/Category/CategoryShow.vue";
+import CategoryShow from "../../components/Category/CategoryShow.vue";
 
 export default {
   components: { MainComp, LatestRes, CategoryShow },

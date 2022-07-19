@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/Home/HomeView.vue";
-import CategoryShow from "../views/Category/CategoryShow.vue";
+// import CategoryShow from "../views/Category/CategoryShow.vue";
 import SubCategoryShow from "../views/Category/subCategoryShow.vue";
 import ResShow from "../views/Resource/ResShow.vue";
-import Resource from "../views/Resource/Resource.vue";
+import ResourcesPage from "../views/Resource/ResourcesPage.vue";
 import NotFound from "../views/NotFound.vue";
 
 const router = createRouter({
@@ -15,16 +15,22 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/category",
-      name: "category",
-      component: CategoryShow,
-    },
-    {
       path: "/category/:id",
       name: "categories",
       component: SubCategoryShow,
       props: true,
-      
+    },
+    {
+      path: "/sub-section/:id",
+      name: "resource",
+      component: ResourcesPage,
+      props: true,
+    },
+    {
+      path: "/resource/:id",
+      name: "ResShow",
+      component: ResShow,
+      props: true,
     },
     // {
     //   path: "/subcategory",
@@ -44,18 +50,8 @@ const router = createRouter({
       name: "login",
       component: () => import("@/views/Home/LoginView.vue"),
     },
-    {
-      path: "/resource/:id",
-      name: "ResShow",
-      component: ResShow,
-      props: true,
-    },
-    {
-      path: "/sub-section/:id",
-      name: "resource",
-      component: Resource,
-      props: true,
-    },
+    
+    
     // {
     //   path: "/resource",
     //   name: "Resource",

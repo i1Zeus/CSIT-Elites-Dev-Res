@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import CategoryCard from "@/components/Category/CategoryCard.vue";
+import CategoryCard from "../Category/CategoryCard.vue";
 import getCategory from "../../composables/Category/getCategory";
 export default {
   components: { CategoryCard },
