@@ -1,5 +1,5 @@
 <template>
-  <!-- =====> Image <====== -->
+  <!--  =====> Image <====== -->
   <div
     class="bg-[url('../src/assets/img/MainCom.jpg')] h-screen bg-cover bg-center object-cover relative"
   >
