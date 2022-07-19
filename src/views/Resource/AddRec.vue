@@ -66,7 +66,7 @@
                 </button>
                 <a :href="link" target="_blank">
                   <p class="bg-gray-100 px-5 rounded-lg">
-                    {{ link }}
+                    {{ link.substring(0,40)+"..." }}
                   </p>
                 </a>
               </div>
@@ -222,7 +222,7 @@ export default {
         description: description.value,
         category: category.value,
       };
-      fetch("http://localhost:8000/AddedRec", {
+      fetch("http://127.0.0.1:8000/api/resources/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,7 +1,7 @@
 import { ref } from "vue";
-
-const getInfo = () => {
-  const Info = ref([]);
+// =====> GET Resources Count <=====
+const getRecCou = () => {
+  const RecCou = ref([]);
   const error = ref(null);
 
   const load = async () => {
@@ -10,17 +10,17 @@ const getInfo = () => {
       //     setTimeout(resolve, 2000);
       // });
 
-      let data = await fetch("http://127.0.0.1:8000/api/tags/");
+      let data = await fetch("http://127.0.0.1:8000/api/resources");
       if (!data.ok) {
         throw Error("no data here");
       } else {
-        Info.value = await data.json();
+        RecCou.value = await data.json();
       }
     } catch (err) {
       error.value = err.message;
       console.log(error.value);
     }
   };
-  return { Info, error, load };
+  return { RecCou, error, load };
 };
-export default getInfo;
+export default getRecCou;

@@ -18,12 +18,10 @@
       <div>
         <p class="text-6xl text-white font-semibold">Search,Find & Learn!</p>
       </div>
-      <!-- =========> Users / Resources  <========= -->
+      <!-- =========> Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-mono">
-          <font-awesome-icon icon="fa-solid fa-book-open-reader" />
-          {{ Info.res }} Res <font-awesome-icon icon="fa-solid fa-users" />
-          {{ Info.users }} Users
+          {{ RecCou }} Res <font-awesome-icon icon="fa-solid fa-users" />
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->
@@ -88,14 +86,14 @@
                       v-if="tagsshow"
                       class="grid grid-cols-4 gap-4 w-full p-2"
                     >
-                      <a v-for="tag in Info.data" :key="tag">#{{ tag.name }}</a>
+                      <a v-for="tag in Tags.data" :key="tag">#{{ tag.name }}</a>
                     </div>
                     <div
                       v-if="!tagsshow"
                       class="grid grid-cols-4 gap-4 w-full p-2"
                     >
-                      <a href="/" v-for="res in Info.CertifiedRes" :key="res">
-                        {{ res }}
+                      <a href="/" v-for="res in CerRec.data" :key="res">
+                        {{ res.name }}
                       </a>
                     </div>
                   </div>
@@ -111,16 +109,20 @@
 
 <script>
 import { ref } from "vue";
-import getInfo from "../../composables/Home/getInfo";
+import getTags from "../../composables/Home/getTags";
+import getRecCou from "../../composables/Home/getRecCount";
+import getCerRec from "../../composables/Home/getCerRec";
 
 export default {
   component: {},
   setup() {
     const tagsshow = ref(true);
-    const { Info, error, load } = getInfo();
+    const { Tags, error, load } = getTags();
+    const { RecCou } = getRecCou();
+    const { CerRec } = getCerRec();
 
     load();
-    return { Info, error, tagsshow };
+    return { RecCou, CerRec , Tags, error, tagsshow };
   },
 };
 </script>
