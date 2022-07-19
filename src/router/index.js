@@ -32,11 +32,11 @@ const router = createRouter({
       component: ResShow,
       props: true,
     },
-    // {
-    //   path: "/subcategory",
-    //   name: "subcategory",
-    //   component: SubCategoryShow,
-    // },
+    {
+      path: "/subcategory",
+      name: "subcategory",
+      component: SubCategoryShow,
+    },
     {
       path: "/add-rec",
       name: "addrec",
