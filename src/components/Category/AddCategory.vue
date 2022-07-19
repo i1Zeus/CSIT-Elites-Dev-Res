@@ -12,7 +12,7 @@
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <button @click="toogleModal = false" type="button"
-                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                         data-modal-toggle="addcategory-modal">
                         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@
                         <span class="sr-only">Close modal</span>
                     </button>
                     <div class="py-6 px-6 lg:px-8">
-                        <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Add Category</h3>
+                        <h3 class="mb-4 text-xl font-semibold text-gray-900">Add Category</h3>
                         <form class="space-y-6" action="#">
                             <div>
                                 <label class="leading-loose">Category Name</label>
