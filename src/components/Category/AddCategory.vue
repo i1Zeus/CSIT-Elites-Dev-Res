@@ -53,7 +53,6 @@ import { ref } from "vue";
 
 export default {
     components: { AddButton },
-    name: "AddCategory",
     setup() {
         const name = ref("");
 
