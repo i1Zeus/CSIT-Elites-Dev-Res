@@ -1,10 +1,10 @@
 import { ref } from "vue";
 // =====> GET Resources Count <=====
 const getRecCou = () => {
-  const RecCou = ref([]);
-  const error = ref(null);
+  const RecCou = ref('');
+  const error1 = ref(null);
 
-  const load = async () => {
+  const load1 = async () => {
     try {
       // await new Promise((resolve) => {
       //     setTimeout(resolve, 2000);
@@ -17,10 +17,10 @@ const getRecCou = () => {
         RecCou.value = await data.json();
       }
     } catch (err) {
-      error.value = err.message;
-      console.log(error.value);
+      error1.value = err.message;
+      console.log(error1.value);
     }
   };
-  return { RecCou, error, load };
+  return { RecCou, error1, load1 };
 };
 export default getRecCou;
