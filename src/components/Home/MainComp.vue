@@ -111,7 +111,7 @@
 
 <script>
 import { ref } from "vue";
-import getInfo from "../../composables/getInfo";
+import getInfo from "../../composables/Home/getInfo";
 
 export default {
   component: {},

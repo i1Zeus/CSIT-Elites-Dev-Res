@@ -71,7 +71,7 @@
           <p>Try searching again or use the Go Back button below.</p>
         </div>
         <div class="mb-20 md:mb-0">
-          <GoBack class="text-lg font-light outline-none bg-transparent hover:border-transparent focus:outline-none transform transition-all hover:scale-110 text-yellow-500 hover:text-yellow-600" />
+          <GoBack class="font-light bg-yellow-500 hover:text-yellow-500 hover:border hover:border-yellow-500" />
         </div>
       </div>
       <div class="w-full md:w-1/2 text-center">
@@ -401,7 +401,7 @@
 }
 </style>
 <script>
-import GoBack from "../components/GoBack.vue";
+import GoBack from "../components/button/GoBack.vue";
 export default {
   components: {
     GoBack,
