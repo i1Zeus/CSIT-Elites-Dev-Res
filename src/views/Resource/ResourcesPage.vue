@@ -4,6 +4,7 @@
       <p class="text-primary-500 text-4xl font-semibold text-center p-10">
         <u>Front-End Resources</u>
       </p>
+
       <div class="md:grid md:grid-cols-2 lg:grid-cols-3">
         <!-- card -->
 
@@ -24,9 +25,9 @@
 <script>
 import ResourceCard from "../../components/Resource/ResourceCard.vue";
 import getResource from "../../composables/Resource/getResource";
-
+import addSubSectionButton from "../../components/Category/addSubCategoryButton.vue"
 export default {
-  components: { ResourceCard },
+  components: { ResourceCard, addSubSectionButton },
   props: ["id"],
   setup(props) {
     const { resource, error, load } = getResource(props.id);

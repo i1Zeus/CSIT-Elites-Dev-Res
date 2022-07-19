@@ -1,16 +1,13 @@
 <template>
   <div>
-    <div class="grid grid-cols-2">
+    <div class="flex justify-between">
       <h1 class="text-left font-semibold mt-5 text-xl">Category</h1>
-      <!-- <a href="" class="pt-6 text-right mr-3 text-primary-500">
-            see more
-            <i class="fa-solid fa-angle-right"></i>
-        </a> -->
+      <AddCategory />
     </div>
     <div
       class="grid grid-cols-3 bg-gray-100 rounded-lg mt-2 mx-5 place-items-center py-5"
     >
-      <div v-for="category in categories" :key="category.id">
+      <div v-for="category in categories.data" :key="category.id">
         <router-link
           :to="{
             name: 'categories',
@@ -33,8 +30,9 @@
 <script>
 import CategoryCard from "../Category/CategoryCard.vue";
 import getCategory from "../../composables/Category/getCategory";
+import AddCategory from "../Category/AddCategory.vue";
 export default {
-  components: { CategoryCard },
+  components: { CategoryCard, AddCategory },
   setup() {
     const { categories, error, load } = getCategory();
 

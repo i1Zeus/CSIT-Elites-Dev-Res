@@ -16,8 +16,7 @@
     <div class="flex flex-col gap-14 items-center mt-40">
       <!-- =========> Paragraph  <========= -->
       <div>
-        <p class="text-6xl text-white font-semibold">Search,Find & Learn!
-        </p>
+        <p class="text-6xl text-white font-semibold">Search,Find & Learn!</p>
       </div>
       <!-- =========> Resources  <========= -->
       <div>
@@ -139,8 +138,8 @@ export default {
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
+    const { RecCou, load1 } = getRecCou();
     let searchTerm = ref("");
-    const { RecCou } = getRecCou();
     const { CerRec } = getCerRec();
     const { AllRec, searchload } = getAllRec();
 
@@ -162,6 +161,7 @@ export default {
       });
     });
     load();
+    load1();
     searchload();
     return {
       searchTerm,

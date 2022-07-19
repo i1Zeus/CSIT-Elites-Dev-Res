@@ -4,8 +4,11 @@
     <h2 class="text-center font-bold text-4xl text-primary-600">
       CHOSE YOUR PATH & LET'S START
     </h2>
-    <div class="grid grid-cols-2 mx-10">
+    <div class="mx-10 justify-between flex">
       <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
+      <div class="flex justify-end mt-5 mr-10">
+        <addSubCategoryButton />
+      </div>
     </div>
 
     <div
@@ -34,9 +37,10 @@
 import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 import GoBack from "../../components/button/GoBack.vue";
+import addSubCategoryButton from "../../components/Category/addSubCategoryButton.vue";
 
 export default {
-  components: { SubCategoryCard, GoBack },
+  components: { SubCategoryCard, GoBack, addSubCategoryButton },
   props: ["id"],
   setup(props) {
     const { subcategories, error, load } = getSubCategory(props.id);
