@@ -114,7 +114,6 @@
 import { ref } from "vue";
 
 export default {
-  name: "AddRec",
   setup() {
     const title = ref("");
     const link = ref("");
