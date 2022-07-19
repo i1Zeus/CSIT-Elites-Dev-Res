@@ -3,9 +3,9 @@
     <button
       @click="toogleModal = !toogleModal"
       type="button"
-      class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+      class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
     >
-      Add resource
+      Add SubCategory
     </button>
   </div>
 
@@ -15,18 +15,18 @@
     <div
       id="authentication-modal"
       tabindex="-1"
-      class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-auto md:inset-0 h-modal md:h-full justify-center items-center flex"
+      class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex"
       aria-modal="true"
       role="dialog"
     >
-      <div class="flex relative w-auto bg-primary-500 h-auto md:h-auto">
+      <div class="flex relative w-1/2 h-auto bg-primary-500 border border-primary-100  md:h-auto">
         <!-- image -->
         <div class="m-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
-            width="500.31838"
-            height="500.97524"
+            width="300.31838"
+            height="300.97524"
             viewBox="0 0 897.31838 556.97524"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
@@ -276,10 +276,10 @@
           </button>
 
           <div class="py-6 px-6 lg:px-8">
-            <h3 class="mb-4 text-xl font-medium">Add sub-section</h3>
+            <h3 class="mb-4 text-xl font-medium text-primary-500">Add sub-section</h3>
             <form class="space-y-5" action="#">
               <div>
-                <label class="leading-loose">Resource Title</label>
+                <label class="leading-loose">Sebsection Title</label>
                 <input
                   required
                   v-model="title"
@@ -315,8 +315,9 @@
               <div>
               
               </div>
-                <button
-                  class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-black duration-1000 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none"
+              
+                <button @click="toogleModal = false"
+                  class="flex justify-center items-center w-full border-2 border-transparent border-b-black  hover:border-emerald-600  text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none mr-6"
                 >
                   <svg
                     class="w-6 h-6 mr-3"
@@ -350,13 +351,35 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
-  name: "modal",
-  data() {
-    return {
-      toogleModal: false,
+  
+  name: "addSubCategoryButton",
+  setup() {
+    const title = ref("");
+    const image = ref("");
+    const toogleModal = ref(false) 
+    const add = () => {
+      const data = {
+        title: title.value,
+      };
+      fetch("", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
     };
+    
+    return {
+      title: title,
+      image: image,
+      toogleModal
+      
+    }
   },
-  methods: {},
+
 };
 </script>
