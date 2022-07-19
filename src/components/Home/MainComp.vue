@@ -7,7 +7,7 @@
     <div class="flex justify-end mr-5">
       <router-link to="/login">
         <button
-          class="bg-transparent border-2 border-transparent hover:bg-black border-r-white hover:border-white text-white rounded-md font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
+          class="bg-transparent border-2 border-transparent hover:bg-black border-t-white border-r-white hover:border-white text-white hover:rounded font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
         >
           <p>login</p>
         </button>
