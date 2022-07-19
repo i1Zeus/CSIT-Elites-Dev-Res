@@ -50,10 +50,10 @@
 </template>
 
 <script>
-import getLatestR from "../composables/getLatestR";
-import GoBack from "../components/GoBack.vue";
-import deleteButton from "../components/button/deleteButton.vue";
-import editButton from "../components/button/editButton.vue";
+import getLatestR from "../../composables/Resource/getLatestR";
+import GoBack from "../../components/button/GoBack.vue";
+import deleteButton from "../../components/button/deleteButton.vue";
+import editButton from "../../components/button/editButton.vue";
 export default {
   components: {
     GoBack,

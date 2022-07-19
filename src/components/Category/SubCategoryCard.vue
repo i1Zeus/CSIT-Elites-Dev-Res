@@ -23,7 +23,7 @@
     class="relative w-72 h-48 bg-white rounded-xl border border-secondary-300 shadow-md group"
   >
     <a href="">
-      <img :src="image" alt="" class="rounded-lg h-48 ease-in duration-200" />
+      <img :src="image" alt="" class="rounded-lg w-72 h-48 ease-in duration-200" />
       <div
         class="absolute top-0 left-0 rounded-lg opacity-75 bg-gradient-to-t from-black group-hover:opacity-50 w-72 h-48 ease-in duration-200"
       ></div>
@@ -36,7 +36,7 @@
             {{ name }}
           </h3>
 
-          <div class="rounded-full px-2 bg-white text-black">{{ res }} Res</div>
+          <div class="rounded-full px-2 bg-white text-black">{{ resources_count }} Res</div>
         </div>
       </div>
 
@@ -54,6 +54,6 @@ import editButton from "@/components/button/editButton.vue";
 import deleteButton from "@/components/button/deleteButton.vue";
 export default {
   components: { editButton, deleteButton },
-  props: ["name", "res", "image"],
+  props: ["name", "resources_count", "image"],
 };
 </script>

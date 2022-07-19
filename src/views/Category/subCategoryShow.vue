@@ -16,7 +16,7 @@
           <SubCategoryCard
             :name="subcategory.name"
             :image="subcategory.image"
-            :res="subcategory.res"
+            :resources_count="subcategory.resources_count"
           />
         </div>
       </div>
