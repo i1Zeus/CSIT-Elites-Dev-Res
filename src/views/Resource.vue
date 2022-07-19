@@ -28,8 +28,9 @@ import getResource from "../composables/getResource";
 
 export default {
   components: { ResourceCard },
-  setup() {
-    const { resource, error, load } = getResource();
+  props: ["id"],
+  setup(props) {
+    const { resource, error, load } = getResource(props.id);
 
     load();
     return { resource, error };

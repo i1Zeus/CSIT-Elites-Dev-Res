@@ -10,7 +10,7 @@ const getInfo = () => {
       //     setTimeout(resolve, 2000);
       // });
 
-      let data = await fetch("http://localhost:8000/info");
+      let data = await fetch("http://127.0.0.1:8000/api/tags/");
       if (!data.ok) {
         throw Error("no data here");
       } else {

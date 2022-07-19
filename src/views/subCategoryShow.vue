@@ -11,13 +11,20 @@
     <div
       class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5"
     >
-      <div v-for="subcategory in subcategories.data" :key="subcategory.id">
+      <RouterLink
+        :to="{
+          name: 'resource',
+          params: { id: subcategory.id },
+        }"
+        v-for="subcategory in subcategories.data"
+        :key="subcategory.id"
+      >
         <SubCategoryCard
           :name="subcategory.name"
           :image="subcategory.image"
-          :res="subcategory.res"
+          :res="subcategory.resources_count"
         />
-      </div>
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -30,7 +37,7 @@ import GoBack from "../components/GoBack.vue";
 
 export default {
   components: { SubCategoryCard, GoBack },
-  props: ["id"],
+  props: ["category", "id"],
   setup(props) {
     const { subcategories, error, load } = getSubCategory(props.id);
 

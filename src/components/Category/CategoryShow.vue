@@ -11,7 +11,12 @@
       class="grid grid-cols-3 bg-gray-100 rounded-lg mt-2 mx-5 place-items-center py-5"
     >
       <div v-for="category in categories" :key="category.id">
-        <router-link :to="{ name: 'categories', params: { id: category.id } }">
+        <router-link
+          :to="{
+            name: 'categories',
+            params: { id: category.id },
+          }"
+        >
           <CategoryCard
             class="grid-cols-1"
             :name="category.name"

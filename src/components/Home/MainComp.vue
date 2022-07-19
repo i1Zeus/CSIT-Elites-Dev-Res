@@ -88,7 +88,7 @@
                       v-if="tagsshow"
                       class="grid grid-cols-4 gap-4 w-full p-2"
                     >
-                      <a v-for="tag in Info.tags" :key="tag">#{{ tag }}</a>
+                      <a v-for="tag in Info.data" :key="tag">#{{ tag.name }}</a>
                     </div>
                     <div
                       v-if="!tagsshow"

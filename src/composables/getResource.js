@@ -1,6 +1,6 @@
 import { ref } from "vue";
 
-const getResource = () => {
+const getResource = (id) => {
   const resource = ref([]);
   const error = ref(null);
 
@@ -10,7 +10,9 @@ const getResource = () => {
       //     setTimeout(resolve, 2000);
       // });
 
-      let data = await fetch("http://127.0.0.1:8000/api/resources/getResourcesWithTags");
+      let data = await fetch(
+        "http://127.0.0.1:8000/api/resources/getResourceBySubId/" + id
+      );
       if (!data.ok) {
         throw Error("no data here");
       } else {

@@ -34,8 +34,8 @@
         <div class="bg-white p-5 rounded-lg shadow-lg">
           <div class="mt-1">
             <div class="text-lg font-semibold text-primary-500">
-              <!-- {{ title }} -->
-              how to hack hassan k. in one second
+              {{ title }}
+              
             </div>
 
             <div class="grid grid-cols-12 mt-2">

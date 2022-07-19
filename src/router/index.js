@@ -23,6 +23,7 @@ const router = createRouter({
       name: "categories",
       component: SubCategoryShow,
       props: true,
+      
     },
     // {
     //   path: "/subcategory",
@@ -49,10 +50,16 @@ const router = createRouter({
       props: true,
     },
     {
-      path: "/resource",
-      name: "Resource",
+      path: "/sub-section/:id",
+      name: "resource",
       component: Resource,
+      props: true,
     },
+    // {
+    //   path: "/resource",
+    //   name: "Resource",
+    //   component: Resource,
+    // },
     {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
@@ -62,7 +69,6 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: NotFound,
-      
     },
   ],
 });
