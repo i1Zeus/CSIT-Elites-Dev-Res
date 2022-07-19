@@ -66,7 +66,7 @@
                 </button>
                 <a :href="link" target="_blank">
                   <p class="bg-gray-100 px-5 rounded-lg">
-                    {{ link.substring(0,40)+".." }}
+                    {{ link.substring(0,40)+"..." }}
                   </p>
                 </a>
               </div>
