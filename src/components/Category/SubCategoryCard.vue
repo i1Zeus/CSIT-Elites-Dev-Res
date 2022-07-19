@@ -36,7 +36,7 @@
             {{ name }}
           </h3>
 
-          <div class="rounded-full px-2 bg-white text-black">{{ res }} Res</div>
+          <div class="rounded-full px-2 bg-white text-black">{{ resources_count }} Res</div>
         </div>
       </div>
 
@@ -54,6 +54,6 @@ import editButton from "@/components/button/editButton.vue";
 import deleteButton from "@/components/button/deleteButton.vue";
 export default {
   components: { editButton, deleteButton },
-  props: ["name", "res", "image"],
+  props: ["name", "resources_count", "image"],
 };
 </script>
