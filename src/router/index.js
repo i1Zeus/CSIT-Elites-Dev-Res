@@ -19,10 +19,16 @@ const router = createRouter({
       component: CategoryShow,
     },
     {
-      path: "/subcategory",
-      name: "subcategory",
+      path: "/category/:id",
+      name: "categories",
       component: SubCategoryShow,
+      props: true,
     },
+    // {
+    //   path: "/subcategory",
+    //   name: "subcategory",
+    //   component: SubCategoryShow,
+    // },
     {
       path: "/add-rec",
       name: "addrec",
