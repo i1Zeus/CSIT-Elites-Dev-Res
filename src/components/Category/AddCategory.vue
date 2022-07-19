@@ -71,6 +71,7 @@ export default {
             });
         }
 
+
         return {
             name: name,
             toogleModal: toogleModal,
