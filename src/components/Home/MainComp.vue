@@ -118,11 +118,13 @@ export default {
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
-    const { RecCou } = getRecCou();
+    const { RecCou, load1 } = getRecCou();
     const { CerRec } = getCerRec();
 
     load();
-    return { RecCou, CerRec , Tags, error, tagsshow };
+    load1();
+
+    return { RecCou, CerRec, Tags, error, tagsshow };
   },
 };
 </script>

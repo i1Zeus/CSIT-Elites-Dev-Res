@@ -6,7 +6,9 @@
     </h2>
     <div class="mx-10 justify-between flex">
       <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
-      <AddButton name="sub category" />
+      <div class="flex justify-end mt-5 mr-10">
+        <addSubCategoryButton />
+      </div>
     </div>
 
     <div
@@ -35,10 +37,10 @@
 import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 import GoBack from "../../components/button/GoBack.vue";
-import AddButton from "../../components/button/AddButton.vue";
+import addSubCategoryButton from "../../components/Category/addSubCategoryButton.vue";
 
 export default {
-  components: { SubCategoryCard, GoBack, AddButton },
+  components: { SubCategoryCard, GoBack, addSubCategoryButton },
   props: ["id"],
   setup(props) {
     const { subcategories, error, load } = getSubCategory(props.id);
