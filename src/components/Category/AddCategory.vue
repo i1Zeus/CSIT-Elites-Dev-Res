@@ -55,10 +55,11 @@ export default {
     components: { AddButton },
     setup() {
         const name = ref("");
+        const toogleModal = ref(false);
 
         const add = () => {
             const data = {
-                name: name.value
+                name: name.value,
             };
 
             fetch("", {
@@ -72,14 +73,9 @@ export default {
 
         return {
             name: name,
+            toogleModal: toogleModal,
             add
         }
-    },
-
-    data() {
-        return {
-            toogleModal: false,
-        };
     },
 }
 </script>
