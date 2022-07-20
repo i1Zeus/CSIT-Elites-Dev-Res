@@ -43,6 +43,7 @@
               />
             </div>
             <input
+              v-model="search"
               type="search"
               id="default-search"
               class="block p-5 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
@@ -56,7 +57,17 @@
               Search
             </button>
           </div>
+          <div class="bg-white -mt-5 rounded-lg">
+            <div v-if="search">
+              <div v-for="res in filteredData" :key="res.id">
+                <div>
+                  {{ res }}
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
+
         <!--========> Tags/Res Table <======== -->
         <div class="flex flex-col">
           <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -108,23 +119,32 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import getTags from "../../composables/Home/getTags";
 import getRecCou from "../../composables/Home/getRecCount";
 import getCerRec from "../../composables/Home/getCerRec";
+import getAllRes from "../../composables/Home/getAllRes";
 
 export default {
   component: {},
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
+    const { allRes, loadRes } = getAllRes();
     const { RecCou, load1 } = getRecCou();
     const { CerRec } = getCerRec();
+    const search = ref("");
 
     load();
     load1();
+    loadRes();
+    const filteredData = computed(() => {
+      return allRes.value.filter(({ name }) =>
+        [name].some((val) => val.toLowerCase().includes(search.value))
+      );
+    });
 
-    return { RecCou, CerRec, Tags, error, tagsshow };
+    return { RecCou, CerRec, Tags, error, tagsshow, search, filteredData };
   },
 };
 </script>

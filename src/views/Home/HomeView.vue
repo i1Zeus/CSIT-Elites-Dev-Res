@@ -1,7 +1,7 @@
 <template>
   <div>
     <MainComp />
-    <div class="mx-10 mt-5 md:mx-14 lg:mx-32">
+    <div class="mx-10 mt-10 md:mx-14 lg:mx-32">
       <CategoryShow />
       <LatestRes />
     </div>
