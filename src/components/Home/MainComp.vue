@@ -50,21 +50,33 @@
               placeholder="Search Resources, Courses..."
               required
             />
+            <ul
+              v-if="search"
+              class="w-full rounded bg-white border border-gray-300 px-4 py-2 space-y-1 absolute z-10 mt-1 shadow-2xl"
+            >
+              <router-link
+                v-for="res in filteredData"
+                :key="res.id"
+                :to="{ name: 'ResShow', params: { id: res.id } }"
+              >
+                <li class="cursor-pointer hover:bg-gray-100 p-1 mt-1">
+                  {{ res.name }}
+                </li>
+              </router-link>
+            </ul>
+            <div
+              v-if="!search"
+              class="text-white absolute right-2.5 bottom-2.5 bg-gray-400 hover:cursor-not-allowed focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
+            >
+              Search
+            </div>
             <button
+              v-else
               type="submit"
               class="text-white absolute right-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
             >
               Search
             </button>
-          </div>
-          <div class="bg-white -mt-5 rounded-lg">
-            <div v-if="search">
-              <div v-for="res in filteredData" :key="res.id">
-                <div>
-                  {{ res }}
-                </div>
-              </div>
-            </div>
           </div>
         </form>
 
