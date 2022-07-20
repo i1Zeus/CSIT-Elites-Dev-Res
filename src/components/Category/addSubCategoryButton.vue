@@ -284,33 +284,11 @@
                   required
                   v-model="title"
                   type="text"
+                  name="title"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Sub-section title"
                 />
-                <label class="leading-loose">Tags</label>
-                <input
-                  @keydown.enter.prevent="addTags"
-                  v-model="tag"
-                  type="text"
-                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                  placeholder="Add Tags"
-                />
-                <div class="flex flex-col gap-1">
-                  <label class="leading-loose">Category</label>
-                  <div class="relative inline-flex">
-                    <select
-                      required
-                      v-model="category"
-                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                    >
-                      <option>Front-End</option>
-                      <option>Back-End</option>
-                      <option>Mobile Application</option>
-                    </select>
-                  </div>
-                </div>
               </div>
-
               <div class="flex">
               <div>
               
@@ -363,8 +341,9 @@ export default {
     const add = () => {
       const data = {
         title: title.value,
+
       };
-      fetch("", {
+      fetch("http://127.0.0.1:8000/api/sub-sections/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

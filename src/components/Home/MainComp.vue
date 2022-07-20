@@ -148,7 +148,7 @@ export default {
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
-    const { allRes, loadRes } = getAllRes();
+    //const { allRes, loadRes } = getAllRes();
     const { RecCou, load1 } = getRecCou();
     let searchTerm = ref("");
     const { CerRec } = getCerRec();
