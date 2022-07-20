@@ -5,7 +5,6 @@
   >
     <!-- ======> Buttons <======  -->
     <div class="flex justify-end mr-5">
-      <LogOut v-if="token" />
       <router-link to="/login">
         <button
           v-if="!token"
@@ -13,6 +12,7 @@
         >
           <p>login</p>
         </button>
+        <LogOut v-else />
       </router-link>
     </div>
     <div class="flex flex-col gap-14 items-center mt-40">
@@ -134,14 +134,30 @@
 
 <script>
 import { ref, computed } from "vue";
-import LogOut from "../button/LogOut.vue";
 import getTags from "../../composables/Home/getTags";
 import getRecCou from "../../composables/Home/getRecCount";
 import getCerRec from "../../composables/Home/getCerRec";
 import getAllRes from "../../composables/Home/getAllRes";
+import LogOut from "../button/LogOut.vue";
 
 export default {
-  component: { LogOut },
+  name: "Home",
+  components: { LogOut },
+  data() {
+    return {
+      token: null,
+    };
+  },
+  mounted() {
+    this.checkUserStatus();
+  },
+  methods: {
+    checkUserStatus() {
+      if (localStorage.getItem("token") != null) {
+        this.token = localStorage.getItem("token");
+      }
+    },
+  },
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
