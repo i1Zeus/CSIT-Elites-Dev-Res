@@ -254,13 +254,17 @@
                     placeholder="Password"
                   />
                 </div>
+                <div v-if="error" class="text-red-500 text-center">
+                  {{ error }}
+                </div>
               </div>
             </div>
             <div class="flex -mx-3">
               <div class="flex w-full px-3 mb-5">
                 <GoBack class="rounded mt-1 ml-2" />
                 <button
-                type="submit"
+                  @click.prevent="preformelogin"
+                  type="submit"
                   class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500 focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
                 >
                   LOGIN
@@ -276,6 +280,7 @@
 
 <script>
 import GoBack from "../../components/button/GoBack.vue";
+import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -284,29 +289,33 @@ export default {
     GoBack,
   },
   name: "Login",
-  setup() {
-    const data = ref({
+  data() {
+    return {
       email: "",
       password: "",
-    });
-    const router = useRouter();
-
-    const submit = async () => {
-      await fetch("http://localhost:8000/Login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(data),
-      });
-
-      // await router.push("/");
-      console.log(data);
+      error: "",
     };
-
-    return {
-      data,
-      submit,
-    };
+  },
+  methods: {
+    preformelogin() {
+      axios
+        .post("http://127.0.0.1:8000/api/auth/login", {
+          email: this.email,
+          password: this.password,
+        })
+        .then((res) => {
+          console.log(res.data);
+          // store the token and user in local storage
+          const token = localStorage.setItem("token", res.data.token);
+          const user = localStorage.setItem("user", res.data.user);
+          this.$router.push("/");
+        })
+        .catch((err) => {
+          console.log(err);
+          this.error = err.message;
+        });
+      console.log("Preformed Login");
+    },
   },
 };
 </script>
