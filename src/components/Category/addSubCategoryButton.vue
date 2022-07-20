@@ -277,7 +277,7 @@
 
           <div class="py-6 px-6 lg:px-8">
             <h3 class="mb-4 text-xl font-medium text-primary-500">Add sub-section</h3>
-            <form @submit.prevent="add" class="space-y-5" action="#">
+            <form @submit.prevent="submit" class="space-y-5" action="#">
               <div>
                 <label class="leading-loose">Sebsection Title</label>
                 <input
@@ -359,16 +359,21 @@ export default {
 
     const data = reactive({
         title: '',
+        category: '',
         
       });
 
-      const add =  () => {
-       console.log(data)
+      const submit = async () => {
+        await fetch('http://127.0.0.1:8000/api/sub-sections/add', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
       }
     
     return {
       data,
-      add,
+      submit,
       // title: title,
       // image: image,
       toogleModal,
