@@ -50,6 +50,18 @@
               placeholder="Search Resources, Courses..."
               required
             />
+            <ul
+              v-if="search"
+              class="w-full rounded bg-white border border-gray-300 px-4 py-2 space-y-1 absolute z-10 mt-1 shadow-2xl"
+            >
+              <li
+                v-for="res in filteredData"
+                :key="res.id"
+                class="cursor-pointer hover:bg-gray-100 p-1 mt-1"
+              >
+                {{ res.name }}
+              </li>
+            </ul>
             <button
               type="submit"
               class="text-white absolute right-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
@@ -57,7 +69,7 @@
               Search
             </button>
           </div>
-          <div class="bg-white -mt-5 rounded-lg">
+          <!-- <div class="bg-white -mt-5 rounded-lg">
             <div v-if="search">
               <div v-for="res in filteredData" :key="res.id">
                 <div>
@@ -65,7 +77,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </form>
 
         <!--========> Tags/Res Table <======== -->
