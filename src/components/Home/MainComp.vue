@@ -5,8 +5,10 @@
   >
     <!-- ======> Buttons <======  -->
     <div class="flex justify-end mr-5">
+      <LogOut v-if="!token" />
       <router-link to="/login">
         <button
+        v-if="!token"
           class="bg-transparent border-2 border-transparent hover:bg-black border-t-white border-r-white hover:border-white text-white hover:rounded font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
         >
           <p>login</p>
@@ -132,13 +134,14 @@
 
 <script>
 import { ref, computed } from "vue";
+import LogOut from "../button/LogOut.vue";
 import getTags from "../../composables/Home/getTags";
 import getRecCou from "../../composables/Home/getRecCount";
 import getCerRec from "../../composables/Home/getCerRec";
 import getAllRes from "../../composables/Home/getAllRes";
 
 export default {
-  component: {},
+  component: { LogOut },
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
@@ -146,7 +149,6 @@ export default {
     const { RecCou, load1 } = getRecCou();
     const { CerRec } = getCerRec();
     const search = ref("");
-
     load();
     load1();
     loadRes();
@@ -155,8 +157,8 @@ export default {
         [name].some((val) => val.toLowerCase().includes(search.value))
       );
     });
-
     return { RecCou, CerRec, Tags, error, tagsshow, search, filteredData };
   },
+  components: { LogOut },
 };
 </script>
