@@ -54,13 +54,15 @@
               v-if="search"
               class="w-full rounded bg-white border border-gray-300 px-4 py-2 space-y-1 absolute z-10 mt-1 shadow-2xl"
             >
-              <li
+              <router-link
                 v-for="res in filteredData"
                 :key="res.id"
-                class="cursor-pointer hover:bg-gray-100 p-1 mt-1"
+                :to="{ name: 'ResShow', params: { id: res.id } }"
               >
-                {{ res.name }}
-              </li>
+                <li class="cursor-pointer hover:bg-gray-100 p-1 mt-1">
+                  {{ res.name }}
+                </li>
+              </router-link>
             </ul>
             <button
               type="submit"
@@ -69,15 +71,6 @@
               Search
             </button>
           </div>
-          <!-- <div class="bg-white -mt-5 rounded-lg">
-            <div v-if="search">
-              <div v-for="res in filteredData" :key="res.id">
-                <div>
-                  {{ res }}
-                </div>
-              </div>
-            </div>
-          </div> -->
         </form>
 
         <!--========> Tags/Res Table <======== -->
