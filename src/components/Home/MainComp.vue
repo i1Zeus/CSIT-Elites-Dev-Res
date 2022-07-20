@@ -5,10 +5,10 @@
   >
     <!-- ======> Buttons <======  -->
     <div class="flex justify-end mr-5">
-      <LogOut v-if="!token" />
+      <LogOut v-if="token" />
       <router-link to="/login">
         <button
-        v-if="!token"
+          v-if="!token"
           class="bg-transparent border-2 border-transparent hover:bg-black border-t-white border-r-white hover:border-white text-white hover:rounded font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
         >
           <p>login</p>
@@ -157,8 +157,15 @@ export default {
         [name].some((val) => val.toLowerCase().includes(search.value))
       );
     });
-    return { RecCou, CerRec, Tags, error, tagsshow, search, filteredData };
+    return {
+      RecCou,
+      CerRec,
+      Tags,
+      error,
+      tagsshow,
+      search,
+      filteredData,
+    };
   },
-  components: { LogOut },
 };
 </script>
