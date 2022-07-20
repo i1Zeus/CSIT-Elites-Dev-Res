@@ -281,8 +281,6 @@
 <script>
 import GoBack from "../../components/button/GoBack.vue";
 import axios from "axios";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
 
 export default {
   components: {
