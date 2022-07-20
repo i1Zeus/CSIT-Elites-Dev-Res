@@ -355,7 +355,8 @@ export default {
     return {
       title: title,
       image: image,
-      toogleModal
+      toogleModal,
+      add,
       
     }
   },
