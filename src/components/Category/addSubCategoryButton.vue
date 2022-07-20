@@ -277,7 +277,7 @@
 
           <div class="py-6 px-6 lg:px-8">
             <h3 class="mb-4 text-xl font-medium text-primary-500">Add sub-section</h3>
-            <form @submit.prevent="submit" class="space-y-5" action="#">
+            <form @submit.prevent="submit" class="space-y-5">
               <div>
                 <label class="leading-loose">Sebsection Title</label>
                 <input
@@ -308,6 +308,12 @@
                     </select> -->
                   </div>
                 </div>
+                <input
+                  type="file"
+                  @change="onFileSelected"
+                  placeholder="Image"
+                  class="bg-primary-200 duration-200 flex flex-shrink-0 justify-center items-center text-red-400 font-mono"
+                />
               <div class="flex">
               <div>
               
@@ -346,7 +352,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from "vue";
 import { reactive } from "vue";
 
@@ -365,10 +371,11 @@ export default {
 
       const submit = async () => {
         await fetch('http://127.0.0.1:8000/api/sub-sections/add', {
-          method: 'POST',
+          method: 'GET',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data)
         });
+        console.log(data)
       }
     
     return {
