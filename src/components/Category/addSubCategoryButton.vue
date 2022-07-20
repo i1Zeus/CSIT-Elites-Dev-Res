@@ -292,12 +292,20 @@
               <div class="flex flex-col gap-1">
                   <label class="leading-loose">Category</label>
                   <div class="relative inline-flex">
-                    <select required v-model="category"
+                  <input
+                  required
+                  v-model="data.category"
+                  type="text"
+                  name="category"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="Sub-section title"
+                />
+                    <!-- <select required v-model="category"
                       class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
                       <option>Front-End</option>
                       <option>Back-End</option>
                       <option>Mobile Application</option>
-                    </select>
+                    </select> -->
                   </div>
                 </div>
               <div class="flex">
@@ -325,7 +333,6 @@
                   Cancel
                 </button>
                 <button
-                  
                   type="submit"
                   class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg">
                   Create
@@ -352,17 +359,11 @@ export default {
 
     const data = reactive({
         title: '',
-
+        
       });
 
-      const add = async () => {
-        await fetch('http://127.0.0.1:8000/api/sub-sections/add', {
-          method: 'POST',
-          headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-        });
+      const add =  () => {
+       console.log(data)
       }
     
     return {
