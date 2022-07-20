@@ -64,7 +64,14 @@
                 </li>
               </router-link>
             </ul>
+            <div
+              v-if="!search"
+              class="text-white absolute right-2.5 bottom-2.5 bg-gray-400 hover:cursor-not-allowed focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
+            >
+              Search
+            </div>
             <button
+              v-else
               type="submit"
               class="text-white absolute right-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
             >
