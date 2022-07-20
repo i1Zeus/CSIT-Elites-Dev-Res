@@ -57,17 +57,16 @@
               Search
             </button>
           </div>
-        </form>
-        <div class="bg-yellow-300">
-          {{ search }}
-        </div>
-        <div v-if="search">
-          <div v-for="res in filteredData" :key="res.id">
-            <div>
-              {{ res }}
+          <div class="bg-white -mt-5 rounded-lg">
+            <div v-if="search">
+              <div v-for="res in filteredData" :key="res.id">
+                <div>
+                  {{ res }}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
 
         <!--========> Tags/Res Table <======== -->
         <div class="flex flex-col">
@@ -140,10 +139,8 @@ export default {
     load1();
     loadRes();
     const filteredData = computed(() => {
-      return allRes.value.filter(({ name, description }) =>
-        [name, description].some((val) =>
-          val.toLowerCase().includes(search.value)
-        )
+      return allRes.value.filter(({ name }) =>
+        [name].some((val) => val.toLowerCase().includes(search.value))
       );
     });
 
