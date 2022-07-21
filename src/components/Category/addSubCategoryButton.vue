@@ -277,7 +277,7 @@
 
           <div class="py-6 px-6 lg:px-8">
             <h3 class="mb-4 text-xl font-medium text-primary-500">Add sub-section</h3>
-            <form @submit="submit" class="space-y-5">
+            <form @submit.prevent="submit" class="space-y-5">
               <div>
                 <label class="leading-loose">Sebsection Title</label>
                 <input
@@ -292,20 +292,12 @@
               <div class="flex flex-col gap-1">
                   <label class="leading-loose">Category</label>
                   <div class="relative inline-flex">
-                  <input
-                  required
-                  v-model="data.category"
-                  type="text"
-                  name="category"
-                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                  placeholder="Sub-section title"
-                />
-                    <!-- <select required v-model="category"
+                    <select required v-model="data.category"
                       class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
-                      <option>Front-End</option>
-                      <option>Back-End</option>
-                      <option>Mobile Application</option>
-                    </select> -->
+                      <option value="1">Front-End</option>
+                      <option value="2">Back-End</option>
+                      <option value="3">Mobile Application</option>
+                    </select>
                   </div>
                 </div>
                 <input type="file" @change="handleFileUpload( $event )"/>
@@ -349,19 +341,16 @@
 
 <script lang="ts">
 import { ref } from "vue";
-import { reactive } from "vue";
 
 export default {
   
   name: "addSubCategoryButton",
   setup() {
-    // const title = ref("");
     const toogleModal = ref(false) 
 
     const data = ref({
         title: '',
         category: '',
-        
       });
 
       const submit = async () => {
@@ -370,6 +359,7 @@ export default {
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data)
         });
+        console.log(data)
       }
     
     return {
