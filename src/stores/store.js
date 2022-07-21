@@ -1,16 +1,29 @@
-import vue from "vue";
-import vuex from "vuex";
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.useAttrs(Vuex);
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    loggedIn: false,
+    user:null,
     token: null,
   },
   mutations: {
-    SET_TOKEN(state, payload) {
+    SET_user(state, payload) {
+      state.user = payload;
+    },
+    SET_token(state, payload) {
       state.token = payload;
+    },
+    SET_loggedIn(state, payload) {
+      state.loggedIn = payload;
     },
   },
   actions: {},
+  getters: {
+    get_loggedIn(state) {
+      return state.loggedIn;
+    }
+  }
 });

@@ -23,7 +23,8 @@
       <!-- =========> Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-mono">
-          {{ RecCou }} Res <font-awesome-icon icon="fa-solid fa-users" />
+          {{ RecCou }} Res
+          <font-awesome-icon icon="fa-solid fa-book-open-reader" />
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->
@@ -141,7 +142,7 @@ import getAllRes from "../../composables/Home/getAllRes";
 import LogOut from "../button/LogOut.vue";
 
 export default {
-  name: "Home",
+  name: "Main InterFace",
   components: { LogOut },
   data() {
     return {
@@ -150,6 +151,11 @@ export default {
   },
   mounted() {
     this.checkUserStatus();
+  },
+  computed: {
+    loggedIn() {
+      return this.$store.getters.get_loggedIn;
+    },
   },
   methods: {
     checkUserStatus() {
