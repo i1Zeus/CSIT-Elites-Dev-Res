@@ -2,6 +2,7 @@ import { createStore } from "vuex";
 import axios from "axios";
 import VuexPresistence from "vuex-persist";
 
+
 export const store = createStore({
   state: {
     loggedIn: false,
