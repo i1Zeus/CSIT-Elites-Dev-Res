@@ -53,13 +53,6 @@ const router = createRouter({
         requiresGuest: true,
       }
     },
-    
-    
-    // {
-    //   path: "/resource",
-    //   name: "Resource",
-    //   component: Resource,
-    // },
     {
       path: "/:pathMatch(.*)*",
       name: "NotFound",

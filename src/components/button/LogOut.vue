@@ -1,10 +1,10 @@
 <template>
-    <button
-      @click.prevent="preformLogOut()"
-      class="bg-transparent border-2 border-transparent hover:bg-black border-b-white border-l-white hover:border-white text-white hover:rounded font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
-    >
-      <p>logout</p>
-    </button>
+  <button
+    @click.prevent="preformLogOut()"
+    class="bg-transparent border-2 border-transparent hover:bg-black border-b-white border-l-white hover:border-white text-white hover:rounded font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
+  >
+    <p>logout</p>
+  </button>
 </template>
 
 <script>
@@ -23,10 +23,15 @@ export default {
         this.token = localStorage.getItem("token");
       }
     },
-    preformLogOut() {
-      localStorage.removeItem("token");
-      localStorage.removeItem("user");
-      this.token = null;
+    preformeLogoutAction() {
+      this.$store
+        .dispatch("preformeLogoutAction")
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
