@@ -259,14 +259,36 @@
                 </div>
               </div>
             </div>
-            <div class="flex -mx-3">
+            <div class="flex -mx-3 group">
               <div class="flex w-full px-3 mb-5">
                 <GoBack class="rounded mt-1 ml-2" />
                 <button
                   @click.prevent="preformelogin"
                   type="submit"
-                  class="block w-full max-w-xs mx-auto hover:border hover:border-green-500 hover:bg-white hover:text-green-500 bg-primary-500 focus:bg-primary-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  class="block w-full max-w-xs mx-auto hover:border hover:border-primary-500 hover:bg-white hover:text-primary-500 bg-primary-500 text-white rounded-lg px-3 py-3 font-semibold"
                 >
+                  <div v-show="isloading">
+                    <svg
+                      class="w-5 h-5 text-white animate-spin mt-0.5 absolute group-hover:text-primary-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        class="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        stroke-width="4"
+                      ></circle>
+                      <path
+                        class="opacity-75"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </div>
                   LOGIN
                 </button>
               </div>
@@ -281,7 +303,6 @@
 <script>
 import GoBack from "../../components/button/GoBack.vue";
 
-
 export default {
   components: {
     GoBack,
@@ -292,39 +313,26 @@ export default {
       email: "",
       password: "",
       error: "",
-      isloggedin: false,
+      isloading: false,
     };
   },
   methods: {
     preformelogin() {
       this.isloading = true; // show loading
-      this.$store.dispatch("preformeloginAction", {
-        email: this.email,
-        password: this.password,
-      }).then((res) => {
-        this.isloading = false; // stop loading
-        this.$router.push("/");
-      }).catch((err) => {
-        this.isloading = false; // stop loading
-        (this.error = "Invalid email or password"), console.log(err.message);
-      });
-    }
-  },
-}
-</script>
-<!--  axios
-        .post("http://127.0.0.1:8000/api/auth/login", {
+      this.$store
+        .dispatch("preformeloginAction", {
           email: this.email,
           password: this.password,
         })
         .then((res) => {
-          console.log(res.data);
-          // store the token and user in local storage
-          const token = localStorage.setItem("token", res.data.token);
-          const user = localStorage.setItem("user", res.data.user);
+          this.isloading = false; // stop loading
           this.$router.push("/");
         })
         .catch((err) => {
-          console.log(err);
-          this.error = err.message;
-        }); -->
+          this.isloading = false; // stop loading
+          (this.error = "Invalid email or password"), console.log(err.message);
+        });
+    },
+  },
+};
+</script>
