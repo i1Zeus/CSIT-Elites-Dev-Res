@@ -280,7 +280,7 @@
 
 <script>
 import GoBack from "../../components/button/GoBack.vue";
-import axios from "axios";
+
 
 export default {
   components: {
@@ -292,11 +292,27 @@ export default {
       email: "",
       password: "",
       error: "",
+      isloggedin: false,
     };
   },
   methods: {
     preformelogin() {
-      axios
+      this.isloading = true; // show loading
+      this.$store.dispatch("preformeloginAction", {
+        email: this.email,
+        password: this.password,
+      }).then((res) => {
+        this.isloading = false; // stop loading
+        this.$router.push("/");
+      }).catch((err) => {
+        this.isloading = false; // stop loading
+        (this.error = "Invalid email or password"), console.log(err.message);
+      });
+    }
+  },
+}
+</script>
+<!--  axios
         .post("http://127.0.0.1:8000/api/auth/login", {
           email: this.email,
           password: this.password,
@@ -311,9 +327,4 @@ export default {
         .catch((err) => {
           console.log(err);
           this.error = err.message;
-        });
-      console.log("Preformed Login");
-    },
-  },
-};
-</script>
+        }); -->
