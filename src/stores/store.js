@@ -1,17 +1,15 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import { createStore } from "vuex";
 import axios from "axios";
 import VuexPresistence from "vuex-persist";
-Vue.use(Vuex);
 
-export default new Vuex.Store({
+export const store = createStore({
   state: {
     loggedIn: false,
     user: null,
     token: null,
   },
-  //saves the state 
-  plugins:[new VuexPresistence().plugin],
+  //saves the state
+  plugins: [new VuexPresistence().plugin],
   mutations: {
     SET_user(state, payload) {
       state.user = payload;
@@ -45,7 +43,7 @@ export default new Vuex.Store({
     preformeLogoutAction({ commit, state }) {
       return new Promise((resolve, reject) => {
         axios
-          .post("http://127.0.0.1:8000/api/auth/logout",{
+          .post("http://127.0.0.1:8000/api/auth/logout", {
             token: state.token,
           })
           .then((res) => {
@@ -66,3 +64,4 @@ export default new Vuex.Store({
     },
   },
 });
+export default store;
