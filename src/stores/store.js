@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
-
+import VuexPresistence from "vuex-persist";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -10,6 +10,8 @@ export default new Vuex.Store({
     user: null,
     token: null,
   },
+  //saves the state 
+  plugins:[new VuexPresistence().plugin],
   mutations: {
     SET_user(state, payload) {
       state.user = payload;
