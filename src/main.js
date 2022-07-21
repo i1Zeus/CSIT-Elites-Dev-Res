@@ -28,6 +28,6 @@ library.add(
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
-app.use(store);
 app.use(router);
+app.use(store);
 app.mount("#app");
