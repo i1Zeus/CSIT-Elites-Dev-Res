@@ -5,7 +5,6 @@ import HomePage from "../components/Home/HomePage.vue";
 import SubCategoryShow from "../views/Category/subCategoryShow.vue";
 import ResShow from "../views/Resource/ResShow.vue";
 import ResourcesPage from "../views/Resource/ResourcesPage.vue";
-import EditResource from "../views/Resource/EditResource.vue";
 import NotFound from "../views/NotFound.vue";
 
 const router = createRouter({
@@ -74,12 +73,6 @@ const router = createRouter({
       name: "NotFound",
       component: NotFound,
     },
-    {
-      path: "/Edit/:id",
-      name: "EditResource",
-      component: EditResource,
-      props: true,
-    }
   ],
 });
 
