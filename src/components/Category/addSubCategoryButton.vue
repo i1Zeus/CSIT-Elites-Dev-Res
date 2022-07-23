@@ -277,40 +277,43 @@
 
           <div class="py-6 px-6 lg:px-8">
             <h3 class="mb-4 text-xl font-medium text-primary-500">Add sub-section</h3>
-            <form class="space-y-5" action="#">
+            <form @submit.prevent="submit" class="space-y-5">
               <div>
                 <label class="leading-loose">Sebsection Title</label>
                 <input
                   required
-                  v-model="title"
+                  v-model="data.title"
                   type="text"
+                  name="title"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Sub-section title"
                 />
-                <label class="leading-loose">Tags</label>
-                <input
-                  @keydown.enter.prevent="addTags"
-                  v-model="tag"
-                  type="text"
-                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                  placeholder="Add Tags"
-                />
-                <div class="flex flex-col gap-1">
+              </div>
+              <div class="flex flex-col gap-1">
                   <label class="leading-loose">Category</label>
                   <div class="relative inline-flex">
-                    <select
-                      required
-                      v-model="category"
-                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                    >
+                  <input
+                  required
+                  v-model="data.category"
+                  type="text"
+                  name="category"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="Sub-section title"
+                />
+                    <!-- <select required v-model="category"
+                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
                       <option>Front-End</option>
                       <option>Back-End</option>
                       <option>Mobile Application</option>
-                    </select>
+                    </select> -->
                   </div>
                 </div>
-              </div>
-
+                <input
+                  type="file"
+                  @change="onFileSelected"
+                  placeholder="Image"
+                  class="bg-primary-200 duration-200 flex flex-shrink-0 justify-center items-center text-red-400 font-mono"
+                />
               <div class="flex">
               <div>
               
@@ -336,7 +339,6 @@
                   Cancel
                 </button>
                 <button
-                  v-on:click="add()"
                   type="submit"
                   class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg">
                   Create
@@ -350,33 +352,39 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from "vue";
+import { reactive } from "vue";
 
 export default {
   
   name: "addSubCategoryButton",
   setup() {
-    const title = ref("");
-    const image = ref("");
+    // const title = ref("");
     const toogleModal = ref(false) 
-    const add = () => {
-      const data = {
-        title: title.value,
-      };
-      fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+
+    const data = reactive({
+        title: '',
+        category: '',
+        
       });
-    };
+
+      const submit = async () => {
+        await fetch('http://127.0.0.1:8000/api/sub-sections/add', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+        console.log(data)
+      }
     
     return {
-      title: title,
-      image: image,
-      toogleModal
+      data,
+      submit,
+      // title: title,
+      // image: image,
+      toogleModal,
+      
       
     }
   },

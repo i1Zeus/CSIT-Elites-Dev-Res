@@ -21,7 +21,8 @@
       <!-- =========> Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-mono">
-          {{ RecCou }} Res <font-awesome-icon icon="fa-solid fa-book-open-reader" />
+          {{ RecCou }} Res
+          <font-awesome-icon icon="fa-solid fa-book-open-reader" />
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->
