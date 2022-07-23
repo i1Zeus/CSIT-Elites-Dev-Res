@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/Home/HomeView.vue";
+import HomePage from "../components/Home/HomePage.vue";
 // import CategoryShow from "../views/Category/CategoryShow.vue";
 import SubCategoryShow from "../views/Category/subCategoryShow.vue";
 import ResShow from "../views/Resource/ResShow.vue";
@@ -13,6 +14,11 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+    },
+    {
+      path: "/home",
+      name: "homepage",
+      component: HomePage,
     },
     {
       path: "/category/:id",
