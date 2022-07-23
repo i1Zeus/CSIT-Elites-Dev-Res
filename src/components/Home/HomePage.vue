@@ -2,75 +2,78 @@
   <div>
     <TheNavigation />
     <div class="grid grid-cols-2">
-      <div class="ml-10 grid-cols-1">
-        <h1
-          class="font-poppins font-semibold mt-40 mb-10 ml-16 text-5xl leading-tight"
-        >
-          Investing in <br />
-          your knowledge and
-          <h1 class="text-primary-700 font-bold">YOUR FUTURE</h1>
-        </h1>
-
-        <div class="flex flex-col w-2/3 gap-10 ml-16">
-          <form>
-            <label
-              for="search"
-              class="mb-2 text-sm font-medium text-gray-900 sr-only"
-              >Search</label
-            >
-            <div class="relative">
-              <div
-                class="flex absolute inset-y-0 left-0 pl-3 pointer-events-none"
+      <div class="grid-cols-1">
+        <div class="ml-10">
+          <h1
+            class="text-7xl font-poppins font-semibold mt-40 mb-10 ml-16 text-5xl leading-tight"
+          >
+            Investing In <br />
+            Your Knowledge And
+            <h1 class="text-primary-500 font-bold">YOUR FUTURE</h1>
+          </h1>
+          <div class="flex flex-col w-3/3 gap-10 mx-16">
+            <form>
+              <label
+                for="search"
+                class="mb-2 text-sm font-medium text-gray-900 sr-only"
+                >Search</label
               >
-                <font-awesome-icon
-                  icon="fa-solid fa-pen"
-                  class="mt-5"
-                  size="xl"
-                />
-              </div>
-              <input
-                v-model="search"
-                type="search"
-                id="default-search"
-                class="block p-5 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
-                placeholder="Search Resources, Courses..."
-                required
-              />
-              <div v-if="search">
+              <div class="relative">
                 <div
-                  v-if="filteredData.length"
-                  class="overflow-y-auto h-96 py-1 w-full rounded bg-white border border-gray-300 px-4 space-y-1 absolute z-10 mt-1 shadow-2xl"
+                  class="flex absolute inset-y-0 left-0 pl-3 pointer-events-none"
                 >
-                  <router-link
-                    v-for="res in filteredData"
-                    :key="res.id"
-                    :to="{ name: 'ResShow', params: { id: res.id } }"
-                  >
-                    <div class="cursor-pointer hover:bg-gray-100 p-1 mt-1">
-                      {{ res.name }}
-                    </div>
-                  </router-link>
+                  <font-awesome-icon
+                    icon="fa-solid fa-pen"
+                    class="mt-5"
+                    size="xl"
+                  />
                 </div>
-              </div>
+                <input
+                  v-model="search"
+                  type="search"
+                  id="default-search"
+                  class="block p-5 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                  placeholder="Search Resources, Courses..."
+                  required
+                />
+                <div v-if="search">
+                  <div
+                    v-if="filteredData.length"
+                    class="overflow-y-auto h-96 py-1 w-full rounded bg-white border border-gray-300 px-4 space-y-1 absolute z-10 mt-1 shadow-2xl"
+                  >
+                    <router-link
+                      v-for="res in filteredData"
+                      :key="res.id"
+                      :to="{ name: 'ResShow', params: { id: res.id } }"
+                    >
+                      <div class="cursor-pointer hover:bg-gray-100 p-1 mt-1">
+                        {{ res.name }}
+                      </div>
+                    </router-link>
+                  </div>
+                </div>
 
-              <div
-                v-if="!search"
-                class="text-white absolute right-2.5 bottom-2.5 bg-gray-400 hover:cursor-not-allowed focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
-              >
-                Search
+                <div
+                  v-if="!search"
+                  class="text-white absolute right-2.5 bottom-2.5 bg-gray-400 hover:cursor-not-allowed focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
+                >
+                  Search
+                </div>
+                <button
+                  v-else
+                  type="submit"
+                  class="text-white absolute right-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
+                >
+                  Search
+                </button>
               </div>
-              <button
-                v-else
-                type="submit"
-                class="text-white absolute right-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
-              >
-                Search
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
+        </div>
+      </div>
 
-          <!--========> Tags/Res Table <======== -->
-          <!-- <div class="flex flex-col">
+      <!--========> Tags/Res Table <======== -->
+      <!-- <div class="flex flex-col">
                         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                                 <div class="overflow-hidden">
@@ -102,8 +105,6 @@
                             </div>
                         </div>
                     </div> -->
-        </div>
-      </div>
 
       <div class="relative grid-cols-1 mx-16">
         <div class="inset-y-70 right-10">
