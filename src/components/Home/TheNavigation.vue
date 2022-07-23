@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 py-3 px-6 md:flex justify-between items-center">
+  <div class="fixed w-full z-50 bg-gray-100 py-3 px-6 md:flex justify-between items-center">
     <div class="flex items-center font-bold">
       <span class="text-primary-700 text-3xl ml-10">
         CSIT Elite Dev Resources
@@ -28,7 +28,7 @@
 <script>
 import LogOut from "../button/LogOut.vue";
 export default {
-    name: "NavBar",
+  name: "NavBar",
   comments: {
     LogOut,
   },
@@ -52,6 +52,7 @@ export default {
       { name: "Home", link: "/" },
       { name: "Category", link: "/category/:id" },
       { name: "Resources", link: "/sub-section/:id" },
+      { name: "Add Resource", link: "/add-rec" },
     ];
 
     return {
