@@ -21,7 +21,8 @@
       <!-- =========> Resources  <========= -->
       <div>
         <p class="text-2xl text-white font-mono">
-          {{ RecCou }} Res <font-awesome-icon icon="fa-solid fa-book-open-reader" />
+          {{ RecCou }} Res
+          <font-awesome-icon icon="fa-solid fa-book-open-reader" />
         </p>
       </div>
       <!-- =========> Search Bar and submit button & Table <========= -->
@@ -145,7 +146,7 @@ export default {
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
-    //const { allRes, loadRes } = getAllRes();
+    const { allRes, loadRes } = getAllRes();
     const { RecCou, load1 } = getRecCou();
     const { CerRec } = getCerRec();
     const search = ref("");
