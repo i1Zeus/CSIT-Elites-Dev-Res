@@ -40,7 +40,7 @@
         </div>
         <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
           <div class="flex">
-          <router-link :to="{ name: 'EditResource', params: { id: latestR.id}}">
+          <router-link :to="{ name: 'EditResource', params: { id: latestR.id }}">
             <editButton></editButton>
           </router-link>
             

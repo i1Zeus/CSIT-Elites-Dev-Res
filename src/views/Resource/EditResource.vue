@@ -6,14 +6,14 @@
       <div
         class="relative py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10"
       >
-        <form class="max-w-md mx-auto">
+        <form @submit.prevent="handleSubmit" class="max-w-md mx-auto">
           <div class="divide-y divide-gray-200">
             <div
               class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7"
             >
               <div class="flex flex-col">
                 <label class="leading-loose">Title</label>
-                <input v-model="title"
+                <input v-model="name"
                   required
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
@@ -63,7 +63,6 @@
               </router-link>
 
               <button
-                type="submit"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
               >
                 Update
@@ -81,20 +80,38 @@ export default {
     props: ['id'],
     data() {
         return {
-            title: '',
+            name: '',
             link: '',
             description: '',
+            uri: 'http://127.0.0.1:8000/api/resources/getResourceById/' + this.id
         }
     },
     mounted() {
-        fetch("http://127.0.0.1:8000/api/resources/getAllResources", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      this.title = data.title
+      //   fetch("http://127.0.0.1:8000/api/resources/getResourceById/" + this.id, {
+      //   method: "GET",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(data),
+      // });
+          
+      fetch(this.uri)
+        .then(res => res.json())
+        .then(data => {
+          this.name = data.name
+          this.description = data.description
+        })  
+    },
+    methods: {
+      handleSubmit(){
+        fetch(this.uri, {
+          method: 'PATCH',
+          headers: { "Content-Type": "application/json", },
+          body: JSON.stringify( {name: this.name, description: this.description}),
+        }).then(() => {
+          this.$router.push('/resource')
+        }).catch(err => console.log(err))
+      }
     },
 }
 </script>
