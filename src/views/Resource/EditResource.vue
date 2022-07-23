@@ -80,13 +80,14 @@ import { ref } from 'vue'
 export default {
     props: ['id'],
     setup(props) {
-      const name = ref('');
+      const name = ref('ruby');
       const description = ref('');
 
       const handleSubmit = () =>{
         name: name.value
         description: description.value
       }
+      
       return { name, description, handleSubmit }
     }
 }
