@@ -76,42 +76,18 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
     props: ['id'],
-    data() {
-        return {
-            name: '',
-            link: '',
-            description: '',
-            uri: 'http://127.0.0.1:8000/api/resources/getResourceById/' + this.id
-        }
-    },
-    mounted() {
-      //   fetch("http://127.0.0.1:8000/api/resources/getResourceById/" + this.id, {
-      //   method: "GET",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(data),
-      // });
-          
-      fetch(this.uri)
-        .then(res => res.json())
-        .then(data => {
-          this.name = data.name
-          this.description = data.description
-        })  
-    },
-    methods: {
-      handleSubmit(){
-        fetch(this.uri, {
-          method: 'PATCH',
-          headers: { "Content-Type": "application/json", },
-          body: JSON.stringify( {name: this.name, description: this.description}),
-        }).then(() => {
-          this.$router.push('/resource')
-        }).catch(err => console.log(err))
+    setup(props) {
+      const name = ref('');
+      const description = ref('');
+
+      const handleSubmit = () =>{
+        name: name.value
+        description: description.value
       }
-    },
+      return { name, description, handleSubmit }
+    }
 }
 </script>

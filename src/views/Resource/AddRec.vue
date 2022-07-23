@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-600 py-6 flex flex-col justify-center sm:py-12">
     <div class="relative py-3 sm:max-w-xl sm:mx-auto">
       <div class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
-        <form class="max-w-md mx-auto">
+        <form @click="handleSubmit" class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
             <button type="file" @change="onFileSelected" placeholder="Image"
               class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400 text-3xl font-mono">
