@@ -19,7 +19,9 @@
       aria-modal="true"
       role="dialog"
     >
-      <div class="flex relative w-1/2 h-auto bg-primary-500 border border-primary-100  md:h-auto">
+      <div
+        class="flex relative w-1/2 h-auto bg-primary-500 border border-primary-100 md:h-auto"
+      >
         <!-- image -->
         <div class="m-5">
           <svg
@@ -276,7 +278,9 @@
           </button>
 
           <div class="py-6 px-6 lg:px-8">
-            <h3 class="mb-4 text-xl font-medium text-primary-500">Add sub-section</h3>
+            <h3 class="mb-4 text-xl font-medium text-primary-500">
+              Add sub-section
+            </h3>
             <form @submit.prevent="submit" class="space-y-5">
               <div>
                 <label class="leading-loose">Sebsection Title</label>
@@ -290,38 +294,26 @@
                 />
               </div>
               <div class="flex flex-col gap-1">
-                  <label class="leading-loose">Category</label>
-                  <div class="relative inline-flex">
-                  <input
-                  required
-                  v-model="data.category"
-                  type="text"
-                  name="category"
-                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                  placeholder="Sub-section title"
-                />
-                    <!-- <select required v-model="category"
-                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
-                      <option>Front-End</option>
-                      <option>Back-End</option>
-                      <option>Mobile Application</option>
-                    </select> -->
-                  </div>
+                <label class="leading-loose">Category</label>
+                <div class="relative inline-flex">
+                  <select
+                    required
+                    v-model="data.category"
+                    class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  >
+                    <option value="1">Front-End</option>
+                    <option value="2">Back-End</option>
+                    <option value="3">Mobile Application</option>
+                  </select>
                 </div>
-                <input
-                  type="file"
-                  @change="onFileSelected"
-                  placeholder="Image"
-                  class="bg-primary-200 duration-200 flex flex-shrink-0 justify-center items-center text-red-400 font-mono"
-                />
-              <div class="flex">
-              <div>
-              
               </div>
-              
-                <button @click="toogleModal = false"
-                  class="flex justify-center items-center w-full border-2 border-transparent border-b-black  hover:border-emerald-600  text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none mr-6"
-                >
+              <input type="file" @change="handleFileUpload($event)" />
+              <div class="flex">
+                <div></div>
+
+                <button
+                  @click="toogleModal = false"
+                  class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-emerald-600 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none mr-6">
                   <svg
                     class="w-6 h-6 mr-3"
                     fill="none"
@@ -354,40 +346,33 @@
 
 <script lang="ts">
 import { ref } from "vue";
-import { reactive } from "vue";
 
 export default {
-  
   name: "addSubCategoryButton",
   setup() {
-    // const title = ref("");
-    const toogleModal = ref(false) 
+    const toogleModal = ref(false);
 
-    const data = reactive({
-        title: '',
-        category: '',
-        
+    const data = ref({
+      title: "",
+      category: "",
+    });
+
+    const submit = async () => {
+      await fetch("http://127.0.0.1:8000/api/sub-sections/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
+      console.log(data);
+    };
 
-      const submit = async () => {
-        await fetch('http://127.0.0.1:8000/api/sub-sections/add', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(data)
-        });
-        console.log(data)
-      }
-    
     return {
       data,
       submit,
       // title: title,
       // image: image,
       toogleModal,
-      
-      
-    }
+    };
   },
-
 };
 </script>
