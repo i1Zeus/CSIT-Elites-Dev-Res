@@ -71,43 +71,8 @@
           </div>
         </div>
       </div>
-
-      <!--========> Tags/Res Table <======== -->
-      <!-- <div class="flex flex-col">
-                        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                                <div class="overflow-hidden">
-                                    <div class="min-w-full text-center bg-gray-100 rounded-2xl">
-                                        <div>
-                                            <div class="flex gap-2 pl-3">
-                                                <button @click="tagsshow = true" scope="col"
-                                                    class="text-sm font-medium border-b-2 border-green-400 text-gray-900 px-6 py-4">
-                                                    Tags
-                                                </button>
-                                                <button @click="tagsshow = false" scope="col"
-                                                    class="text-sm font-medium border-b-2 border-green-400 text-gray-900 px-6 py-4">
-                                                    Certified Resources
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div v-if="tagsshow" class="grid grid-cols-4 gap-4 w-full p-2">
-                                                <a v-for="tag in Tags.data" :key="tag">#{{ tag.name }}</a>
-                                            </div>
-                                            <div v-if="!tagsshow" class="grid grid-cols-4 gap-4 w-full p-2">
-                                                <a href="/" v-for="res in CerRec.data" :key="res">
-                                                    {{ res.name }}
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
       <div class="relative grid-cols-1 mx-16">
-        <div class="inset-y-70 right-10">
+        <div class="inset-y-70 right-10 mt-10">
           <img src="../../assets/img/Searching.png" alt="HomeImage" />
         </div>
       </div>
