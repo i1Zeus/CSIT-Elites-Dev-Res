@@ -252,7 +252,7 @@ import getAllRes from "../../composables/Home/getAllRes";
 import TheNavigation from "../../components/Home/TheNavigation.vue";
 export default {
   component: {
-    TheNavigation
+    TheNavigation,
   },
   setup() {
     const tagsshow = ref(true);

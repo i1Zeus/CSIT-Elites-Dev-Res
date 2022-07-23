@@ -1,7 +1,7 @@
 <template>
   <button
     @click.prevent="preformeLogoutAction()"
-    class="bg-transparent border-2 border-transparent hover:bg-black border-b-white border-l-white hover:border-white text-white hover:rounded font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
+    class="text-white hover:text-primary-700 border border-primary-700 hover:bg-white bg-primary-700 focus:ring-1 focus:outline-none focus:ring-primary-700 rounded-lg text-md font-semibold px-4 py-2 text-center"
   >
     <p>logout</p>
   </button>
