@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <GoBack class="mt-10 ml-10" />
+    <GoBack class="absolute ml-10" />
+  <div class="mt-10">
     <h2 class="text-center font-bold text-4xl text-primary-600">
       CHOSE YOUR PATH & LET'S START
     </h2>

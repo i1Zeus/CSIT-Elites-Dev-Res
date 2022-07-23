@@ -36,7 +36,7 @@
       </div>
       <div class="grid grid-cols-2 justify-between mb-10 md:mb-0">
         <div class="col-span-1">
-          <GoBack class="mt-10 ml-16" />
+          <GoBack class="mt-9 ml-16" />
         </div>
         <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
           <div class="flex">
