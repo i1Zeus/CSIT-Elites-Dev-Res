@@ -7,10 +7,12 @@
     <div class="flex justify-end mr-5">
       <router-link to="/login">
         <button
+          v-if="!loggedIn"
           class="bg-transparent border-2 border-transparent hover:bg-black border-t-white border-r-white hover:border-white text-white hover:rounded font-semibold mt-3 ml-2 py-1.5 px-8 duration-200"
         >
           <p>login</p>
         </button>
+        <LogOut v-else />
       </router-link>
     </div>
     <div class="flex flex-col gap-14 items-center mt-40">
@@ -137,9 +139,31 @@ import getTags from "../../composables/Home/getTags";
 import getRecCou from "../../composables/Home/getRecCount";
 import getCerRec from "../../composables/Home/getCerRec";
 import getAllRes from "../../composables/Home/getAllRes";
+import LogOut from "../button/LogOut.vue";
 
 export default {
-  component: {},
+  name: "Main InterFace",
+  components: { LogOut },
+  data() {
+    return {
+      token: null,
+    };
+  },
+  mounted() {
+    this.checkUserStatus();
+  },
+  computed: {
+    loggedIn() {
+      return this.$store.getters.get_loggedIn;
+    },
+  },
+  methods: {
+    checkUserStatus() {
+      if (localStorage.getItem("token") != null) {
+        this.token = localStorage.getItem("token");
+      }
+    },
+  },
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
@@ -147,7 +171,6 @@ export default {
     const { RecCou, load1 } = getRecCou();
     const { CerRec } = getCerRec();
     const search = ref("");
-
     load();
     load1();
     loadRes();
@@ -156,8 +179,15 @@ export default {
         [name].some((val) => val.toLowerCase().includes(search.value))
       );
     });
-
-    return { RecCou, CerRec, Tags, error, tagsshow, search, filteredData };
+    return {
+      RecCou,
+      CerRec,
+      Tags,
+      error,
+      tagsshow,
+      search,
+      filteredData,
+    };
   },
 };
 </script>
