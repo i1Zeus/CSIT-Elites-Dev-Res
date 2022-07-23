@@ -56,10 +56,14 @@ const router = createRouter({
       path: "/login",
       name: "login",
       component: () => import("@/views/Home/LoginView.vue"),
-      meta: {
-        requiresGuest: true,
-      }
     },
+    
+    
+    // {
+    //   path: "/resource",
+    //   name: "Resource",
+    //   component: Resource,
+    // },
     {
       path: "/:pathMatch(.*)*",
       name: "NotFound",

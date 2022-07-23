@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex items-center bg-gray-200 p-16">
+  <div class="h-screen flex items-center bg-gray-600 p-16">
     <div class="bg-white p-4 rounded-lg">
       <div class="grid grid-cols-12">
         <div class="col-span-6">
