@@ -313,8 +313,7 @@
 
                 <button
                   @click="toogleModal = false"
-                  class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-emerald-600 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none mr-6"
-                >
+                  class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-emerald-600 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none mr-6">
                   <svg
                     class="w-6 h-6 mr-3"
                     fill="none"
@@ -333,8 +332,7 @@
                 </button>
                 <button
                   type="submit"
-                  class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
-                >
+                  class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg">
                   Create
                 </button>
               </div>
