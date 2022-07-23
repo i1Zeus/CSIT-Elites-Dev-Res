@@ -1,13 +1,13 @@
 <template>
-    <div class="bg-gray-100 py-3 px-6 md:flex justify-between items-center">
-        <div class="flex items-center font-bold">
-            <span class="text-primary-700 text-3xl ml-10">
-                CSIT Elites
-            </span>
-        </div>
+  <div class="fixed w-full z-50 bg-gray-100 py-3 px-6 md:flex justify-between items-center">
+    <div class="flex items-center font-bold">
+      <span class="text-primary-700 text-3xl ml-10">
+        CSIT Elite Dev Resources
+      </span>
+    </div>
 
         <ul class="md:flex md:items-center">
-            <li class="md:mx-4" v-for="link in links">
+            <li class="md:mx-4" v-for="link in links" :key="link.id">
                 <a :href="link.link" class="text-xl hover:text-primary-600"> {{ link.name }} </a>
             </li>
             <router-link to="/login">
@@ -20,13 +20,31 @@
 
 <script>
 export default {
-    setup() {
-        let links = [
-            { name: "Home", link: "#" },
-            { name: "Category", link: "/category/:id" },
-            { name: "Resources", link: "/sub-section/:id" },
-        ]
-
+  name: "NavBar",
+  comments: {
+  },
+  mounted() {
+    this.checkUserStatus();
+  },
+  computed: {
+    loggedIn() {
+      return this.$store.getters.get_loggedIn;
+    },
+  },
+  methods: {
+    checkUserStatus() {
+      if (localStorage.getItem("token") != null) {
+        this.token = localStorage.getItem("token");
+      }
+    },
+  },
+  setup() {
+    let links = [
+      { name: "Home", link: "/" },
+      { name: "Category", link: "/category/:id" },
+      { name: "Resources", link: "/sub-section/:id" },
+      { name: "Add Resource", link: "/add-rec" },
+    ];
         return {
             links
         }
