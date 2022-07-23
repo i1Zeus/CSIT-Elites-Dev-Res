@@ -2,12 +2,12 @@
     <div class="bg-gray-100 py-3 px-6 md:flex justify-between items-center">
         <div class="flex items-center font-bold">
             <span class="text-primary-700 text-3xl ml-10">
-                CSIT Elites
+                CSIT Elites Dev Resources
             </span>
         </div>
 
         <ul class="md:flex md:items-center">
-            <li class="md:mx-4" v-for="link in links">
+            <li class="md:mx-4" v-for="link in links" :key="link.name">
                 <a :href="link.link" class="text-xl hover:text-primary-600"> {{ link.name }} </a>
             </li>
             <router-link to="/login">
@@ -22,7 +22,7 @@
 export default {
     setup() {
         let links = [
-            { name: "Home", link: "#" },
+            { name: "Home", link: "/" },
             { name: "Category", link: "/category/:id" },
             { name: "Resources", link: "/sub-section/:id" },
         ]
