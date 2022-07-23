@@ -6,7 +6,7 @@ import "./assets/tailwind.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import TheNavigation from "./components/Home/TheNavigation.vue";
-
+import LogOut from "./components/button/LogOut.vue";
 
 
 /* =======> Here We Add FontAwsome Icons <======= */
@@ -30,6 +30,7 @@ library.add(
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.component("TheNavigation", TheNavigation);
+app.component("LogOut", LogOut);
 app.use(router);
 app.use(store);
 app.mount("#app");
