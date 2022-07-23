@@ -14,7 +14,7 @@
               :title="resources.name"
               :publishDate="resources.updated_time"
               :tags="resources.tags"
-              :image="resources.screenShot"
+              :image="resources.image"
             />
           </router-link>
         </div>
