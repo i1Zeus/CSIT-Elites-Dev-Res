@@ -5,12 +5,12 @@
 
     <div v-if="toogleModal">
         <div id="addcategory-modal" tabindex="-1"
-            class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex"
+            class="overflow-y-auto bg-black bg-opacity-50 overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex"
             aria-modal="true" role="dialog">
             <div class="relative p-4 w-full max-w-md h-full md:h-auto">
 
                 <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="relative bg-white rounded-lg shadow">
                     <button @click="toogleModal = false" type="button"
                         class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                         data-modal-toggle="addcategory-modal">
@@ -34,7 +34,7 @@
 
                             <div>
                                 <input type="file" @change="onFileSelected" placeholder="Image"
-                                    class="bg-primary-200 duration-200 flex flex-shrink-0 justify-center items-center text-red-400 font-mono">
+                                    class="bg-primary-200 duration-200 flex flex-shrink-0 justify-center items-center font-mono">
                             </div>
 
                             <AddButton v-on:click="add()" name="Add" />
