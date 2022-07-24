@@ -7,6 +7,9 @@ import ResShow from "../views/Resource/ResShow.vue";
 import ResourcesPage from "../views/Resource/ResourcesPage.vue";
 import NotFound from "../views/NotFound.vue";
 
+// test
+import DropZone from "../components/button/DropZone.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -14,6 +17,11 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+    },
+    {
+      path: "/dropzone",
+      name: "dropzone",
+      component: DropZone,
     },
     {
       path: "/home",
