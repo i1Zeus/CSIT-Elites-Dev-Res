@@ -15,7 +15,7 @@
           <div class="bg-white rounded-xl grid grid-cols-12 m-4 h-32">
             <div class="col-span-4">
               <img
-                class="h-full w-full rounded-2xl object-cover p-3"
+                class="h-32 w-full rounded-2xl object-cover p-3"
                 src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg"
                 alt=""
               />
