@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="flex justify-between">
-      <h1 class="text-left font-semibold mt-5 text-xl">Category</h1>
+      <h1 class="text-left text-primary-700 text-2xl font-semibold mx-5 mt-5">
+        Category
+      </h1>
       <AddCategory />
     </div>
     <div
