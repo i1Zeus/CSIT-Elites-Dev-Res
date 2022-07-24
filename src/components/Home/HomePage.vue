@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="relative grid-cols-1 mx-16">
-        <div class="inset-y-70 right-10 mt-10">
+        <div class="inset-y-70 right-10 mt-10 ">
           <img src="../../assets/img/Searching.png" alt="HomeImage" />
         </div>
       </div>
