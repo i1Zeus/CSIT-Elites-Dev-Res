@@ -51,6 +51,14 @@ const router = createRouter({
         requiresAuth: true,
       },
     },
+    // {
+    //   path: "add-category",
+    //   name: "addcategory",
+    //   component: () => import("../components/Category/AddCategory.vue"),
+    //   meta: {
+    //     requiresAuth: true,
+    //   },
+    // },
     {
       path: "/login",
       name: "login",

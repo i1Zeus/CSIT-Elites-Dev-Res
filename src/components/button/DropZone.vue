@@ -14,7 +14,7 @@
     <label
       for="dropzoneFile"
       :class="{
-        'text-[#41b883] bg-[#fff]': active,
+        'text-[#41b883] border bg-[#fff]': active,
       }"
       class="px-4 py-2 text-[#fff] bg-primary-500 hover:bg-primary-700 duration-300 ease-linear"
       >Select Image</label

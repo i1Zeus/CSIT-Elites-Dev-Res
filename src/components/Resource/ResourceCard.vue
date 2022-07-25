@@ -34,7 +34,7 @@
         <div class="bg-white p-5 rounded-lg shadow-lg">
           <div class="mt-1">
             <div class="text-lg font-semibold text-primary-500">
-              {{ title }}
+              <!-- {{ title }} -->
               
             </div>
 

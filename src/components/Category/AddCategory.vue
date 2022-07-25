@@ -70,7 +70,20 @@
                 <p class="mt-2">File: {{ dropzoneFile.name }}</p>
               </div>
 
-              <AddButton type="submit" name="Add" />
+              <div
+                v-if="!(name && dropzoneFile)"
+                class="bg-gray-400 focus:ring-2 focus:outline-none justify-center items-center text-center w-full text-white px-4 py-3 rounded-lg"
+              >
+                Create
+              </div>
+
+              <div
+                v-else
+                @click="send"
+                class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-center text-white px-4 py-3 rounded-lg cursor-pointer"
+              >
+                Create
+              </div>
             </form>
           </div>
         </div>
@@ -109,7 +122,7 @@ export default {
       const formData = new FormData();
       formData.append("file", this.file);
       formData.append("name", this.name);
-      console.log(formData);
+      // console.log(formData);
 
       fetch("http://127.0.0.1:8000/api/categories/add", {
         method: "POST",
