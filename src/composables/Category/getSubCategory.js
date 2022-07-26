@@ -1,28 +1,24 @@
 import { ref } from "vue";
+import axios from "axios";
 
-const getSubCategory = (id) => {
+export default function useSubCategory(id) {
   const subcategories = ref([]);
-  const error = ref(null);
 
-  const load = async () => {
-    try {
-      // await new Promise((resolve) => {
-      //     setTimeout(resolve, 2000);
-      // });
-
-      let data = await fetch(
-        "http://127.0.0.1:8000/api/sub-sections/getSubByCategory/" + id
-      );
-      if (!data.ok) {
-        throw Error("no data here");
-      } else {
-        subcategories.value = await data.json();
-      }
-    } catch (err) {
-      error.value = err.message;
-      console.log(error.value);
-    }
+  //Fetch||Get Function
+  const fetchSubCategory = async () => {
+    let response = await axios.get(
+      `http://127.0.0.1:8000/api/sub-sections/getSubByCategory/` +id 
+    );
+    subcategories.value = response.data;
   };
-  return { subcategories, error, load };
-};
-export default getSubCategory;
+
+  //Delete Function
+  const dsetroySubCategory = async (id) => {
+    await axios.delete(`http://127.0.0.1:8000/api/sub-sections/delete/${id}`);
+  };
+  return {
+    subcategories,
+    fetchSubCategory,
+    dsetroySubCategory,
+  };
+}

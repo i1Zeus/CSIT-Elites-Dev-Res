@@ -1,5 +1,5 @@
 <template>
-    <GoBack class="absolute ml-10" />
+  <GoBack class="absolute ml-10" />
   <div class="mt-10">
     <h2 class="text-center font-bold text-4xl text-primary-600">
       CHOSE YOUR PATH & LET'S START
@@ -33,21 +33,21 @@
 </template>
 
 <script>
-// import sourceData from "@/data/db.json";
 import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 import GoBack from "../../components/button/GoBack.vue";
 import addSubCategoryButton from "../../components/Category/addSubCategoryButton.vue";
+import { onMounted } from "@vue/runtime-core";
 
 export default {
   components: { SubCategoryCard, GoBack, addSubCategoryButton },
   props: ["id"],
   setup(props) {
-    const { subcategories, error, load } = getSubCategory(props.id);
+    const { subcategories, fetchSubCategory } = getSubCategory(props.id);
 
-    load();
+    onMounted(fetchSubCategory);
 
-    return { subcategories, error };
+    return { subcategories };
   },
 };
 </script>
