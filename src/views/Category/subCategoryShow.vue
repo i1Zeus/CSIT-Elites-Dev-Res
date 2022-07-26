@@ -14,21 +14,24 @@
     <div
       class="grid grid-cols-4 mt-2 mx-10 place-items-center rounded-md bg-gray-200 py-5"
     >
-      <RouterLink
-        :to="{
-          name: 'resource',
-          params: { id: subcategory.id },
-        }"
-        v-for="subcategory in subcategories.data"
-        :key="subcategory.id"
-        :id="subcategory.id"
-      >
-        <SubCategoryCard
-          :name="subcategory.name"
-          :image="subcategory.image"
-          :res="subcategory.resources_count"
-        />
-      </RouterLink>
+      <div v-for="subcategory in subcategories.data" :key="subcategory.id">
+        <RouterLink
+          :to="{
+            name: 'resource',
+            params: { id: subcategory.id },
+          }"
+        >
+          <SubCategoryCard
+            :name="subcategory.name"
+            :image="subcategory.image"
+            :res="subcategory.resources_count"
+          />
+        </RouterLink>
+        <div class="flex gap-2 rounded-xl top-0 right-0">
+          <editButton />
+          <deleteButton class="" @click="deleteSub(subcategory.id)" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -38,17 +41,33 @@ import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 import GoBack from "../../components/button/GoBack.vue";
 import addSubCategoryButton from "../../components/Category/addSubCategoryButton.vue";
+import editButton from "@/components/button/editButton.vue";
+import deleteButton from "@/components/button/deleteButton.vue";
 import { onMounted } from "vue";
 
 export default {
-  components: { SubCategoryCard, GoBack, addSubCategoryButton },
+  components: {
+    SubCategoryCard,
+    GoBack,
+    addSubCategoryButton,
+    editButton,
+    deleteButton,
+  },
   props: ["id"],
   setup(props) {
-    const { subcategories, fetchSubCategory } = getSubCategory(props.id);
+    const { subcategories, fetchSubCategory, dsetroySubCategory } =
+      getSubCategory(props.id);
+
+    const deleteSub = async (ids) => {
+      if (!window.confirm("Are you sure?")) return;
+
+      await dsetroySubCategory(ids);
+      await fetchSubCategory();
+    };
 
     onMounted(fetchSubCategory);
 
-    return { subcategories };
+    return { subcategories, deleteSub };
   },
 };
 </script>

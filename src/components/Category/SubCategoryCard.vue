@@ -22,29 +22,22 @@
         <div class="rounded-full px-2 bg-white text-black">{{ res }} Res</div>
       </div>
     </div>
-
-    <div class="flex gap-2 rounded-xl absolute top-0 right-0">
-      <editButton />
-      <deleteButton class="" @click="deleteSub(id)" />
-    </div>
   </div>
 </template>
 
 <script>
-import editButton from "@/components/button/editButton.vue";
-import deleteButton from "@/components/button/deleteButton.vue";
+
 import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
-  components: { editButton, deleteButton },
-  props: ["name", "res", "image", "id"],
+  
+  props: ["name", "res", "image", "ids"],
   setup(props) {
-    const { dsetroySubCategory } = getSubCategory();
+    const { dsetroySubCategory } = getSubCategory(props.ids);
 
-    const deleteSub = async (id) => {
+    const deleteSub = async () => {
       if (!window.confirm("Are you sure?")) return;
 
-      await dsetroySubCategory(id);
-      await fetchSubCategory();
+      await dsetroySubCategory();
     };
     return { deleteSub };
   },
