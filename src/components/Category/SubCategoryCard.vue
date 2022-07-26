@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-72 h-48 bg-white rounded-xl border border-secondary-300 shadow-md"
+    class="relative w-72 h-48 bg-white rounded-xl border border-secondary-300 shadow-md group"
   >
     <a href="">
       <img
@@ -25,7 +25,6 @@
       </div>
     </a>
     <div class="flex gap-2 rounded-xl absolute top-0 right-0">
-      <!-- <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" /> -->
       <editButton />
       <deleteButton @click="deleteSub(id)" />
     </div>
@@ -35,10 +34,11 @@
 <script>
 import editButton from "@/components/button/editButton.vue";
 import deleteButton from "@/components/button/deleteButton.vue";
+import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
   components: { editButton, deleteButton },
   props: ["name", "res", "image"],
-  setip() {
+  setup() {
     const { dsetroySubCategory } = getSubCategory();
     const deleteSub = async (id) => {
       await dsetroySubCategory(id);

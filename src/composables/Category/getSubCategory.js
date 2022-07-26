@@ -13,8 +13,8 @@ export default function useSubCategory(id) {
   };
 
   //Delete Function
-  const dsetroySubCategory = async (id) => {
-    await axios.delete(`http://127.0.0.1:8000/api/sub-sections/delete/${id}`);
+  const dsetroySubCategory = async () => {
+    await axios.delete(`http://127.0.0.1:8000/api/sub-sections/delete/`+id);
   };
   return {
     subcategories,
