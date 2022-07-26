@@ -14,7 +14,7 @@ export default function useSubCategory(id) {
 
   //Delete Function
   const dsetroySubCategory = async () => {
-    await axios.delete(`http://127.0.0.1:8000/api/sub-sections/delete/` + id);
+    await axios.post(`http://127.0.0.1:8000/api/sub-sections/delete/` + id);
   };
 
   //Create Function

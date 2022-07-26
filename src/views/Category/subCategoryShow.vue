@@ -21,6 +21,7 @@
         }"
         v-for="subcategory in subcategories.data"
         :key="subcategory.id"
+        :id="subcategory.id"
       >
         <SubCategoryCard
           :name="subcategory.name"

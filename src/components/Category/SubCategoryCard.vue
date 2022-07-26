@@ -25,7 +25,7 @@
 
     <div class="flex gap-2 rounded-xl absolute top-0 right-0">
       <editButton />
-      <deleteButton class="z-auto" @click="deleteSub(id)" />
+      <deleteButton class="" @click="deleteSub(id)" />
     </div>
   </div>
 </template>
@@ -36,9 +36,9 @@ import deleteButton from "@/components/button/deleteButton.vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
   components: { editButton, deleteButton },
-  props: ["name", "res", "image"],
-  setup() {
-    const { dsetroySubCategory, fetchSubCategory } = getSubCategory();
+  props: ["name", "res", "image", "id"],
+  setup(props) {
+    const { dsetroySubCategory } = getSubCategory();
 
     const deleteSub = async (id) => {
       if (!window.confirm("Are you sure?")) return;
