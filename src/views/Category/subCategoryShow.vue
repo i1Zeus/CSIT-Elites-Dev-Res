@@ -12,7 +12,7 @@
     </div>
 
     <div
-      class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5"
+      class="grid grid-cols-4 mt-2 mx-10 place-items-center rounded-md bg-gray-200 py-5"
     >
       <RouterLink
         :to="{
@@ -37,7 +37,7 @@ import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 import GoBack from "../../components/button/GoBack.vue";
 import addSubCategoryButton from "../../components/Category/addSubCategoryButton.vue";
-import { onMounted } from "@vue/runtime-core";
+import { onMounted } from "vue";
 
 export default {
   components: { SubCategoryCard, GoBack, addSubCategoryButton },
