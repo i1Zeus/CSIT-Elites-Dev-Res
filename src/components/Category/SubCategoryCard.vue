@@ -25,7 +25,7 @@
 
     <div class="flex gap-2 rounded-xl absolute top-0 right-0">
       <editButton />
-      <deleteButton @click="deleteSub(id)" />
+      <deleteButton class="z-auto" @click="deleteSub(id)" />
     </div>
   </div>
 </template>
