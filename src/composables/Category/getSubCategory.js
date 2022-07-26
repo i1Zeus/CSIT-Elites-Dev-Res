@@ -6,15 +6,15 @@ export default function useSubCategory(id) {
 
   //Fetch||Get Function
   const fetchSubCategory = async () => {
-    let response = await axios.get(
-      `http://127.0.0.1:8000/api/sub-sections/getSubByCategory/` +id 
+    const response = await axios.get(
+      `http://127.0.0.1:8000/api/sub-sections/getSubByCategory/` + id
     );
     subcategories.value = response.data;
   };
 
   //Delete Function
   const dsetroySubCategory = async () => {
-    await axios.delete(`http://127.0.0.1:8000/api/sub-sections/delete/`+id);
+    await axios.delete(`http://127.0.0.1:8000/api/sub-sections/delete/` + id);
   };
   return {
     subcategories,

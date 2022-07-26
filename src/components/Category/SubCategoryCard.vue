@@ -39,9 +39,13 @@ export default {
   components: { editButton, deleteButton },
   props: ["name", "res", "image"],
   setup() {
-    const { dsetroySubCategory } = getSubCategory();
+    const { dsetroySubCategory, fetchSubCategory } = getSubCategory();
+
     const deleteSub = async (id) => {
+      if (!window.confirm("Are you sure?")) return;
+
       await dsetroySubCategory(id);
+      await fetchSubCategory();
     };
     return { deleteSub };
   },
