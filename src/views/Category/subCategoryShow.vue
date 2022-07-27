@@ -1,5 +1,5 @@
 <template>
-    <GoBack class="absolute ml-10" />
+  <GoBack class="absolute ml-10" />
   <div class="mt-10">
     <h2 class="text-center font-bold text-4xl text-primary-600">
       CHOSE YOUR PATH & LET'S START
@@ -12,42 +12,72 @@
     </div>
 
     <div
-      class="grid grid-cols-4 mt-2 mx-10 place-items-center bg-gray-100 py-5"
+      class="grid grid-cols-4 mt-2 mx-10 place-items-center rounded-md bg-gray-200 py-5"
     >
-      <RouterLink
-        :to="{
-          name: 'resource',
-          params: { id: subcategory.id },
-        }"
-        v-for="subcategory in subcategories.data"
-        :key="subcategory.id"
-      >
-        <SubCategoryCard
-          :name="subcategory.name"
-          :image="subcategory.image"
-          :res="subcategory.resources_count"
-        />
-      </RouterLink>
+      <div v-for="subcategory in subcategories.data" :key="subcategory.id">
+        <RouterLink
+          :to="{
+            name: 'resource',
+            params: { id: subcategory.id },
+          }"
+        >
+          <SubCategoryCard
+            :name="subcategory.name"
+            :image="subcategory.image"
+            :res="subcategory.resources_count"
+          />
+        </RouterLink>
+        <div class="flex gap-2 rounded-xl top-0 right-0">
+          <router-link
+            :to="{
+              name: 'SubEdit',
+              params: { id: subcategory.id },
+            }"
+          >
+            <editButton />
+          </router-link>
+          <deleteButton @click="deleteSub(subcategory.id)" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// import sourceData from "@/data/db.json";
 import SubCategoryCard from "@/components/Category/SubCategoryCard.vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 import GoBack from "../../components/button/GoBack.vue";
 import addSubCategoryButton from "../../components/Category/addSubCategoryButton.vue";
+import editButton from "@/components/button/editButton.vue";
+import deleteButton from "@/components/button/deleteButton.vue";
+import { onMounted } from "vue";
 
 export default {
-  components: { SubCategoryCard, GoBack, addSubCategoryButton },
+  components: {
+    SubCategoryCard,
+    GoBack,
+    addSubCategoryButton,
+    editButton,
+    deleteButton,
+  },
   props: ["id"],
   setup(props) {
-    const { subcategories, error, load } = getSubCategory(props.id);
+    const {
+      subcategories,
+      fetchSubCategory,
+      dsetroySubCategory,
+    } = getSubCategory(props.id);
 
-    load();
+    //Delete subcategory
+    const deleteSub = async (ids) => {
+      if (!window.confirm("Are you sure?")) return;
 
-    return { subcategories, error };
+      await dsetroySubCategory(ids);
+    };
+
+    onMounted(fetchSubCategory);
+
+    return { subcategories, deleteSub };
   },
 };
 </script>

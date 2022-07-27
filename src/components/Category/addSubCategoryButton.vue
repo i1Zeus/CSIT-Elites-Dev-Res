@@ -15,12 +15,12 @@
     <div
       id="authentication-modal"
       tabindex="-1"
-      class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex"
+      class="overflow-y-auto overflow-x-hidden bg-black bg-opacity-50 fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex"
       aria-modal="true"
       role="dialog"
     >
       <div
-        class="flex relative w-1/2 h-auto bg-primary-500 border border-primary-100 md:h-auto"
+        class="flex relative h-auto rounded-md bg-primary-500 border border-primary-100 md:h-auto"
       >
         <!-- image -->
         <div class="m-5">
@@ -279,14 +279,14 @@
 
           <div class="py-6 px-6 lg:px-8">
             <h3 class="mb-4 text-xl font-medium text-primary-500">
-              Add sub-section
+              Add SubCategory
             </h3>
-            <form @submit.prevent="submit" class="space-y-5">
+            <form @submit.prevent="saveSub" class="space-y-5">
               <div>
                 <label class="leading-loose">Sebsection Title</label>
                 <input
                   required
-                  v-model="data.title"
+                  v-model="form.name"
                   type="text"
                   name="title"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
@@ -298,7 +298,7 @@
                 <div class="relative inline-flex">
                   <select
                     required
-                    v-model="data.category"
+                    v-model="form.category"
                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   >
                     <option value="1">Front-End</option>
@@ -309,8 +309,6 @@
               </div>
               <input type="file" @change="handleFileUpload($event)" />
               <div class="flex">
-                <div></div>
-
                 <button
                   @click="toogleModal = false"
                   class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-emerald-600 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none mr-6"
@@ -348,31 +346,27 @@
 
 <script lang="ts">
 import { ref } from "vue";
+import getSubCategory from "../../composables/Category/getSubCategory";
 
 export default {
-  name: "addSubCategoryButton",
+  name: "addSubCategory",
   setup() {
     const toogleModal = ref(false);
 
-    const data = ref({
-      title: "",
+    const { createSubCategory } = getSubCategory();
+
+    const form = ref({
+      name: "",
       category: "",
     });
 
-    const submit = async () => {
-      await fetch("http://127.0.0.1:8000/api/sub-sections/add", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      console.log(data);
+    const saveSub = async () => {
+      await createSubCategory({...form});
     };
 
     return {
-      data,
-      submit,
-      // title: title,
-      // image: image,
+      form,
+      saveSub,
       toogleModal,
     };
   },
