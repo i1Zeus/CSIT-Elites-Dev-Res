@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function useSubCategory(id) {
   const subcategories = ref([]);
-  const subcategory = ref([]);
+  const subcategory = ref({});
 
   //Fetch||Get Function => this must ne subcategories not subcategory
   const fetchSubCategory = async () => {
@@ -14,9 +14,9 @@ export default function useSubCategory(id) {
   };
 
   //Get subcategory to edit
-  const grapsubcategory = async (id) => {
+  const grapsubcategory = async () => {
     const response = await axios.get(
-      `http://127.0.0.1:8000/api/sub-sections/getSubByCategory/` + id
+      `http://127.0.0.1:8000/api/sub-sections/getSubSection/` + id
     );
     subcategory.value = response.data;
   };
@@ -46,5 +46,6 @@ export default function useSubCategory(id) {
     createSubCategory,
     updateSubCategory,
     grapsubcategory,
+    subcategory
   };
 }

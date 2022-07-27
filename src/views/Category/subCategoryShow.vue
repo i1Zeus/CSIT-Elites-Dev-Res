@@ -62,11 +62,8 @@ export default {
   },
   props: ["id"],
   setup(props) {
-    const {
-      subcategories,
-      fetchSubCategory,
-      dsetroySubCategory,
-    } = getSubCategory(props.id);
+    const { subcategories, fetchSubCategory, dsetroySubCategory } =
+      getSubCategory(props.id);
 
     //Delete subcategory
     const deleteSub = async (ids) => {

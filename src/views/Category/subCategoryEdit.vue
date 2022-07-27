@@ -21,8 +21,8 @@
           <label class="leading-loose">Resource Title</label>
           <input
             required
-            v-model="name"
             type="text"
+            v-model="name"
             class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
             placeholder="Resource title"
           />
@@ -75,23 +75,21 @@
   </form>
 </template>
 <script>
-import { onMounted } from "vue";
+import { ref } from "vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-  },
+  props: ["id"],
   setup(props) {
-    const { subcategory, grapsubcategory } = getSubCategory();
-
-    onMounted(grapsubcategory(props.id));
+    const { subcategory, grapsubcategory } = getSubCategory(props.id);
+    
+    grapsubcategory();
+    const name = ref(subcategory.value);
+    console.log(subcategory);
 
     return {
       // saveSub,
       subcategory,
+      name,
     };
   },
 };
