@@ -1,7 +1,7 @@
 <template>
   <div class="flex-col">
     <div class="bg-white flex justify-between mt-16 mb-5">
-      <div class="text-black text-lg font-semibold">Latest Resources...</div>
+      <div class="text-primary-700 text-2xl font-semibold mx-5">Latest Resources</div>
       <div class="text-green-500 font-semibold">
         <!-- <router-link :to="{ name: 'Resource' }">
           <u><a href="">See more></a></u>
@@ -15,7 +15,7 @@
           <div class="bg-white rounded-xl grid grid-cols-12 m-4 h-32">
             <div class="col-span-4">
               <img
-                class="h-full w-full rounded-2xl object-cover p-3"
+                class="h-32 w-full rounded-2xl object-cover p-3"
                 src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg"
                 alt=""
               />
