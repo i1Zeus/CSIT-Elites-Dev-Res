@@ -54,7 +54,8 @@ import getLatestR from "../../composables/Resource/getLatestR";
 import GoBack from "../../components/button/GoBack.vue";
 import deleteButton from "../../components/button/deleteButton.vue";
 import editButton from "../../components/button/editButton.vue";
-import { onMounted } from '@vue/runtime-core';
+
+import { onMounted } from "vue";
 export default {
   components: {
     GoBack,
@@ -66,6 +67,7 @@ export default {
     const { resources, fetchResource, destroyResource } = getLatestR(props.id);
 
     const deleteRes = async (ids) => {
+      if (!window.confirm("are you sure you wanna delete it ?")) return;
       await destroyResource(ids);
       await fetchResource();
     }
