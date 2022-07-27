@@ -6,6 +6,7 @@ import SubCategoryShow from "../views/Category/subCategoryShow.vue";
 import ResShow from "../views/Resource/ResShow.vue";
 import ResourcesPage from "../views/Resource/ResourcesPage.vue";
 import NotFound from "../views/NotFound.vue";
+import subCategoryEdit from "../views/Category/subCategoryEdit.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,6 +25,12 @@ const router = createRouter({
       path: "/category/:id",
       name: "categories",
       component: SubCategoryShow,
+      props: true,
+    },
+    {
+      path: "/sub-category/:id/edit",
+      name: "SubEdit",
+      component: subCategoryEdit,
       props: true,
     },
     {

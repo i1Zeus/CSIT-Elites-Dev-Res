@@ -28,8 +28,15 @@
           />
         </RouterLink>
         <div class="flex gap-2 rounded-xl top-0 right-0">
-          <editButton />
-          <deleteButton class="" @click="deleteSub(subcategory.id)" />
+          <router-link
+            :to="{
+              name: 'SubEdit',
+              params: { id: subcategory.id },
+            }"
+          >
+            <editButton />
+          </router-link>
+          <deleteButton @click="deleteSub(subcategory.id)" />
         </div>
       </div>
     </div>
@@ -55,14 +62,17 @@ export default {
   },
   props: ["id"],
   setup(props) {
-    const { subcategories, fetchSubCategory, dsetroySubCategory } =
-      getSubCategory(props.id);
+    const {
+      subcategories,
+      fetchSubCategory,
+      dsetroySubCategory,
+    } = getSubCategory(props.id);
 
+    //Delete subcategory
     const deleteSub = async (ids) => {
       if (!window.confirm("Are you sure?")) return;
 
       await dsetroySubCategory(ids);
-      await fetchSubCategory();
     };
 
     onMounted(fetchSubCategory);
