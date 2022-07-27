@@ -5,12 +5,12 @@
         <div class="col-span-6">
           <div class="flex flex-col">
             <p class="font-semibold text-4xl ml-16 mt-10 text-primary-500">
-              {{ latestR.name }}
+              {{ resources.name }}
             </p>
             <div class="mr-20">
               <!-- <p class="text-primary-500 text-lg font-semibold ml-16">{{latestR.name}}</p> -->
-              <p class="mt-4 ml-16 text-lg">{{ latestR.description }}</p>
-              <p class="mt-5 text-right mr-4">{{ latestR.updated_time }}</p>
+              <p class="mt-4 ml-16 text-lg">{{ resources.description }}</p>
+              <p class="mt-5 text-right mr-4">{{ resources.updated_time }}</p>
             </div>
             <div class="flex flex-col">
               <ul class="list-disc mt-10 ml-16 text-lg">
@@ -41,7 +41,7 @@
         <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
           <div class="flex">
             <editButton></editButton>
-            <deleteButton class="ml-5"></deleteButton>
+            <deleteButton @click="deleteRes(resources.id)" class="ml-5"></deleteButton>
           </div>
         </div>
       </div>
@@ -54,6 +54,7 @@ import getLatestR from "../../composables/Resource/getLatestR";
 import GoBack from "../../components/button/GoBack.vue";
 import deleteButton from "../../components/button/deleteButton.vue";
 import editButton from "../../components/button/editButton.vue";
+import { onMounted } from '@vue/runtime-core';
 export default {
   components: {
     GoBack,
@@ -62,10 +63,15 @@ export default {
   },
   props: ["id"],
   setup(props) {
-    const { latestR, error, load } = getLatestR(props.id);
+    const { resources, fetchResource, destroyResource } = getLatestR(props.id);
 
-    load();
-    return { latestR, error };
+    const deleteRes = async (ids) => {
+      await destroyResource(ids);
+      await fetchResource();
+    }
+
+    onMounted(fetchResource)
+    return { resources, deleteRes};
   },
 };
 </script>
