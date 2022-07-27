@@ -26,20 +26,7 @@
 </template>
 
 <script>
-
-import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
-  
   props: ["name", "res", "image", "ids"],
-  setup(props) {
-    const { dsetroySubCategory } = getSubCategory(props.ids);
-
-    const deleteSub = async () => {
-      if (!window.confirm("Are you sure?")) return;
-
-      await dsetroySubCategory();
-    };
-    return { deleteSub };
-  },
 };
 </script>
