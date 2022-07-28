@@ -21,8 +21,8 @@
           <label class="leading-loose">Resource Title</label>
           <input
             required
+            v-model="name"
             type="text"
-            v-model="subcategory.name"
             class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
             placeholder="Resource title"
           />
@@ -32,12 +32,12 @@
           <div class="relative inline-flex">
             <select
               required
-              v-model="subcategory.category_id"
+              v-model="category"
               class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
             >
-              <option value="1">Front-End</option>
-              <option value="2">Back-End</option>
-              <option value="3">Mobile Application</option>
+              <option>Front-End</option>
+              <option>Back-End</option>
+              <option>Mobile Application</option>
             </select>
           </div>
         </div>
@@ -65,7 +65,6 @@
           </button>
         </router-link>
         <button
-          @click="saveSub()"
           type="button"
           class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
         >
@@ -76,23 +75,22 @@
   </form>
 </template>
 <script>
-import { onMounted } from "@vue/runtime-core";
+import { onMounted } from "vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
-  props: ["id"],
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+  },
   setup(props) {
-    const { subcategory, grapsubcategory, updateSubCategory } = getSubCategory(
-      props.id
-    );
+    const { subcategory, grapsubcategory } = getSubCategory();
 
     onMounted(grapsubcategory(props.id));
 
-    const saveSub = async () => {
-      await updateSubCategory(props.id);
-    };
-
     return {
-      saveSub,
+      // saveSub,
       subcategory,
     };
   },
