@@ -1,9 +1,11 @@
 import { ref } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router";
 
 export default function useSubCategory(id) {
   const subcategories = ref([]);
   const subcategory = ref([]);
+  const router = useRouter();
 
   //Fetch||Get Function => this must ne subcategories not subcategory
   const fetchSubCategory = async () => {
@@ -36,7 +38,10 @@ export default function useSubCategory(id) {
     await axios.post(
       "http://127.0.0.1:8000/api/sub-sections/update/" + id,
       subcategory.value
-    ); //data.id is the id of the sub-category
+    );
+    
+    // await router.push({path:''})
+    
   };
 
   return {
@@ -46,6 +51,6 @@ export default function useSubCategory(id) {
     createSubCategory,
     updateSubCategory,
     grapsubcategory,
-    subcategory
+    subcategory,
   };
 }
