@@ -22,7 +22,7 @@
           <input
             required
             type="text"
-            v-model="name"
+            v-model="subcategory.name"
             class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
             placeholder="Resource title"
           />
@@ -32,12 +32,12 @@
           <div class="relative inline-flex">
             <select
               required
-              v-model="category"
+              v-model="subcategory.category_id"
               class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
             >
-              <option>Front-End</option>
-              <option>Back-End</option>
-              <option>Mobile Application</option>
+              <option value="1">Front-End</option>
+              <option value="2">Back-End</option>
+              <option value="3">Mobile Application</option>
             </select>
           </div>
         </div>
@@ -65,6 +65,7 @@
           </button>
         </router-link>
         <button
+          @click="saveSub()"
           type="button"
           class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
         >
@@ -75,21 +76,24 @@
   </form>
 </template>
 <script>
-import { ref } from "vue";
+import { onMounted } from "@vue/runtime-core";
 import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
   props: ["id"],
   setup(props) {
-    const { subcategory, grapsubcategory } = getSubCategory(props.id);
-    
-    grapsubcategory();
-    const name = ref(subcategory.value);
-    console.log(subcategory);
+    const { subcategory, grapsubcategory, updateSubCategory } = getSubCategory(
+      props.id
+    );
+
+    onMounted(grapsubcategory(props.id));
+
+    const saveSub = async () => {
+      await updateSubCategory(props.id);
+    };
 
     return {
-      // saveSub,
+      saveSub,
       subcategory,
-      name,
     };
   },
 };

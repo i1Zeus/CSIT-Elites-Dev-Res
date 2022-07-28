@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function useSubCategory(id) {
   const subcategories = ref([]);
-  const subcategory = ref({});
+  const subcategory = ref([]);
 
   //Fetch||Get Function => this must ne subcategories not subcategory
   const fetchSubCategory = async () => {
@@ -18,7 +18,7 @@ export default function useSubCategory(id) {
     const response = await axios.get(
       `http://127.0.0.1:8000/api/sub-sections/getSubSection/` + id
     );
-    subcategory.value = response.data;
+    subcategory.value = response.data.data;
   };
 
   //Create Function
@@ -32,10 +32,10 @@ export default function useSubCategory(id) {
   };
 
   //Update Function
-  const updateSubCategory = async (data) => {
+  const updateSubCategory = async (id) => {
     await axios.post(
-      "http://127.0.0.1:8000/api/sub-sections/update/" + data.id,
-      data
+      "http://127.0.0.1:8000/api/sub-sections/update/" + id,
+      subcategory.value
     ); //data.id is the id of the sub-category
   };
 
