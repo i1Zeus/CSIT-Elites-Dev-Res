@@ -15,7 +15,7 @@ export default function useSubCategory(id) {
     subcategories.value = response.data;
   };
 
-  //Get subcategory to edit
+  //Get subcategory for editting 
   const grapsubcategory = async () => {
     const response = await axios.get(
       `http://127.0.0.1:8000/api/sub-sections/getSubSection/` + id
@@ -39,7 +39,7 @@ export default function useSubCategory(id) {
       "http://127.0.0.1:8000/api/sub-sections/update/" + id,
       subcategory.value
     );
-    
+
     // await router.push({path:''})
     
   };

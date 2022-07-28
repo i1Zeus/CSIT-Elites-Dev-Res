@@ -27,6 +27,8 @@
             :res="subcategory.resources_count"
           />
         </RouterLink>
+
+        <!-- Buttons -->
         <div class="flex gap-2 rounded-xl top-0 right-0">
           <router-link
             :to="{
@@ -34,9 +36,9 @@
               params: { id: subcategory.id },
             }"
           >
-            <editButton />
+            <editButton class="p-1.5" />
           </router-link>
-          <deleteButton @click="deleteSub(subcategory.id)" />
+          <deleteButton @click="deleteSub(subcategory.id)" class="" />
         </div>
       </div>
     </div>
