@@ -65,7 +65,7 @@
                   placeholder="Sub-section title"
                 />
               </div>
-              <div class="flex flex-col gap-1">
+              <div class="flex  flex-col gap-1">
                 <label class="leading-loose">Category</label>
                 <div class="relative inline-flex">
                   <select
