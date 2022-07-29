@@ -103,10 +103,11 @@
                           />
                         </div>
                         <div
-                          v-for="link in links"
-                          :key="link"
+                          v-for="link in resources.links"
+                          :key="link.id"
                           class="flex flex-row-reverse items-center justify-between"
                         >
+                        
                           <button
                             class="font-bold text-gray-500 hover:text-red-500"
                             @click="deleteLink(link)"
@@ -117,9 +118,9 @@
                               class="px-1"
                             />
                           </button>
-                          <a :href="link" target="_blank">
+                          <a :href="link.url" target="_blank">
                             <p class="bg-gray-100 px-5 rounded-lg">
-                              {{ link.substring(0, 40) + "..." }}
+                              {{link.url}}
                             </p>
                           </a>
                         </div>
@@ -251,6 +252,8 @@ export default {
   props: ["id"],
   setup(props) {
     const toogleModal = ref(false);
+    const links = ref([]);
+
     const { resources, fetchResource, destroyResource } = getLatestR(props.id);
 
     const deleteRes = async (ids) => {
@@ -258,9 +261,14 @@ export default {
       await destroyResource(ids);
       await fetchResource();
     };
-
     onMounted(fetchResource);
-    return { resources, deleteRes, toogleModal };
+
+      const deleteLink = (link) => {
+      links.value = links.value.filter((item) => {
+        return link !== item;
+      });
+    };
+    return { resources, deleteRes, toogleModal, deleteLink };
   },
 };
 </script>
