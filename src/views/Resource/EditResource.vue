@@ -95,8 +95,7 @@
                     <button @click="deleteTag(tag)">
                       <font-awesome-icon
                         icon="fa-solid fa-xmark"
-                        class="px-1 font-bold text-gray-500 hover:text-red-500"
-                      />
+                        class="px-1 font-bold text-gray-500 hover:text-red-500"/>
                     </button>
                   </div>
                 </div>
@@ -178,7 +177,7 @@ export default {
     onMounted(fetchResource);
 
     const deleteLink = (link) => {
-      resources.value.links.url = resources.value.links.url.filter((item) => {
+      resources.value.links = resources.value.links.filter((item) => {
         return link !== item;
       });
     };
