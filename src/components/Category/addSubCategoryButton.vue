@@ -360,7 +360,7 @@ export default {
     });
 
     const submit = async () => {
-      await fetch("http://127.0.0.1:8000/api/sub-sections/add", {
+        await fetch("http://127.0.0.1:8000/api/sub-sections/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

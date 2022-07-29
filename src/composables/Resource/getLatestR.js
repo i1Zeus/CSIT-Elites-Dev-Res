@@ -28,7 +28,7 @@ import { ref } from "vue";
   const resources = ref ([]);
 
   //get all resource (fetch)
-  const fetchResource = async () => {
+    const fetchResource = async () => {
     const response = await axios.get('http://127.0.0.1:8000/api/resources/getResourceById/' + id);
     resources.value = response.data;
   }
@@ -36,6 +36,9 @@ import { ref } from "vue";
   const destroyResource = async (ids) => {
   await axios.post('http://127.0.0.1:8000/api/resources/delete/' + ids);
   };
+
+
+  // Update function
 
   return { resources, fetchResource, destroyResource, }
 }
