@@ -23,7 +23,7 @@
         >
           <SubCategoryCard
             :name="subcategory.name"
-            :image="subcategory.image"
+            :image="subcategory.image_url"
             :res="subcategory.resources_count"
           />
         </RouterLink>

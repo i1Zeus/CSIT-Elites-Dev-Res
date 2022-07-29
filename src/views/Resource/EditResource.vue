@@ -1,6 +1,10 @@
 <template>
   <div
-    class="min-h-screen bg-gray-200 py-6 flex flex-col justify-center sm:py-12"
+    id="authentication-modal"
+    tabindex="-1"
+    aria-modal="true"
+    role="dialog"
+    class="bg-gray-200 py-6 flex flex-col justify-center sm:py-12 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full items-center"
   >
     <div class="relative py-3 sm:max-w-xl sm:mx-auto">
       <div
@@ -16,9 +20,9 @@
             <div
               class="block pl-2 font-semibold text-xl self-start text-gray-700"
             >
-              <h2 class="leading-relaxed">Add a Resource</h2>
+              <h2 class="leading-relaxed">Edit a Resource</h2>
               <p class="text-sm text-gray-500 font-normal leading-relaxed">
-                this page were made specifically to add a Resource 💕.
+                this page were made specifically to Edit a Resource 💕.
               </p>
             </div>
           </div>
@@ -30,7 +34,7 @@
                 <label class="leading-loose">Resource Title</label>
                 <input
                   required
-                  v-model="title"
+                  v-model="resources.name"
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Resource title"
@@ -47,13 +51,15 @@
                 />
               </div>
               <div
-                v-for="link in links"
-                :key="link"
+                v-for="link in resources.links"
+                :key="link.id"
+
+                
                 class="flex flex-row-reverse items-center justify-between"
               >
                 <button
+                  @click.prevent="deleteLink(link.url)"
                   class="font-bold text-gray-500 hover:text-red-500"
-                  @click="deleteLink(link)"
                 >
                   <font-awesome-icon
                     icon="fa-solid fa-xmark"
@@ -61,9 +67,9 @@
                     class="px-1"
                   />
                 </button>
-                <a :href="link" target="_blank">
+                <a :href="link.url" target="_blank">
                   <p class="bg-gray-100 px-5 rounded-lg">
-                    {{ link.substring(0, 40) + "..." }}
+                    {{ link.url.substring(0, 40) + "..." }}
                   </p>
                 </a>
               </div>
@@ -72,26 +78,24 @@
                   <label class="leading-loose">Tags</label>
                   <input
                     @keydown.enter.prevent="addTags"
-                    v-model="tag"
                     type="text"
                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     placeholder="Add Tags"
                   />
                   <div
-                    v-for="tag in tags"
-                    :key="tag"
+                    v-for="tag in resources.tags"
+                    :key="tag.id"
                     class="flex flex-row items-center justify-between"
                   >
                     <p
                       class="w-full items-baseline bg-gray-100 px-2 rounded-lg"
                     >
-                      #{{ tag }}
+                      #{{ tag.name }}
                     </p>
                     <button @click="deleteTag(tag)">
                       <font-awesome-icon
                         icon="fa-solid fa-xmark"
-                        class="px-1 font-bold text-gray-500 hover:text-red-500"
-                      />
+                        class="px-1 font-bold text-gray-500 hover:text-red-500"/>
                     </button>
                   </div>
                 </div>
@@ -100,60 +104,50 @@
                   <div class="relative inline-flex">
                     <select
                       required
-                      v-model="category"
+                      v-model="resources.category_id"
                       class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     >
-                      <option>Front-End</option>
-                      <option>Back-End</option>
-                      <option>Mobile Application</option>
+                      <option value="1">Front-End</option>
+                      <option value="2">Back-End</option>
+                      <option value="3">Mobile Application</option>
                     </select>
                   </div>
                 </div>
               </div>
               <div class="flex flex-col">
                 <label class="leading-loose">Resource Description</label>
-                
+                <textarea
+                  required
+                  v-model="resources.description"
+                  type="text"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="Remember to add a description"
+                ></textarea>
               </div>
             </div>
             <div class="pt-4 flex items-center space-x-4">
-              <router-link to="/">
-                <button
-                  class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-black duration-1000 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none"
-                >
-                  <svg
-                    class="w-6 h-6 mr-3"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                  Cancel
-                </button>
-              </router-link>
-              <div
-                v-if="
-                  !(
-                    title &&
-                    category &&
-                    tags.length &&
-                    links.length &&
-                    description
-                  )
-                "
-                class="bg-gray-400 focus:ring-2 focus:outline-none justify-center items-center text-center w-full text-white px-4 py-3 rounded-lg"
-              >
-                Create
-              </div>
               <button
-                v-else
-                @click="add()"
+                class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-black duration-1000 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none"
+              >
+                <svg
+                  class="w-6 h-6 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+                Cancel
+              </button>
+
+              <button
+                @click="saveResource()"
                 type="button"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
               >
@@ -169,27 +163,22 @@
 
 <script>
 import { ref } from "vue";
-
+import { onMounted } from "vue";
+import getLatestR from "../../composables/Resource/getLatestR";
 export default {
-  setup() {
-    const title = ref("");
+  components: {},
+  props: ["id"],
+  setup(props) {
+    // const links = ref([]);
     const link = ref("");
-    const links = ref([]);
     const tag = ref("");
-    const tags = ref([]);
-    const description = ref("");
-    const category = ref("");
+    const { resources, fetchResource } = getLatestR(props.id);
 
-    const addTags = () => {
-      if (!tags.value.includes(tag.value)) {
-        tag.value = tag.value.replace(/\s/, "");
-        tags.value.unshift(tag.value);
-      }
-      tag.value = "";
-    };
-    const deleteTag = (tag) => {
-      tags.value = tags.value.filter((item) => {
-        return tag !== item;
+    onMounted(fetchResource);
+
+    const deleteLink = (link) => {
+      resources.value.links = resources.value.links.filter((item) => {
+        return link !== item;
       });
     };
     const addLink = () => {
@@ -199,41 +188,18 @@ export default {
       }
       link.value = "";
     };
-    const deleteLink = (link) => {
-      links.value = links.value.filter((item) => {
-        return link !== item;
-      });
-    };
-    const add = () => {
-      const data = {
-        title: title.value,
-        links: links.value,
-        tags: tags.value,
-        description: description.value,
-        category: category.value,
-      };
-      fetch("http://127.0.0.1:8000/api/resources/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-    };
 
+    const saveResource = async () => {
+    await updateResource(props.id);
+    };
     return {
-      title: title,
-      links: links,
-      tags: tags,
-      description: description,
-      category: category,
-      add,
+      resources,
+      fetchResource,
+       deleteLink,
+    //   addLink,
+      saveResource,
       tag,
-      addTags,
       link,
-      addLink,
-      deleteTag,
-      deleteLink,
     };
   },
 };
