@@ -58,7 +58,7 @@
                 class="flex flex-row-reverse items-center justify-between"
               >
                 <button
-                  @click.prevent="deleteLink(link.id)"
+                  @click.prevent="deleteLink(link.url)"
                   class="font-bold text-gray-500 hover:text-red-500"
                 >
                   <font-awesome-icon
@@ -172,32 +172,24 @@ export default {
   setup(props) {
     // const links = ref([]);
     const link = ref("");
-    const links = ref([]);
-
     const tag = ref("");
     const { resources, fetchResource } = getLatestR(props.id);
 
     onMounted(fetchResource);
 
     const deleteLink = (link) => {
-      links.value = links.value.filter((item) => {
+      resources.value.links.url = resources.value.links.url.filter((item) => {
         return link !== item;
       });
     };
+    const addLink = () => {
+      if (!links.value.includes(link.value)) {
+        link.value = link.value.replace(/\s/, "");
+        links.value.unshift(link.value);
+      }
+      link.value = "";
+    };
 
-    // const addLink = () => {
-    //   if (!links.value.includes(link.value)) {
-    //     link.value = link.value.replace(/\s/, "");
-    //     links.value.unshift(link.value);
-    //   }
-    //   link.value = "";
-    // };
-
-    // const deleteLink = (link) => {
-    //   links.value = links.value.filter((item) => {
-    //     return link !== item;
-    //   });
-    // };
     const saveResource = async () => {
     await updateResource(props.id);
     };

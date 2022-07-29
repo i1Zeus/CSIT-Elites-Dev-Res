@@ -42,7 +42,6 @@ import { ref } from "vue";
   // Update function
   const updateResource = async (id) => {
     await axios.post("http://127.0.0.1:8000/api/resources/update/" + id,
-    resources.value
     );
   }
 

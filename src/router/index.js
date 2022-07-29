@@ -78,7 +78,7 @@ const router = createRouter({
       component: NotFound,
     },
     {
-      path: "/edit/:id",
+      path: "/resource/:id/edit",
       name: "EditResource",
       component: EditResource,
       props: true,
