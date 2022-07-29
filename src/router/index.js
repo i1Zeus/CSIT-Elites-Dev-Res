@@ -6,7 +6,7 @@ import SubCategoryShow from "../views/Category/subCategoryShow.vue";
 import ResShow from "../views/Resource/ResShow.vue";
 import ResourcesPage from "../views/Resource/ResourcesPage.vue";
 import NotFound from "../views/NotFound.vue";
-
+import EditResource from "../views/Resource/EditResource.vue"
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -76,6 +76,12 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: NotFound,
+    },
+    {
+      path: "/resource/edit/:id",
+      name: "EditResource",
+      component: EditResource,
+      props: true,
     },
   ],
 });
