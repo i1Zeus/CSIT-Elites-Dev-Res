@@ -86,7 +86,7 @@ export default {
       await fetchResource();
     };
     onMounted(fetchResource);
-
+    
     return { resources, deleteRes, };
   },
 };

@@ -44,7 +44,7 @@
                 <label class="leading-loose">Resource Link</label>
                 <input
                   @keydown.enter.prevent="addLink"
-                  v-model="resources.link"
+                  v-model="link"
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Add a Link"
@@ -53,10 +53,12 @@
               <div
                 v-for="link in resources.links"
                 :key="link.id"
+
+                
                 class="flex flex-row-reverse items-center justify-between"
               >
                 <button
-                  @click="deleteLink(links.id)"
+                  @click.prevent="deleteLink(link.id)"
                   class="font-bold text-gray-500 hover:text-red-500"
                 >
                   <font-awesome-icon
@@ -170,10 +172,18 @@ export default {
   setup(props) {
     // const links = ref([]);
     const link = ref("");
+    const links = ref([]);
+
     const tag = ref("");
     const { resources, fetchResource } = getLatestR(props.id);
 
     onMounted(fetchResource);
+
+    const deleteLink = (link) => {
+      links.value = links.value.filter((item) => {
+        return link !== item;
+      });
+    };
 
     // const addLink = () => {
     //   if (!links.value.includes(link.value)) {
@@ -194,7 +204,7 @@ export default {
     return {
       resources,
       fetchResource,
-    //   deleteLink,
+       deleteLink,
     //   addLink,
       saveResource,
       tag,
