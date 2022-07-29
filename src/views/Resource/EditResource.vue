@@ -56,7 +56,7 @@
                 class="flex flex-row-reverse items-center justify-between"
               >
                 <button
-                  @click="deleteLink(link.id)"
+                  @click="deleteLink(links.id)"
                   class="font-bold text-gray-500 hover:text-red-500"
                 >
                   <font-awesome-icon
@@ -67,7 +67,7 @@
                 </button>
                 <a :href="link.url" target="_blank">
                   <p class="bg-gray-100 px-5 rounded-lg">
-                    {{ link.url }}
+                    {{ link.url.substring(0, 40) + "..." }}
                   </p>
                 </a>
               </div>
@@ -76,20 +76,19 @@
                   <label class="leading-loose">Tags</label>
                   <input
                     @keydown.enter.prevent="addTags"
-                    v-model="resources.tags[1]"
                     type="text"
                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                     placeholder="Add Tags"
                   />
                   <div
-                    v-for="resources in tags"
-                    :key="resources.tags"
+                    v-for="tag in resources.tags"
+                    :key="tag.id"
                     class="flex flex-row items-center justify-between"
                   >
                     <p
                       class="w-full items-baseline bg-gray-100 px-2 rounded-lg"
                     >
-                      #{{ tag }}
+                      #{{ tag.name }}
                     </p>
                     <button @click="deleteTag(tag)">
                       <font-awesome-icon
@@ -147,7 +146,7 @@
               </button>
 
               <button
-                @click="saveSub()"
+                @click="saveResource()"
                 type="button"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
               >
@@ -162,18 +161,45 @@
 </template>
 
 <script>
-    import { ref } from "vue";
-    import { onMounted } from "vue";
-    import getLatestR from "../../composables/Resource/getLatestR"
-    export default {
-        components : {
-        },
-        props: ["id"],
-        setup(props) {
-            const { resources, fetchResource, } = getLatestR(props.id);
+import { ref } from "vue";
+import { onMounted } from "vue";
+import getLatestR from "../../composables/Resource/getLatestR";
+export default {
+  components: {},
+  props: ["id"],
+  setup(props) {
+    // const links = ref([]);
+    const link = ref("");
+    const tag = ref("");
+    const { resources, fetchResource } = getLatestR(props.id);
 
+    onMounted(fetchResource);
 
-            return {resources, fetchResource, }
-        },        
-    }
+    // const addLink = () => {
+    //   if (!links.value.includes(link.value)) {
+    //     link.value = link.value.replace(/\s/, "");
+    //     links.value.unshift(link.value);
+    //   }
+    //   link.value = "";
+    // };
+
+    // const deleteLink = (link) => {
+    //   links.value = links.value.filter((item) => {
+    //     return link !== item;
+    //   });
+    // };
+    const saveResource = async () => {
+    await updateResource(props.id);
+    };
+    return {
+      resources,
+      fetchResource,
+    //   deleteLink,
+    //   addLink,
+      saveResource,
+      tag,
+      link,
+    };
+  },
+};
 </script>

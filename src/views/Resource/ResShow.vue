@@ -76,8 +76,7 @@ export default {
   },
   props: ["id"],
   setup(props) {
-    const links = ref([]);
-    const link = ref("");
+    
 
     const { resources, fetchResource, destroyResource } = getLatestR(props.id);
 
@@ -88,22 +87,6 @@ export default {
     };
     onMounted(fetchResource);
 
-    //   const addLink = () => {
-    //   if (!links.value.includes(link.value)) {
-    //     link.value = link.value.replace(/\s/, "");
-    //     links.value.unshift(link.value);
-    //   }
-    //     link.value = "";
-    // };
-
-    // const deleteLink = (link) => {
-    //   links.value = links.value.filter((item) => {
-    //     return link !== item;
-    //   });
-    // };
-    // const saveRes = async () => {
-    //   await updateResource(props.id);
-    // };
     return { resources, deleteRes, };
   },
 };

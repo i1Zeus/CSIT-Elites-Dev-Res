@@ -37,6 +37,7 @@ import { ref } from "vue";
   await axios.post('http://127.0.0.1:8000/api/resources/delete/' + ids);
   };
 
+  
 
   // Update function
   const updateResource = async (id) => {
