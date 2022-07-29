@@ -44,9 +44,9 @@
         </div>
         <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
           <div class="flex">
-            <!-- <router-link :to="{ name: 'EditResource', params: { id: resources.id } }>
+            <router-link to="{ name: 'EditResource', params: { id: props.id} }">
               <editButton ></editButton>
-            </router-link> -->
+            </router-link>
             
             <deleteButton
               @click="deleteRes(resources.id)"
