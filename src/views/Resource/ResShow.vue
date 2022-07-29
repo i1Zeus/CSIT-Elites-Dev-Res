@@ -5,22 +5,18 @@
         <div class="col-span-6">
           <div class="flex flex-col">
             <p class="font-semibold text-4xl ml-16 mt-10 text-primary-500">
-              {{ resources.name }}
+              {{ latestR.name }}
             </p>
             <div class="mr-20">
               <!-- <p class="text-primary-500 text-lg font-semibold ml-16">{{latestR.name}}</p> -->
-              <p class="mt-4 ml-16 text-lg">{{ resources.description }}</p>
-              <p class="mt-5 text-right mr-4">{{ resources.updated_time }}</p>
+              <p class="mt-4 ml-16 text-lg">{{ latestR.description }}</p>
+              <p class="mt-5 text-right mr-4">{{ latestR.updated_time }}</p>
             </div>
             <div class="flex flex-col">
-              <ul
-                v-for="link in resources.links"
-                :key="link.id"
-                class="list-disc mt-10 ml-16 text-lg"
-              >
-                <li>
-                  <a href=""> {{ link.url }} </a>
-                </li>
+              <ul class="list-disc mt-10 ml-16 text-lg">
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
               </ul>
             </div>
           </div>
@@ -44,15 +40,8 @@
         </div>
         <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
           <div class="flex">
-            <router-link to="{ name: 'EditResource', params: { id: resources.id} }">
-              <editButton ></editButton>
-            </router-link>
-            
-            <deleteButton
-              @click="deleteRes(resources.id)"
-              class="ml-5"
-            ></deleteButton>
-
+            <editButton></editButton>
+            <deleteButton class="ml-5"></deleteButton>
           </div>
         </div>
       </div>
@@ -65,9 +54,6 @@ import getLatestR from "../../composables/Resource/getLatestR";
 import GoBack from "../../components/button/GoBack.vue";
 import deleteButton from "../../components/button/deleteButton.vue";
 import editButton from "../../components/button/editButton.vue";
-import { ref } from "vue";
-import { onMounted } from "vue";
-
 export default {
   components: {
     GoBack,
@@ -76,19 +62,10 @@ export default {
   },
   props: ["id"],
   setup(props) {
-    
+    const { latestR, error, load } = getLatestR(props.id);
 
-    const { resources, fetchResource, destroyResource } = getLatestR(props.id);
-
-    const deleteRes = async (ids) => {
-      if (!window.confirm("are you sure you wanna delete it ?")) return;
-      await destroyResource(ids);
-      await fetchResource();
-    };
-    
-    onMounted(fetchResource);
-    
-    return { resources, deleteRes, };
+    load();
+    return { latestR, error };
   },
 };
 </script>
