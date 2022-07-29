@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-w-screen min-h-screen bg-gray-200 flex items-center p-5 lg:p-20 overflow-hidden relative"
+    class="min-w-screen min-h-screen bg-gray-600 flex items-center p-5 lg:p-20 overflow-hidden relative"
   >
     <div
       class="flex-1 min-h-full min-w-full rounded-3xl bg-white shadow-xl p-10 lg:p-20 text-gray-800 relative md:flex items-center text-center md:text-left"
