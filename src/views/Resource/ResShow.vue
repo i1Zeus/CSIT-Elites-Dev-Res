@@ -54,7 +54,7 @@
               tabindex="-1"
               aria-modal="true"
               role="dialog"
-              class="bg-gray-200 py-6 flex flex-col justify-center sm:py-12  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full items-center"
+              class="bg-gray-200 py-6 flex flex-col justify-center sm:py-12 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full items-center"
             >
               <div class="relative py-3 sm:max-w-xl sm:mx-auto">
                 <div
@@ -74,7 +74,8 @@
                         <p
                           class="text-sm text-gray-500 font-normal leading-relaxed"
                         >
-                          this page were made specifically to Edit a Resource 💕.
+                          this page were made specifically to Edit a Resource
+                          💕.
                         </p>
                       </div>
                     </div>
@@ -107,7 +108,6 @@
                           :key="link.id"
                           class="flex flex-row-reverse items-center justify-between"
                         >
-                        
                           <button
                             class="font-bold text-gray-500 hover:text-red-500"
                             @click="deleteLink(link)"
@@ -120,7 +120,7 @@
                           </button>
                           <a :href="link.url" target="_blank">
                             <p class="bg-gray-100 px-5 rounded-lg">
-                              {{link.url}}
+                              {{ link.url }}
                             </p>
                           </a>
                         </div>
@@ -181,25 +181,26 @@
                         </div>
                       </div>
                       <div class="pt-4 flex items-center space-x-4">
-                          <button @click="toogleModal = false"
-                            class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-black duration-1000 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none"
+                        <button
+                          @click="toogleModal = false"
+                          class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-black duration-1000 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none"
+                        >
+                          <svg
+                            class="w-6 h-6 mr-3"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              class="w-6 h-6 mr-3"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"
-                              ></path>
-                            </svg>
-                            Cancel
-                          </button>
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12"
+                            ></path>
+                          </svg>
+                          Cancel
+                        </button>
                         <div
                           v-if="
                             !(
@@ -263,12 +264,15 @@ export default {
     };
     onMounted(fetchResource);
 
-      const deleteLink = (link) => {
+    const deleteLink = (link) => {
       links.value = links.value.filter((item) => {
         return link !== item;
       });
     };
-    return { resources, deleteRes, toogleModal, deleteLink };
+    const saveRes = async () => {
+      await updateResource(props.id);
+    };
+    return { resources, deleteRes, toogleModal, deleteLink, saveRes };
   },
 };
 </script>
