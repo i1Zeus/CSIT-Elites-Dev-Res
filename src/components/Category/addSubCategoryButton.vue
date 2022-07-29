@@ -49,7 +49,11 @@
             <h3 class="mb-4 text-xl font-medium text-primary-500">
               Add SubCategory
             </h3>
-            <form @submit.prevent="saveSub" class="space-y-5">
+            <form
+              @submit="saveSub"
+              enctype="multipart/form-data"
+              class="space-y-5"
+            >
               <div>
                 <label class="leading-loose">Sebsection Title</label>
                 <input
@@ -75,17 +79,8 @@
                   </select>
                 </div>
               </div>
-              <img
-                v-show="imageUrl"
-                :src="imageUrl"
-                class="w-48 h-48 object-cover"
-              />
               <div>
-                <input
-                  type="file"
-                  accept="image/*"
-                  @change="handleImageSelected"
-                />
+                <input type="file" @change="onChange" />
               </div>
               <!-- <input type="file" @change="handleFileUpload($event)" /> -->
               <div class="flex">
@@ -113,7 +108,6 @@
 <script>
 import { ref } from "vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
-import { useImageUpload } from "../../composables/useImageUpload";
 
 export default {
   name: "addSubCategory",
@@ -121,13 +115,15 @@ export default {
     const toogleModal = ref(false);
 
     const { createSubCategory } = getSubCategory();
-    const { imageFile, imageUrl, handleImageSelected } = useImageUpload();
 
     const form = ref({
       name: "",
       category_id: "",
-      image: imageFile.value,
+      image: "",
     });
+    const onChange = (e) => {
+      form.value.image = e.target.files[0];
+    };
 
     const saveSub = async () => {
       await createSubCategory({ ...form.value });
@@ -137,8 +133,7 @@ export default {
       form,
       saveSub,
       toogleModal,
-      handleImageSelected,
-      imageUrl,
+      onChange,
     };
   },
 };

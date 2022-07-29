@@ -1,11 +1,16 @@
 import { ref } from "vue";
 import axios from "axios";
-import { useRouter } from "vue-router";
+// import { useRouter } from "vue-router";
 
 export default function useSubCategory(id) {
   const subcategories = ref([]);
   const subcategory = ref([]);
-  const router = useRouter();
+  // const router = useRouter();
+  const config = {
+    headers: {
+      "content-type": "multipart/form-data",
+    },
+  };
 
   //Fetch||Get Function => this must ne subcategories not subcategory
   const fetchSubCategory = async () => {
@@ -15,7 +20,7 @@ export default function useSubCategory(id) {
     subcategories.value = response.data;
   };
 
-  //Get subcategory for editting 
+  //Get subcategory for editting
   const grapsubcategory = async () => {
     const response = await axios.get(
       `http://127.0.0.1:8000/api/sub-sections/getSubSection/` + id
@@ -25,7 +30,11 @@ export default function useSubCategory(id) {
 
   //Create Function
   const createSubCategory = async (data) => {
-    await axios.post("http://127.0.0.1:8000/api/sub-sections/add", data);
+    await axios.post(
+      "http://127.0.0.1:8000/api/sub-sections/add",
+      data,
+      config
+    );
   };
 
   //Delete Function
@@ -41,7 +50,6 @@ export default function useSubCategory(id) {
     );
 
     // await router.push({path:''})
-    
   };
 
   return {
