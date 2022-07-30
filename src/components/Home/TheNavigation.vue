@@ -3,7 +3,7 @@
     class="fixed w-full z-50 bg-gray-100 py-3 px-6 md:flex justify-between items-center"
   >
     <div class="flex items-center font-bold">
-      <span class="text-primary-700 text-3xl ml-10">
+      <span class="text-primary-700 text-xl md:text-3xl lg:text-4xl  ml-10">
         CSIT Elite Dev Resources
       </span>
     </div>

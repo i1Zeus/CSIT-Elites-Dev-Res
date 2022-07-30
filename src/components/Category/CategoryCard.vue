@@ -1,7 +1,7 @@
 <template>
   <div class="w-72 bg-white rounded-lg border border-secondary-300 shadow-md">
     <a href="#">
-      <img class="rounded-lg w-72 h-36" :src="image" alt="" />
+      <img class="rounded-lg w-full h-52" :src="image" alt="" />
     </a>
     <div class="p-2 text-center">
       <h3 class="font-semibold">{{ name }}</h3>
