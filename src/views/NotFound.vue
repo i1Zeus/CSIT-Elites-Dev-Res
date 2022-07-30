@@ -71,7 +71,9 @@
           <p>Try searching again or use the Go Back button below.</p>
         </div>
         <div class="mb-20 md:mb-0">
-          <GoBack class="font-light bg-amber-400 hover:text-amber-400 hover:border hover:border-amber-400" />
+          <router-link :to="{path:'/'}">
+            <GoBack class="font-light bg-yellow-400 hover:text-yellow-400 hover:border hover:border-yellow-400" />
+          </router-link>
         </div>
       </div>
       <div class="w-full md:w-1/2 text-center">

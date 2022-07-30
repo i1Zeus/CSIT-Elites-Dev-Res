@@ -7,6 +7,7 @@
           <u><a href="">See more></a></u>
         </router-link> -->
       </div>
+      <div class="text-green-500 font-semibold"></div>
     </div>
 
     <div class="bg-gray-100 rounded-lg grid md:grid-cols-2 md:mx-5">
@@ -14,9 +15,10 @@
         <router-link :to="{ name: 'ResShow', params: { id: latestReses.id } }">
           <div class="bg-white rounded-xl grid grid-cols-12 my-4 mx-3 md:mx-12 h-32">
             <div class="col-span-4">
+              <!-- u can change the p to p-2.5 😊! -->
               <img
-                class="h-32 w-full rounded-2xl object-cover p-2"
-                src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg"
+              class="w-full h-32 rounded-2xl overflow-hidden object-cover p-2." 
+                :src="latestReses.image"
                 alt=""
               />
             </div>
