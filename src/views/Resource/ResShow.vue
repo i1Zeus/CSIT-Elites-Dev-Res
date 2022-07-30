@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen flex items-center bg-gray-200 p-16">
-    <div class="bg-white p-4 rounded-lg">
+    <div class="bg-white p-4 rounded-lg shadow-md">
       <div class="grid grid-cols-12">
         <div class="col-span-6">
           <div class="flex flex-col">
@@ -8,7 +8,6 @@
               {{ latestR.name }}
             </p>
             <div class="mr-20">
-              <!-- <p class="text-primary-500 text-lg font-semibold ml-16">{{latestR.name}}</p> -->
               <p class="mt-4 ml-16 text-lg">{{ latestR.description }}</p>
               <p class="mt-5 text-right mr-4">{{ latestR.updated_time }}</p>
             </div>
@@ -21,15 +20,11 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-span-6 mt-12">
-        <img class="rounded-lg" src="" alt="">
-      </div> -->
-
         <div class="col-span-6 h-auto">
           <div>
             <img
-              class="relative rounded-lg mt-10 pr-5"
-              src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg"
+              class="relative rounded-lg ml-24 h-96"
+              :src="latestR.image"
             />
           </div>
         </div>
@@ -40,8 +35,8 @@
         </div>
         <div class="col-span-1 flex gap-10 mt-10 ml-10 md:ml-28">
           <div class="flex">
-            <editButton></editButton>
-            <deleteButton class="ml-5"></deleteButton>
+            <editButton />
+            <deleteButton class="ml-5" />
           </div>
         </div>
       </div>

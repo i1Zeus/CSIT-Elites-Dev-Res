@@ -1,8 +1,8 @@
 <template>
   <GoBack class="absolute ml-10" />
-  <div class="mt-10">
+  <div class="py-24 ">
     <h2 class="text-center font-bold text-4xl text-primary-600">
-      CHOSE YOUR PATH & LET'S START
+      CHOSE YOUR PATH & LET'S GET STARTED!
     </h2>
     <div class="mx-10 justify-between flex">
       <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
