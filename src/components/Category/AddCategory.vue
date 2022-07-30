@@ -40,50 +40,41 @@
               Add Category
             </h3>
 
-            <form @submit.prevent="send" class="space-y-6">
+            <form
+              @submit="sendCategory"
+              enctype="multipart/form-data"
+              class="space-y-6"
+            >
               <div>
-                <label for="name" class="leading-loose">Category Name</label>
+                <label class="leading-loose">Category Name</label>
                 <input
                   required
                   v-model="form.name"
                   type="text"
+                  name="title"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Category name"
                 />
               </div>
 
-              <div class="justify-center">
-                <DropZone
-                  @drop.prevent="drop"
-                  @change="selectedFile"
-                  v-model="form.file"
-                  class="bg-[#f1f1f1]"
-                />
-                <p class="mt-2">File: {{ dropzoneFile.name }}</p>
+              <div>
+                <input type="file" @change="onChange" />
               </div>
 
-              <div
-                v-if="!(name && dropzoneFile)"
-                class="bg-gray-400 focus:ring-2 focus:outline-none justify-center items-center text-center w-full text-white px-4 py-3 rounded-lg"
-              >
-                Create
+              <div class="flex">
+                <button
+                  @click="toogleModal = false"
+                  class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-emerald-600 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none mr-6"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
+                >
+                  Create
+                </button>
               </div>
-
-              <div
-                v-else
-                @click="send"
-                class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-center text-white px-4 py-3 rounded-lg cursor-pointer"
-              >
-                Create
-              </div>
-
-              <!-- <button
-                v-else
-                type="submit"
-                class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-center text-white px-4 py-3 rounded-lg cursor-pointer"
-              >
-                Create
-              </button> -->
             </form>
           </div>
         </div>
@@ -92,105 +83,35 @@
   </div>
 </template>
 
-<!-- <script>
-import AddButton from "../button/AddButton.vue";
-import DropZone from "../button/DropZone.vue";
-import { ref } from "vue";
-
-export default {
-  components: { AddButton, DropZone },
-  setup() {
-    const name = ref("");
-    // const file = ref("");
-    const dropzoneFile = ref("");
-
-    const drop = (e) => {
-      dropzoneFile.value = e.dataTransfer.files[0];
-    };
-
-    const selectedFile = () => {
-      dropzoneFile.value = document.querySelector(".dropzoneFile").files[0];
-    };
-
-    const toogleModal = ref(false);
-
-    const send = () => {
-      // const formData = new FormData();
-      // formData.append("file", this.file);
-      // formData.append("name", this.name);
-      // console.log(formData);
-
-      const data = {
-        name: name.value,
-        file: dropzoneFile.value,
-      };
-      console.log(data);
-
-      fetch("http://127.0.0.1:8000/api/categories/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-    };
-
-    return {
-      name: name,
-      toogleModal: toogleModal,
-      send,
-      dropzoneFile,
-      drop,
-      selectedFile,
-    };
-  },
-};
-</script> -->
-
 <script>
 import AddButton from "../button/AddButton.vue";
-import DropZone from "../button/DropZone.vue";
-import getCategory from "../../composables/Category/getCategory";
+import useCategories from "../../composables/Category/getCategory";
 import { ref, reactive } from "vue";
 
 export default {
-  components: { AddButton, DropZone },
+  components: { AddButton },
   setup() {
     const toogleModal = ref(false);
-    // if doesn't work, try to use "target:"
     const form = reactive({
       name: "",
-      file: "",
+      image: "",
     });
 
-    const { addCategory } = getCategory();
+    const { addCategory } = useCategories();
 
-    const save = async () => {
+    const onChange = (e) => {
+      form.value.image = e.target.files[0];
+    };
+
+    const sendCategory = async () => {
       await addCategory({ ...form });
-
-      // this from copilot
-
-      // const data = {
-      //   name: form.name,
-      //   file: form.file,
-      // };
-      // console.log(data);
-
-      // const response = await fetch("http://localhost:8000/api/categories/add", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(data),
-      // });
-      // const json = await response.json();
-      // console.log(json);
     };
 
     return {
       form,
-      save,
-      toogleModal: toogleModal,
+      sendCategory,
+      onChange,
+      toogleModal,
     };
   },
 };
