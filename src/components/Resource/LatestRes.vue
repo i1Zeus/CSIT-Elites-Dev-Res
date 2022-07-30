@@ -9,7 +9,7 @@
     <div class="bg-gray-100 rounded-2xl grid md:grid-cols-2 mx-5">
       <div v-for="latestReses in latestRes" :key="latestReses.id">
         <router-link :to="{ name: 'ResShow', params: { id: latestReses.id } }">
-          <div class="bg-white rounded-xl grid grid-cols-12 m-4 h-32">
+          <div class="bg-white rounded-xl grid grid-cols-12 m-4 h-32 shadow-md">
             <div class="col-span-4">
               <!-- u can change the p to p-2.5 😊! -->
               <img
