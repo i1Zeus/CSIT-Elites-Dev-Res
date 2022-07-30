@@ -9,10 +9,6 @@
       <div class="grid grid-cols-2">
         <p class="text-gray-400 grid-col-1">{{ subsections_count }} Sub.</p>
         <p class="text-gray-400 grid-col-1">{{ resources_count }} Res.</p>
-
-        <!-- <a href="#" class="grid-col-1">
-                    <i class="fa-solid fa-angle-right"></i>
-                </a> -->
       </div>
     </div>
   </div>

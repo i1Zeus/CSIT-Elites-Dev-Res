@@ -72,7 +72,7 @@ export default {
       if (!window.confirm("Are you sure?")) return;
 
       await dsetroySubCategory(ids);
-      await fetchSubCategory();
+      fetchSubCategory();
     };
 
     onMounted(fetchSubCategory);
