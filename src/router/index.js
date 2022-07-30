@@ -80,9 +80,10 @@ const router = createRouter({
       component: () => import("@/views/NotFound.vue"),
     },
     {
-      path: "/:pathMatch(.*)*",
-      name: "NotFound",
-      component: NotFound,
+      path: "/resource/:id/edit",
+      name: "EditResource",
+      component: () => import("@/views/Resource/EditResource.vue"),
+      props: true,
     },
   ],
 });
