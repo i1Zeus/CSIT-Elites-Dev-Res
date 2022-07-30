@@ -5,15 +5,15 @@
         <div class="md:col-span-6">
           <div class="flex flex-col">
             <p class="font-semibold text-2xl md:text-4xl ml-8 md:ml-16 mt-10 text-primary-500">
-              {{ resources.name }}
+              {{ latestR.name }}
             </p>
             <div class="md:mr-20">
-              <p class="mt-4 ml-8 md:ml-16 text-xl">{{ resources.description }}</p>
-              <p class="mt-5 text-right mr-4 text-lg ml-10">{{ resources.updated_time }}</p>
+              <p class="mt-4 ml-8 md:ml-16 text-xl">{{ latestR.description }}</p>
+              <p class="mt-5 text-right mr-4 text-lg ml-10">{{ latestR.updated_time }}</p>
             </div>
             <div class="flex flex-col">
               <ul
-                v-for="link in resources.links"
+                v-for="link in latestR.links"
                 :key="link.id"
                 class="list-disc mt-5 ml-12 md:ml-20 text-xl"
               >
