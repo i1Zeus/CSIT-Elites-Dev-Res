@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import TheNavigation from "./components/Home/TheNavigation.vue";
 import LogOut from "./components/button/LogOut.vue";
 
-
 /* =======> Here We Add FontAwsome Icons <======= */
 import { faBookOpenReader } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";

@@ -53,6 +53,7 @@ import addSubCategoryButton from "../../components/Category/addSubCategoryButton
 import editButton from "@/components/button/editButton.vue";
 import deleteButton from "@/components/button/deleteButton.vue";
 import { onMounted } from "vue";
+import swal from "sweetalert";
 
 export default {
   components: {
@@ -69,10 +70,23 @@ export default {
 
     //Delete subcategory
     const deleteSub = async (ids) => {
-      if (!window.confirm("Are you sure?")) return;
-
-      await dsetroySubCategory(ids);
-      fetchSubCategory();
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this SubCategory!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your SubCategory has been deleted!", {
+            icon: "success",
+          });
+          dsetroySubCategory(ids);
+          fetchSubCategory();
+        } else {
+          swal("Your SubCategory is safe!");
+        }
+      });
     };
 
     onMounted(fetchSubCategory);

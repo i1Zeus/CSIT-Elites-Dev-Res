@@ -42,6 +42,7 @@ import CategoryCard from "../Category/CategoryCard.vue";
 import useCategories from "../../composables/Category/getCategory";
 import AddCategory from "../Category/AddCategory.vue";
 import { onMounted } from "vue";
+import swal from "sweetalert";
 
 export default {
   components: { CategoryCard, AddCategory, editButton, deleteButton },
@@ -49,12 +50,26 @@ export default {
   setup() {
     const { categories, getCategory, destroyCategory } = useCategories();
 
-    
     const deleteCategory = async (id) => {
-      if (!window.confirm("Are you sure?")) return;
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this Category!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your Category has been deleted!", {
+            icon: "success",
+          });
 
-      await destroyCategory(id);
-      await getCategory();
+          destroyCategory(id);
+          getCategory();
+          
+        } else {
+          swal("Your Category is safe!");
+        }
+      });
     };
 
     onMounted(getCategory);
