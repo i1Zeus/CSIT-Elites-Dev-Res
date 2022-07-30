@@ -19,7 +19,7 @@
           v-if="!loggedIn"
           class="text-white hover:text-primary-700 border border-primary-700 hover:bg-white bg-primary-700 focus:ring-1 focus:outline-none focus:ring-primary-700 rounded-lg text-md font-semibold px-7 py-2 text-center"
         >
-          <p>login</p>
+          <p>Login</p>
         </button>
         <LogOut v-else />
       </router-link>
