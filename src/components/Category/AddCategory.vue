@@ -40,12 +40,12 @@
               Add Category
             </h3>
 
-            <form class="space-y-6">
+            <form @submit.prevent="send" class="space-y-6">
               <div>
-                <label class="leading-loose">Category Name</label>
+                <label for="name" class="leading-loose">Category Name</label>
                 <input
                   required
-                  v-model="name"
+                  v-model="form.name"
                   type="text"
                   class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                   placeholder="Category name"
@@ -56,7 +56,7 @@
                 <DropZone
                   @drop.prevent="drop"
                   @change="selectedFile"
-                  v-model="file"
+                  v-model="form.file"
                   class="bg-[#f1f1f1]"
                 />
                 <p class="mt-2">File: {{ dropzoneFile.name }}</p>
@@ -76,6 +76,14 @@
               >
                 Create
               </div>
+
+              <!-- <button
+                v-else
+                type="submit"
+                class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-center text-white px-4 py-3 rounded-lg cursor-pointer"
+              >
+                Create
+              </button> -->
             </form>
           </div>
         </div>
@@ -84,7 +92,7 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 import AddButton from "../button/AddButton.vue";
 import DropZone from "../button/DropZone.vue";
 import { ref } from "vue";
@@ -134,6 +142,55 @@ export default {
       dropzoneFile,
       drop,
       selectedFile,
+    };
+  },
+};
+</script> -->
+
+<script>
+import AddButton from "../button/AddButton.vue";
+import DropZone from "../button/DropZone.vue";
+import getCategory from "../../composables/Category/getCategory";
+import { ref, reactive } from "vue";
+
+export default {
+  components: { AddButton, DropZone },
+  setup() {
+    const toogleModal = ref(false);
+    // if doesn't work, try to use "target:"
+    const form = reactive({
+      name: "",
+      file: "",
+    });
+
+    const { addCategory } = getCategory();
+
+    const save = async () => {
+      await addCategory({ ...form });
+
+      // this from copilot
+
+      // const data = {
+      //   name: form.name,
+      //   file: form.file,
+      // };
+      // console.log(data);
+
+      // const response = await fetch("http://localhost:8000/api/categories/add", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(data),
+      // });
+      // const json = await response.json();
+      // console.log(json);
+    };
+
+    return {
+      form,
+      save,
+      toogleModal: toogleModal,
     };
   },
 };

@@ -112,7 +112,13 @@
               </div>
               <div class="flex flex-col">
                 <label class="leading-loose">Resource Description</label>
-                
+                <textarea
+                  required
+                  v-model="description"
+                  type="text"
+                  class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                  placeholder="Remember to add a description"
+                ></textarea>
               </div>
             </div>
             <div class="pt-4 flex items-center space-x-4">
@@ -153,7 +159,7 @@
               </div>
               <button
                 v-else
-                @click="add()"
+                v-on:click="add()"
                 type="button"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
               >

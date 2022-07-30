@@ -23,7 +23,7 @@
         >
           <SubCategoryCard
             :name="subcategory.name"
-            :image="subcategory.image_url"
+            :image="subcategory.image"
             :res="subcategory.resources_count"
           />
         </RouterLink>
@@ -72,7 +72,7 @@ export default {
       if (!window.confirm("Are you sure?")) return;
 
       await dsetroySubCategory(ids);
-      await fetchSubCategory();
+      fetchSubCategory();
     };
 
     onMounted(fetchSubCategory);
