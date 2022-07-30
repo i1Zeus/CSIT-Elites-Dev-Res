@@ -5,7 +5,7 @@
       <div class="grid-cols-1">
         <div class="ml-10">
           <h1
-            class="font-poppins font-semibold mt-56 mb-10 ml-16 text-6xl leading-tight"
+            class="font-poppins font-semibold mt-44 md:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
           >
             Investing In <br />
             Your Knowledge And
@@ -24,7 +24,7 @@
                 >
                   <font-awesome-icon
                     icon="fa-solid fa-pen"
-                    class="mt-5"
+                    class="mt-5 hidden"
                     size="xl"
                   />
                 </div>
@@ -32,7 +32,7 @@
                   v-model="search"
                   type="search"
                   id="default-search"
-                  class="block p-5 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                  class="block p-5 pl-10 md:w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
                   placeholder="Search Resources, Courses..."
                   required
                 />
@@ -71,8 +71,8 @@
           </div>
         </div>
       </div>
-      <div class="relative grid-cols-1 mx-16">
-        <div class="inset-y-70 right-10 mt-10">
+      <div class="relative grid-cols-1 mx-20">
+        <div class="inset-y-70 right-10 mt-16">
           <img src="../../assets/img/Searching.png" alt="HomeImage" />
         </div>
       </div>

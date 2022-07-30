@@ -8,7 +8,7 @@
       </span>
     </div>
 
-    <ul class="md:flex md:items-center">
+    <ul class="flex md:items-center">
       <li class="md:mx-4" v-for="link in links" :key="link.name">
         <a :href="link.link" class="text-xl hover:text-primary-600">
           {{ link.name }}
