@@ -5,7 +5,7 @@
       <div class="grid-cols-1">
         <div class="ml-10">
           <h1
-            class="font-poppins font-semibold mt-44 md:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
+            class="font-poppins font-semibold mt-36 md:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
           >
             Investing In <br />
             Your Knowledge And
