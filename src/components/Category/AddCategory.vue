@@ -86,13 +86,13 @@
 <script>
 import AddButton from "../button/AddButton.vue";
 import useCategories from "../../composables/Category/getCategory";
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 
 export default {
   components: { AddButton },
   setup() {
     const toogleModal = ref(false);
-    const form = reactive({
+    const form = ref({
       name: "",
       image: "",
     });
@@ -104,7 +104,7 @@ export default {
     };
 
     const sendCategory = async () => {
-      await addCategory({ ...form });
+      await addCategory({ ...form.value });
     };
 
     return {
