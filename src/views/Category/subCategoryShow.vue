@@ -1,6 +1,6 @@
 <template>
   <GoBack class="absolute ml-10" />
-  <div class="py-24">
+  <div class="py-24 ">
     <h2 class="text-center font-bold text-4xl text-primary-600">
       CHOSE YOUR PATH & LET'S GET STARTED!
     </h2>
