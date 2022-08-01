@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheNavigation />
+    <TheNavigation/>
     <div class="grid grid-cols-2">
       <div class="grid-cols-1">
         <div>
