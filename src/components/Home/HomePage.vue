@@ -4,21 +4,21 @@
     <div class="grid grid-cols-2">
       <div class="grid-cols-1">
         <div>
-        <div class="ml-10">
-          <h1
-            class=" font-poppins font-semibold mt-36 md:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
-          >
-            Investing In <br />
-            Your Knowledge And
-            <h1 class="text-primary-500 font-semibold">YOUR FUTURE</h1>
-          </h1>
-        </div>
-          
-          <div class="flex flex-col w-3/3 gap-10 mx-16">
+          <div class="">
+            <h1
+              class="font-poppins font-semibold mt-28 md:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
+            >
+              Investing In <br />
+              Your Knowledge And
+              <h1 class="text-primary-500 font-semibold">YOUR FUTURE</h1>
+            </h1>
+          </div>
+
+          <div class="flex flex-col w-3/3 gap-10 ml-10 md:ml-28">
             <form>
               <label
                 for="search"
-                class="mb-2 text-sm font-medium text-gray-900 sr-only"
+                class=" mb-2 text-sm font-medium text-gray-900 sr-only"
                 >Search</label
               >
               <div class="relative">
@@ -76,7 +76,11 @@
       </div>
       <div class="relative grid-cols-1 mx-20">
         <div class="inset-y-70 right-10 mt-16">
-          <img src="../../assets/img/Searching.png" class="invisible md:visible" alt="HomeImage" />
+          <img
+            src="../../assets/img/Searching.png"
+            class="invisible md:visible"
+            alt="HomeImage"
+          />
         </div>
       </div>
     </div>
