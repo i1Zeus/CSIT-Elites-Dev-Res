@@ -27,7 +27,7 @@
         <div class="col-span-6 h-auto">
           <div>
             <img
-              class="relative rounded-lg md:ml-36 md:h-96 h-48 ml-16 md:mt-10 mt-14 "
+              class="relative rounded-lg md:ml-36 md:h-96 h-48 ml-20 md:mt-10 mt-14 "
               :src="resources.image"
             />
           </div>

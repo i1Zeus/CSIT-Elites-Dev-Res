@@ -1,5 +1,4 @@
 <template>
-
   <div
     class="fixed w-full z-50 bg-gray-100 md:py-3 px-6 md:flex justify-between items-center"
   >
@@ -9,7 +8,7 @@
       </span>
     </div>
 
-    <ul class="flex justify-between gap-2 font-semibold md:items-center">
+    <ul class="flex justify-between md:items-center">
       <li class="md:mx-4" v-for="link in links" :key="link.name">
         <a :href="link.link" class="text-xl hover:text-primary-600">
           {{ link.name }}
@@ -57,6 +56,7 @@ export default {
       { name: "Resources", link: "/sub-section/:id" },
       // { name: "Add Resource", link: "/add-rec" },
     ];
+
     return {
       links,
     };
