@@ -12,7 +12,7 @@
     </div>
 
     <div
-      class="grid grid-cols-4 mt-2 mx-10 place-items-center rounded-md bg-gray-200 py-5"
+      class="relative grid grid-cols-4 mt-2 mx-10 place-items-center rounded-md bg-gray-200 py-5"
     >
       <div v-for="subcategory in subcategories.data" :key="subcategory.id">
         <RouterLink
@@ -29,7 +29,7 @@
         </RouterLink>
 
         <!-- Buttons -->
-        <div class="flex gap-2 rounded-xl top-0 right-0">
+        <div class="flex gap-2 rounded-xl absolute top-6 ml-52">
           <router-link
             :to="{
               name: 'SubEdit',

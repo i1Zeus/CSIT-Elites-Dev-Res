@@ -12,7 +12,6 @@
       role="dialog"
     >
       <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-        <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow">
           <button
             @click="toogleModal = false"

@@ -15,6 +15,6 @@
 </template>
 <script>
 export default {
-  props: ["name", "subsections_count", "resources_count", "image"],
+  props: ["name", "subsections_count", "resources_count", "image", "id"],
 };
 </script>
