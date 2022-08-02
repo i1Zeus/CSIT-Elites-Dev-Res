@@ -6,7 +6,7 @@
       <span
         class="text-primary-700 text-2xl md:text-3xl lg:text-4xl mt-3 md:mt-0 ml-9 md:ml-10"
       >
-        CSIT Elite Dev Resources
+        Dev Resources
       </span>
     </div>
     <div class="flex">
@@ -40,7 +40,7 @@
       </div>
 
       <div class="flex">
-        <ul class="flex flex-wrap gap-2 font-semibold md:items-center invisible md:visible">
+        <ul class="md:flex flex-wrap gap-2 font-semibold md:items-center hidden">
           <li
             class="md:mx-4"
             v-for="link in links"
