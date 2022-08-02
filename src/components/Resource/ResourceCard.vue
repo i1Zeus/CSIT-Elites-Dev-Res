@@ -3,10 +3,7 @@
 
   <!-- <div class="bg-gray-50 rounded-lg border border-gray-200 shadow-md m-10 p-3">
     <div>
-      <img
-        :src="image"
-        class="w-full object-cover object-center rounded-lg shadow-md"
-      />
+      <img class="rounded-t-lg bg-cover" src="https://www.aspfaqs.com/wp-content/uploads/2021/10/pankaj-patel-_SgRNwAVNKw-unsplash-1.jpg" alt="" />
     </div>
 
     <div class="p-3">
@@ -34,7 +31,7 @@
         class="w-full object-cover object-center rounded-lg shadow-md"
       />
       <div class="relative px-4 -mt-16">
-        <div class="bg-gray-100 p-5 rounded-lg shadow-lg">
+        <div class="bg-white p-5 rounded-lg shadow-lg">
           <div class="mt-1">
             <div class="text-lg font-semibold text-primary-500">
               <!-- {{ title }} -->

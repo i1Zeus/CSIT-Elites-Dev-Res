@@ -4,12 +4,12 @@
       <div class="lg::grid grid-cols-12 mt-28 md:mt-0">
         <div class="md:col-span-6">
           <div class="flex flex-col">
-            <p class="font-semibold text-2xl md:text-4xl ml-8 md:ml-16 mt-10 text-primary-500">
-              {{ resources.name }}
+            <p class="font-semibold text-4xl ml-16 mt-10 text-primary-500">
+              {{ latestR.name }}
             </p>
-            <div class="md:mr-20">
-              <p class="mt-4 ml-8 md:ml-16 text-xl">{{ resources.description }}</p>
-              <p class="mt-5 text-right mr-4 text-lg ml-10">{{ resources.updated_time }}</p>
+            <div class="mr-20">
+              <p class="mt-4 ml-16 text-lg">{{ latestR.description }}</p>
+              <p class="mt-5 text-right mr-4">{{ latestR.updated_time }}</p>
             </div>
             <div class="flex flex-col">
               <ul
@@ -26,10 +26,7 @@
         </div>
         <div class="col-span-6 h-auto">
           <div>
-            <img
-              class="relative rounded-lg md:ml-36 md:h-96 h-48 ml-16 md:mt-10 mt-14 "
-              :src="resources.image"
-            />
+            <img class="relative rounded-lg ml-24 h-96" :src="latestR.image" />
           </div>
         </div>
       </div>
@@ -38,12 +35,9 @@
           <GoBack class="mt-9 md:ml-40 lg:ml-16" />
         </div>
         <div class="col-span-1 flex gap-10 mb-10 mt-10 ml-10 md:ml-20 lg:ml-28">
-          <div class="flex ">
+          <div class="flex">
             <editButton />
-            <deleteButton
-              @click="deleteRes(resources.id)"
-              class="ml-5"
-            ></deleteButton>
+            <deleteButton class="ml-5" />
           </div>
         </div>
       </div>
@@ -52,7 +46,6 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
 import getLatestR from "../../composables/Resource/getLatestR";
 import GoBack from "../../components/button/GoBack.vue";
 import deleteButton from "../../components/button/deleteButton.vue";
@@ -65,16 +58,10 @@ export default {
   },
   props: ["id"],
   setup(props) {
+    const { latestR, error, load } = getLatestR(props.id);
 
-    const deleteRes = async (ids) => {
-      if (!window.confirm("are you sure you wanna delete it ?")) return;
-      await destroyResource(ids);
-      await fetchResource();
-    };
-    const { resources, fetchResource, destroyResource } = getLatestR(props.id);
-
-    onMounted(fetchResource);
-    return { resources, fetchResource, deleteRes };
+    load();
+    return { latestR, error };
   },
 };
 </script>

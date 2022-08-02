@@ -16,9 +16,9 @@
             <div
               class="block pl-2 font-semibold text-xl self-start text-gray-700"
             >
-              <h2 class="leading-relaxed">Add a Resource</h2>
+              <h2 class="leading-relaxed">Edit a Resource</h2>
               <p class="text-sm text-gray-500 font-normal leading-relaxed">
-                this page were made specifically to add a Resource 💕.
+                this page were made specifically to Edit a Resource 💕.
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@
                 type="button"
                 class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
               >
-                Create
+                Edit
               </button>
             </div>
           </div>
@@ -88,7 +88,7 @@
   </div>
 </template>
 <script>
-import { onMounted } from "@vue/runtime-core";
+import { onMounted } from "vue";
 import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
   props: ["id"],
@@ -97,10 +97,10 @@ export default {
       props.id
     );
 
-    onMounted(grapsubcategory(props.id));
+    onMounted(grapsubcategory());
 
     const saveSub = async () => {
-      await updateSubCategory(props.id);
+      await updateSubCategory();
     };
 
     return {
