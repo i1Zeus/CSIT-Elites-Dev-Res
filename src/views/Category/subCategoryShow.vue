@@ -1,18 +1,18 @@
 <template>
   <GoBack class="absolute ml-10" />
-  <div class="py-24 ">
-    <h2 class="text-center font-bold text-2xl md:text-4xl text-primary-600">
+  <div class="py-24">
+    <h2 class="text-center font-bold text-4xl text-primary-600">
       CHOSE YOUR PATH & LET'S GET STARTED!
     </h2>
-    <div class="md:mx-10 justify-between flex">
-      <h1 class="md:text-left ml-6 md:ml-0 font-semibold mt-11 md:mt-5 text-lg md:text-2xl">Sub Category</h1>
-      <div class="flex justify-end mt-10 md:mt-5 mr-5">
+    <div class="mx-10 justify-between flex">
+      <h1 class="text-left font-semibold mt-5 text-2xl">Sub Category</h1>
+      <div class="flex justify-end mt-5 mr-10">
         <addSubCategoryButton />
       </div>
     </div>
 
     <div
-      class="grid md:grid-cols-4 mt-2 mx-3 md:mx-10 place-items-center rounded-md bg-gray-200 py-5"
+      class="relative grid grid-cols-4 mt-2 mx-10 place-items-center rounded-md bg-gray-200 py-5"
     >
       <div v-for="subcategory in subcategories.data" :key="subcategory.id">
         <RouterLink
@@ -29,7 +29,7 @@
         </RouterLink>
 
         <!-- Buttons -->
-        <div class="flex gap-2 rounded-xl top-0 right-0">
+        <div class="flex gap-2 rounded-xl absolute top-6 ml-52">
           <router-link
             :to="{
               name: 'SubEdit',

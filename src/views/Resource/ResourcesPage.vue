@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-gray-300 lg:p-20 md:p-10 p-5 h-screen">
+  <div class="bg-gray-300 lg:p-20 md:p-10 p-5">
     <div class="bg-white rounded-lg">
       <p class="text-primary-500 text-4xl font-semibold text-center p-10">
         <u>Front-End Resources</u>
       </p>
 
-      <div class="md:grid md:grid-cols-2 lg:grid-cols-4">
+      <div class="md:grid md:grid-cols-2 lg:grid-cols-3">
         <!-- card -->
 
         <div v-for="resources in resource" :key="resources.id">

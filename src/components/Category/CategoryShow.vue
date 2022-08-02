@@ -1,18 +1,13 @@
 <template>
   <div>
-    <div class="flex justify-between md:mx-4">
-    <div>
-      <h1 class="text-left text-primary-700 text-base md:text-2xl font-semibold mx-5 mt-5">
+    <div class="flex justify-between">
+      <h1 class="text-left text-primary-700 text-2xl font-semibold mx-5 mt-5">
         Category
       </h1>
+      <AddCategory />
     </div>
-    <div class="mt-4 md:mt-3">
-      <AddCategory/>
-    </div>
-      
-      
-    </div>
-    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-gray-100 rounded-lg mt-2 md:mx-3 justify-center justify-items-center py-5 relative"
+    <div
+      class="relative grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-gray-100 rounded-lg mt-2 mx-3 justify-center justify-items-center py-5"
     >
       <div v-for="category in categories.data" :key="category.id">
         <router-link
@@ -31,7 +26,15 @@
         </router-link>
 
         <div class="flex gap-2 rounded-xl absolute top-6 ml-52">
-          <editButton />
+          <router-link
+            :to="{
+              name: 'categoryedit',
+              params: { id: category.id },
+            }"
+          >
+            <editButton />
+          </router-link>
+          <!-- <editButton /> -->
           <deleteButton @click="deleteCategory(category.id)" />
         </div>
       </div>
@@ -40,8 +43,8 @@
 </template>
 
 <script>
-import editButton from "@/components/button/editButton.vue";
-import deleteButton from "@/components/button/deleteButton.vue";
+import editButton from "../button/editButton.vue";
+import deleteButton from "../button/deleteButton.vue";
 
 import CategoryCard from "../Category/CategoryCard.vue";
 import useCategories from "../../composables/Category/getCategory";
@@ -51,9 +54,11 @@ import swal from "sweetalert";
 
 export default {
   components: { CategoryCard, AddCategory, editButton, deleteButton },
-
-  setup() {
-    const { categories, getCategory, destroyCategory } = useCategories();
+  props: ["id"],
+  setup(props) {
+    const { categories, getCategory, destroyCategory } = useCategories(
+      props.id
+    );
 
     const deleteCategory = async (id) => {
       swal({
@@ -70,7 +75,6 @@ export default {
 
           destroyCategory(id);
           getCategory();
-          
         } else {
           swal("Your Category is safe!");
         }
