@@ -1,13 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/Home/HomeView.vue";
 import HomePage from "../components/Home/HomePage.vue";
-// import CategoryShow from "../views/Category/CategoryShow.vue";
 import SubCategoryShow from "../views/Category/subCategoryShow.vue";
 import ResShow from "../views/Resource/ResShow.vue";
 import ResourcesPage from "../views/Resource/ResourcesPage.vue";
-import NotFound from "../views/NotFound.vue";
 import subCategoryEdit from "../views/Category/subCategoryEdit.vue";
-import CategoryEdit from "../views/Category/EditCategory.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,12 +23,6 @@ const router = createRouter({
       path: "/category/:id",
       name: "categories",
       component: SubCategoryShow,
-      props: true,
-    },
-    {
-      path: "/category/:id/edit",
-      name: "categoryedit",
-      component: CategoryEdit,
       props: true,
     },
     {
@@ -65,21 +56,13 @@ const router = createRouter({
         requiresAuth: true,
       },
     },
-    // {
-    //   path: "add-category",
-    //   name: "addcategory",
-    //   component: () => import("../components/Category/AddCategory.vue"),
-    //   meta: {
-    //     requiresAuth: true,
-    //   },
-    // },
     {
       path: "/login",
       name: "login",
       component: () => import("@/views/Home/LoginView.vue"),
       meta: {
         requiresGuest: true,
-      }
+      },
     },
     {
       path: "/:pathMatch(.*)*",
@@ -87,9 +70,16 @@ const router = createRouter({
       component: () => import("@/views/NotFound.vue"),
     },
     {
-      path: "/:pathMatch(.*)*",
-      name: "NotFound",
-      component: NotFound,
+      path: "/resource/:id/edit",
+      name: "EditResource",
+      component: () => import("@/views/Resource/EditResource.vue"),
+      props: true,
+    },
+    {
+      path: "/category/:id/edit",
+      name: "categoryedit",
+      component: () => import("@/views/Category/EditCategory.vue"),
+      props: true,
     },
   ],
 });
