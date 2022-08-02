@@ -21,7 +21,7 @@
         >
           <p>Login</p>
         </button>
-        <LogOut v-else />
+        <LogOut class="md:mt-3" v-else />
       </router-link>
     </ul>
   </div>
