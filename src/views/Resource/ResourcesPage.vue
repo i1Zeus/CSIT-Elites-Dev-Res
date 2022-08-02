@@ -7,7 +7,7 @@
         <u>Front-End Resources</u>
       </p>
 
-      <div class="md:grid md:grid-cols-2 lg:grid-cols-3">
+      <div class="md:grid md:grid-cols-2 lg:grid-cols-4">
         <!-- card -->
 
         <div v-for="resources in resource" :key="resources.id">

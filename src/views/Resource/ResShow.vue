@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 import getLatestR from "../../composables/Resource/getLatestR";
 import GoBack from "../../components/button/GoBack.vue";
 import deleteButton from "../../components/button/deleteButton.vue";
