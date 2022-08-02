@@ -27,7 +27,7 @@
           />
         </router-link>
 
-        <div class="flex gap-2 rounded-xl absolute top-6 ml-52">
+        <div class="flex gap-2 rounded-xl  ml-52">
           <router-link
             :to="{
               name: 'categoryedit',

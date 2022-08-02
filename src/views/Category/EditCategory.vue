@@ -65,6 +65,7 @@ export default {
   props: ["id"],
   setup(props) {
     const { category, getCategoryEdit, updateCategory } = getCategory(props.id);
+    
     onMounted(getCategoryEdit());
 
     const sendData = async () => {
