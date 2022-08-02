@@ -97,10 +97,10 @@ export default {
       props.id
     );
 
-    onMounted(grapsubcategory(props.id));
+    onMounted(grapsubcategory());
 
     const saveSub = async () => {
-      await updateSubCategory(props.id);
+      await updateSubCategory();
     };
 
     return {

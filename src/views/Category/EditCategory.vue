@@ -42,8 +42,8 @@
                     Cancel
                   </button>
                   <button
-                    @click="send()"
-                    type="submit"
+                    @click="sendData()"
+                    type="button"
                     class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
                   >
                     Edit
@@ -67,13 +67,13 @@ export default {
     const { category, getCategoryEdit, updateCategory } = getCategory(props.id);
     onMounted(getCategoryEdit());
 
-    const send = async () => {
+    const sendData = async () => {
       await updateCategory();
     };
 
     return {
       category,
-      send,
+      sendData,
     };
   },
 };

@@ -36,7 +36,7 @@ export default function useCategory(id) {
   const updateCategory = async () => {
     await axios.post(
       "http://127.0.0.1:8000/api/categories/edit/" + id,
-      category.value
+      category.value 
     );
     // router.push({ name: "categories.index" });
   };
