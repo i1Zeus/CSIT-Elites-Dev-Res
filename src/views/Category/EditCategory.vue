@@ -18,6 +18,7 @@
               <form class="space-y-6">
                 <div>
                   <label class="leading-loose">Category Name</label>
+                  <p>{{ category.name }}</p>
                   <input
                     required
                     v-model="category.name"
@@ -64,10 +65,10 @@ export default {
   props: ["id"],
   setup(props) {
     const { category, getCategoryEdit, updateCategory } = getCategory(props.id);
-    onMounted(getCategoryEdit(props.id));
+    onMounted(getCategoryEdit());
 
     const send = async () => {
-      await updateCategory(props.id);
+      await updateCategory();
     };
 
     return {
