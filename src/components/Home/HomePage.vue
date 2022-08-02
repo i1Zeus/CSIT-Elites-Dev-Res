@@ -6,7 +6,7 @@
         <div>
           <div class="">
             <h1
-              class="font-poppins font-semibold mt-28 md:mt-36 lg:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
+              class="font-poppins font-semibold mt-28 md:mt-36 lg:mt-56 mb-10 ml-16 md:ml-28 text-4xl md:text-6xl leading-tight"
             >
               Investing In <br />
               Your Knowledge And
@@ -27,7 +27,7 @@
                 >
                   <font-awesome-icon
                     icon="fa-solid fa-pen"
-                    class="mt-5 invisible md:visible"
+                    class="mt-5 hidden md:block"
                     size="xl"
                   />
                 </div>
@@ -78,7 +78,7 @@
         <div class="lg:inset-y-70 right-10 lg:mt-16">
           <img
             src="../../assets/img/Searching.png"
-            class="invisible lg:visible"
+            class=""
             alt="HomeImage"
           />
         </div>

@@ -2,7 +2,7 @@
   <div class="h-screen lg:flex items-center bg-gray-200 p-6 md:p-16">
     <div class="bg-white md:p-4 rounded-lg md:mt-16">
       <div class="lg:grid grid-cols-12 mt-28 md:mt-0">
-        <div class="md:col-span-6">
+        <div class="md:col-span-8">
           <div class="flex flex-col">
             <p class="font-semibold text-2xl md:text-4xl ml-8 md:ml-16 mt-10 text-primary-500">
               {{ resources.name }}
@@ -24,10 +24,10 @@
             </div>
           </div>
         </div>
-        <div class="col-span-6 h-auto">
+        <div class="col-span-4 h-auto">
           <div>
             <img
-              class="relative rounded-lg md:ml-24  md:h-96 h-48 ml-16 md:mt-10 mt-14 "
+              class="relative rounded-lg ml-16 md:ml-40 lg:ml-0  md:h-96 h-48  md:mt-16 mt-14 "
               :src="resources.image"
             />
           </div>
