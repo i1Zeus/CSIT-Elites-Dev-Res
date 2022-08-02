@@ -27,7 +27,7 @@
         <div class="col-span-6 h-auto">
           <div>
             <img
-              class="relative rounded-lg md:ml-36 md:h-96 h-48 ml-16 md:mt-10 mt-14 "
+              class="relative rounded-lg md:ml-24 md:h-96 h-48 ml-16 md:mt-10 mt-14 "
               :src="resources.image"
             />
           </div>
@@ -35,7 +35,7 @@
       </div>
       <div class="grid grid-cols-2 justify-between mb-10 md:mb-0">
         <div class="col-span-1">
-          <GoBack class="mt-9 md:ml-40 lg:ml-16" />
+          <GoBack class="mt-9 md:ml-40 ml-10 lg:ml-16" />
         </div>
         <div class="col-span-1 flex gap-10 mb-10 mt-10 ml-10 md:ml-20 lg:ml-28">
           <div class="flex ">
