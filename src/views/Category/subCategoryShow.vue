@@ -1,7 +1,7 @@
 <template>
-  <GoBack class="absolute ml-10" />
+  <GoBack class="lg:absolute ml-10" />
   <div class="py-24 ">
-    <h2 class="text-center font-bold text-2xl md:text-4xl text-primary-600">
+    <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-4xl md:mb-10 lg:mb-0 text-primary-600">
       CHOSE YOUR PATH & LET'S GET STARTED!
     </h2>
     <div class="md:mx-10 justify-between flex">
@@ -12,7 +12,7 @@
     </div>
 
     <div
-      class="grid md:grid-cols-4 mt-2 mx-3 md:mx-10 place-items-center rounded-md bg-gray-200 py-5"
+      class="grid md:grid-cols-2 lg:grid-cols-4 mt-2 mx-3 md:mx-10 place-items-center rounded-md bg-gray-200 py-5"
     >
       <div v-for="subcategory in subcategories.data" :key="subcategory.id">
         <RouterLink

@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-300 lg:p-20 md:p-10 p-5 h-screen">
-    <div class="bg-white rounded-lg">
-      <p class="text-primary-500 text-4xl font-semibold text-center p-10">
+    <div class="bg-white rounded-lg mt-10">
+      <p class="text-primary-500 md:mt-20 lg:mt-0 text-4xl font-semibold text-center p-10">
         <u>Front-End Resources</u>
       </p>
 

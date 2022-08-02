@@ -1,12 +1,12 @@
 <template>
   <div>
     <TheNavigation/>
-    <div class="grid grid-cols-2">
-      <div class="grid-cols-1">
+    <div class="grid lg:grid-cols-2">
+      <div class="lg:grid-cols-1">
         <div>
           <div class="">
             <h1
-              class="font-poppins font-semibold mt-28 md:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
+              class="font-poppins font-semibold mt-28 md:mt-36 lg:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
             >
               Investing In <br />
               Your Knowledge And
@@ -14,7 +14,7 @@
             </h1>
           </div>
 
-          <div class="flex flex-col w-3/3 gap-10 ml-10 md:ml-28">
+          <div class="flex flex-col md:w-2/3 lg:w-3/3 gap-10 ml-16 md:ml-32 lg:ml-28">
             <form>
               <label
                 for="search"
@@ -74,11 +74,11 @@
           </div>
         </div>
       </div>
-      <div class="relative grid-cols-1 mx-20">
-        <div class="inset-y-70 right-10 mt-16">
+      <div class="relative lg:grid-cols-1 mx-20">
+        <div class="lg:inset-y-70 right-10 lg:mt-16">
           <img
             src="../../assets/img/Searching.png"
-            class="invisible md:visible"
+            class="invisible lg:visible"
             alt="HomeImage"
           />
         </div>
