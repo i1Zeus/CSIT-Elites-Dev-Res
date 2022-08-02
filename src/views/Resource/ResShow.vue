@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen lg:flex items-center bg-gray-200 p-6 md:p-16">
     <div class="bg-white md:p-4 rounded-lg md:mt-16">
-      <div class="lg::grid grid-cols-12 mt-28 md:mt-0">
+      <div class="lg:grid grid-cols-12 mt-28 md:mt-0">
         <div class="md:col-span-6">
           <div class="flex flex-col">
             <p class="font-semibold text-2xl md:text-4xl ml-8 md:ml-16 mt-10 text-primary-500">
