@@ -41,6 +41,7 @@ export default function useCategory(id) {
     // router.push({ name: "categories.index" });
   };
 
+  
   return {
     category,
     categories,
