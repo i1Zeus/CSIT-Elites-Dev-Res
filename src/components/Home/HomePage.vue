@@ -95,11 +95,8 @@ import getTags from "../../composables/Home/getTags";
 import getRecCou from "../../composables/Home/getRecCount";
 import getCerRec from "../../composables/Home/getCerRec";
 import getAllRes from "../../composables/Home/getAllRes";
-import TheNavigation from "../../components/Home/TheNavigation.vue";
+
 export default {
-  component: {
-    TheNavigation,
-  },
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200">
+  <div>
     <div>
       <div
         id="addcategory-modal"

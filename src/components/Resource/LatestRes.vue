@@ -6,14 +6,14 @@
       </div>
       <div class="text-green-500 font-semibold"></div>
     </div>
-    <div class="bg-gray-100 rounded-2xl grid md:grid-cols-2 mx-5">
+    <div class="bg-gray-100 rounded-lg grid md:grid-cols-2 mx-5">
       <div v-for="latestReses in latestRes" :key="latestReses.id">
         <router-link :to="{ name: 'ResShow', params: { id: latestReses.id } }">
-          <div class="bg-white rounded-xl grid grid-cols-12 m-4 h-32 shadow-md">
+          <div class="bg-white rounded-lg grid grid-cols-12 m-4 h-32 shadow-md">
             <div class="col-span-4">
               <!-- u can change the p to p-2.5 😊! -->
               <img
-                class="w-full h-32 rounded-2xl overflow-hidden object-cover p-2." 
+                class="w-full h-32 rounded-lg overflow-hidden object-cover p-2." 
                 :src="latestReses.image"
                 alt=""
               />
