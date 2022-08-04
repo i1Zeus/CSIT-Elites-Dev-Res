@@ -15,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "autoprefixer": "^10",
     "axios": "^0.27.2",
+    "cors": "^2.8.5",
     "json-server": "^0.17.0",
     "postcss": "^8",
     "sweetalert": "^2.1.2",

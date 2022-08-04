@@ -29,7 +29,7 @@ const router = createRouter({
       props: true,
     },
     {
-      path: "/category/:id/edit",
+      path: "/categoryedit/:id",
       name: "categoryedit",
       component: CategoryEdit,
       props: true,
