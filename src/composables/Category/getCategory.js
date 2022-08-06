@@ -11,6 +11,8 @@ export default function useCategory(id) {
       "content-type": "multipart/form-data",
     },
   };
+  // const imageFile = ref("");
+  // const imageUrl = ref("");
 
   const getCategory = async () => {
     const response = await axios.get("http://127.0.0.1:8000/api/categories/");
@@ -41,6 +43,31 @@ export default function useCategory(id) {
     // router.push({ name: "categories.index" });
   };
 
+  // function handleImageSelected(event) {
+  //   if(event.target.files === 0) {
+  //     imageFile.value = "";
+  //     imageUrl.value = "";
+  //     return
+  //   }
+
+  //   imageFile.value = event.target.files[0];
+  // }
+
+  // watch(imageFile, (imageFile) => {
+  //   if(imageFile === "") {
+  //     imageUrl.value = "";
+  //     return
+  //   }
+
+  //   const fileReader = new FileReader();
+  //   fileReader.readAsDataURL(imageFile);
+
+  //   fileReader.addEventListener("load", () => {
+  //     imageUrl.value = fileReader.result;
+  //   })
+  // })
+
+
   return {
     category,
     categories,
@@ -49,5 +76,7 @@ export default function useCategory(id) {
     addCategory,
     updateCategory,
     getCategoryEdit,
+    // handleImageSelected,
+    // imageUrl
   };
 }

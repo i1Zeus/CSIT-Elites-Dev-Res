@@ -4,19 +4,19 @@
       <h1 class="text-left text-primary-700 text-2xl font-semibold mx-5 mt-5">
         Category
       </h1>
-      <div class="mt-3 md:mt-3">
-        <AddCategory />
-      </div>
+      <AddCategory />
     </div>
     <div
-      class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-gray-100 rounded-lg mt-2 lg:mx-3 py-5 justify-center justify-items-center relative"
+      class="relative grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-gray-100 rounded-lg mt-2 mx-3 justify-center justify-items-center py-5"
     >
       <div v-for="category in categories.data" :key="category.id">
-        <router-link
+        <div class="relative">
+          <router-link
           :to="{
             name: 'categories',
             params: { id: category.id },
           }"
+          
         >
           <CategoryCard
             class="grid-cols-1"
@@ -27,7 +27,7 @@
           />
         </router-link>
 
-        <div class="flex gap-2 rounded-xl  ml-52">
+        <div class="flex gap-2 rounded-xl absolute top-0 right-0 m-3 ">
           <router-link
             :to="{
               name: 'categoryedit',
@@ -38,6 +38,7 @@
           </router-link>
           <!-- <editButton /> -->
           <deleteButton @click="deleteCategory(category.id)" />
+        </div>
         </div>
       </div>
     </div>

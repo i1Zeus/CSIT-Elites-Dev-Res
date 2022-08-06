@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-gray-200">
     <div>
       <div
         id="addcategory-modal"
@@ -42,7 +42,7 @@
                     Cancel
                   </button>
                   <button
-                    @click="sendData()"
+                    @click="sendData"
                     type="button"
                     class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
                   >
@@ -65,8 +65,7 @@ export default {
   props: ["id"],
   setup(props) {
     const { category, getCategoryEdit, updateCategory } = getCategory(props.id);
-    
-    onMounted(getCategoryEdit());
+    onMounted(getCategoryEdit(props.id));
 
     const sendData = async () => {
       await updateCategory();
