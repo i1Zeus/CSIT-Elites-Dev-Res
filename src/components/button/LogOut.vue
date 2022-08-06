@@ -1,9 +1,9 @@
 <template>
   <button
     @click.prevent="preformeLogoutAction()"
-    class="text-white hover:text-primary-700 border border-primary-700 hover:bg-white bg-primary-700 focus:ring-1 focus:outline-none focus:ring-primary-700 rounded-lg text-md font-semibold px-7 py-2 text-center"
+    class="text-white hover:text-primary-700 border border-primary-700 hover:bg-white bg-primary-700 focus:ring-1 focus:outline-none focus:ring-primary-700 rounded-full text-md font-semibold px-4 py-1 md:px-5 md:py-2 text-center"
   >
-    <p>Logout</p>
+    <i class="fa-solid fa-arrow-right-from-bracket"></i>
   </button>
 </template>
 

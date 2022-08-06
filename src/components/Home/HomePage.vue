@@ -1,12 +1,12 @@
 <template>
   <div>
-    <TheNavigation />
+    <TheNavigation/>
     <div class="grid lg:grid-cols-2">
       <div class="lg:grid-cols-1">
         <div>
           <div class="">
             <h1
-              class="font-poppins font-semibold mt-28 md:mt-36 lg:mt-56 mb-10 ml-16 text-4xl md:text-6xl leading-tight"
+              class="font-poppins font-semibold mt-28 md:mt-36 lg:mt-56 mb-10 ml-16 md:ml-28 text-4xl md:text-6xl leading-tight"
             >
               Investing In <br />
               Your Knowledge And
@@ -14,13 +14,11 @@
             </h1>
           </div>
 
-          <div
-            class="flex flex-col md:w-2/3 lg:w-3/3 gap-10 ml-16 md:ml-32 lg:ml-28"
-          >
+          <div class="flex flex-col md:w-2/3 lg:w-3/3 gap-10 ml-16 md:ml-32 lg:ml-28">
             <form>
               <label
                 for="search"
-                class="mb-2 text-sm font-medium text-gray-900 sr-only"
+                class=" mb-2 text-sm font-medium text-gray-900 sr-only"
                 >Search</label
               >
               <div class="relative">
@@ -29,7 +27,7 @@
                 >
                   <font-awesome-icon
                     icon="fa-solid fa-pen"
-                    class="mt-5"
+                    class="mt-5 hidden md:block"
                     size="xl"
                   />
                 </div>
@@ -37,7 +35,7 @@
                   v-model="search"
                   type="search"
                   id="default-search"
-                  class="block p-5 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                  class="block p-5 md:pl-10 w-72 md:w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
                   placeholder="Search Resources, Courses..."
                   required
                 />
@@ -60,14 +58,14 @@
 
                 <div
                   v-if="!search"
-                  class="text-white absolute right-2.5 bottom-2.5 bg-gray-400 hover:cursor-not-allowed focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
+                  class="invisible md:visible text-white absolute right-2.5 bottom-2.5 bg-gray-400 hover:cursor-not-allowed focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
                 >
                   Search
                 </div>
                 <button
                   v-else
                   type="submit"
-                  class="text-white absolute right-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
+                  class="invisible md:visible text-white absolute right-2.5 bottom-2.5 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3"
                 >
                   Search
                 </button>
@@ -80,7 +78,7 @@
         <div class="lg:inset-y-70 right-10 lg:mt-16">
           <img
             src="../../assets/img/Searching.png"
-            class="invisible lg:visible"
+            class=""
             alt="HomeImage"
           />
         </div>
@@ -88,15 +86,17 @@
     </div>
   </div>
 </template>
-
 <script>
 import { ref, computed } from "vue";
 import getTags from "../../composables/Home/getTags";
 import getRecCou from "../../composables/Home/getRecCount";
 import getCerRec from "../../composables/Home/getCerRec";
 import getAllRes from "../../composables/Home/getAllRes";
-
+import TheNavigation from "../../components/Home/TheNavigation.vue";
 export default {
+  component: {
+    TheNavigation,
+  },
   setup() {
     const tagsshow = ref(true);
     const { Tags, error, load } = getTags();
