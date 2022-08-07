@@ -11,16 +11,27 @@ export default function useCategory(id) {
       "content-type": "multipart/form-data",
     },
   };
+
+  // const data = new FormData();
+  // data.append("name", category.value.name);
+  // data.append("image", category.value.imageFile);
+
   // const imageFile = ref("");
   // const imageUrl = ref("");
+  // const images = ref([]);
+  // const message = ref([]);
 
   const getCategory = async () => {
     const response = await axios.get("http://127.0.0.1:8000/api/categories/");
     categories.value = response.data;
   };
 
-  const addCategory = async (data) => {
-    await axios.post("http://127.0.0.1:8000/api/categories/add/", data, config);
+  const addCategory = async (adddata) => {
+    await axios.post(
+      "http://127.0.0.1:8000/api/categories/add/",
+      adddata,
+      config
+    );
     // await router.push({ name: "categories.index" });
   };
 
@@ -36,27 +47,28 @@ export default function useCategory(id) {
   };
 
   const updateCategory = async () => {
-    await axios.post(
-      "http://127.0.0.1:8000/api/categories/edit/" + id,
-      category.value 
-    );
-    // router.push({ name: "categories.index" });
+    await axios.post("http://127.0.0.1:8000/api/categories/edit/" + id, config);
+    // .then((response) => {
+    //   imageUrl.value = "";
+    //   imageFile.value = "";
+    //   message.value = response.data.message;
+    //   images.value = response.data.data.images;
+    // });
   };
 
   // function handleImageSelected(event) {
-  //   if(event.target.files === 0) {
+  //   if (event.target.files.length === 0) {
   //     imageFile.value = "";
   //     imageUrl.value = "";
-  //     return
+  //     return;
   //   }
 
   //   imageFile.value = event.target.files[0];
   // }
 
   // watch(imageFile, (imageFile) => {
-  //   if(imageFile === "") {
-  //     imageUrl.value = "";
-  //     return
+  //   if (!(imageFile instanceof File)) {
+  //     return;
   //   }
 
   //   const fileReader = new FileReader();
@@ -64,9 +76,8 @@ export default function useCategory(id) {
 
   //   fileReader.addEventListener("load", () => {
   //     imageUrl.value = fileReader.result;
-  //   })
-  // })
-
+  //   });
+  // });
 
   return {
     category,
@@ -77,6 +88,7 @@ export default function useCategory(id) {
     updateCategory,
     getCategoryEdit,
     // handleImageSelected,
-    // imageUrl
+    // imageUrl,
+    // imageFile,
   };
 }

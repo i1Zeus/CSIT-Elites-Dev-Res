@@ -6,7 +6,7 @@
       <div
         class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10"
       >
-        <form class="max-w-md mx-auto">
+        <form enctype="multipart/form-data" class="max-w-md mx-auto">
           <div class="flex items-center space-x-5">
             <div
               class="h-16 w-16 bg-green-200 duration-200 rounded-xl flex flex-shrink-0 justify-center items-center text-red-400 text-3xl font-mono"
@@ -50,7 +50,14 @@
                   </select>
                 </div>
               </div>
+
+              <div>
+                <input type="file" @change="onChange" ref="image" />
+              </div>
             </div>
+
+            <p>{{ category }}</p>
+
             <div class="pt-4 flex items-center space-x-4">
               <router-link to="/">
                 <button
@@ -93,6 +100,10 @@ import getSubCategory from "../../composables/Category/getSubCategory";
 export default {
   props: ["id"],
   setup(props) {
+    const onChange = () => {
+      this.image = this.$ref.image.files[0];
+    };
+
     const { subcategory, grapsubcategory, updateSubCategory } = getSubCategory(
       props.id
     );
@@ -106,6 +117,7 @@ export default {
     return {
       saveSub,
       subcategory,
+      onChange,
     };
   },
 };

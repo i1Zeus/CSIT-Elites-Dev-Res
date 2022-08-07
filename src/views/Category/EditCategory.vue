@@ -15,10 +15,11 @@
                 Edit Category
               </h3>
 
-              <form class="space-y-6">
+              <form @submit.prevent="sendData" class="space-y-6">
                 <div>
                   <label class="leading-loose">Category Name</label>
                   <p>{{ category.name }}</p>
+                  <p>{{ category.id }}</p>
                   <input
                     required
                     v-model="category.name"
@@ -28,21 +29,42 @@
                   />
                 </div>
 
-                <!-- <div>
-                  <input type="file" v-on="category.image" />
+                <div>
+                  <!-- <input
+                    type="file"
+                    accept="image/*"
+                    @change="handleImageSelected"
+                    class="bg-primary-300"
+                  /> -->
+
+                  <div>
+                    <input
+                      type="file"
+                      @change="onChange"
+                      v-on="subcategory.image"
+                    />
+                  </div>
+                </div>
+
+                <!-- preview image -->
+                <!-- <div class="flex justify-center">
+                  <img
+                    v-show="imageUrl"
+                    :src="imageUrl"
+                    class="w-48 h-48 object-cover"
+                  />
                 </div> -->
 
                 <div class="flex">
-                  <button
+                  <router-link
                     :to="{
                       name: 'home',
                     }"
                     class="flex justify-center items-center w-full border-2 border-transparent border-b-black hover:border-emerald-600 text-gray-900 px-4 py-3 rounded-t-lg rounded-b-sm focus:outline-none mr-6"
                   >
                     Cancel
-                  </button>
+                  </router-link>
                   <button
-                    @click="sendData"
                     type="button"
                     class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
                   >
@@ -64,8 +86,16 @@ import { onMounted } from "vue";
 export default {
   props: ["id"],
   setup(props) {
-    const { category, getCategoryEdit, updateCategory } = getCategory(props.id);
-    onMounted(getCategoryEdit(props.id));
+    const {
+      category,
+      getCategoryEdit,
+      updateCategory,
+      // handleImageSelected,
+      // imageUrl,
+      // imageFile,
+    } = getCategory(props.id);
+
+    onMounted(getCategoryEdit());
 
     const sendData = async () => {
       await updateCategory();
@@ -74,6 +104,9 @@ export default {
     return {
       category,
       sendData,
+      // handleImageSelected,
+      // imageUrl,
+      // imageFile,
     };
   },
 };
