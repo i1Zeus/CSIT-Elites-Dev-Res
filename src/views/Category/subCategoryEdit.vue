@@ -18,7 +18,7 @@
             >
               <h2 class="leading-relaxed">Add a Resource</h2>
               <p class="text-sm text-gray-500 font-normal leading-relaxed">
-                this page were made specifically to add a Resource 💕.
+                this page were made specifically to Edit a SubCategory 💕.
               </p>
             </div>
           </div>
@@ -27,7 +27,7 @@
               class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7"
             >
               <div class="flex flex-col">
-                <label class="leading-loose">Resource Title</label>
+                <label class="leading-loose">SubCategory Title</label>
                 <input
                   required
                   type="text"
