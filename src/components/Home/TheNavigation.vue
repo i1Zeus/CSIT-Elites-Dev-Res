@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col h-16 md:h-auto fixed w-full z-50 bg-gray-100 md:py-3 px-6 items-center"
+    class="flex flex-col h-16 md:h-auto fixed w-full z-50 bg-gray-100 md:py-3  items-center"
   >
     <div class="flex justify-between w-full">
       <div class="flex order-2 items-center font-bold">
@@ -13,7 +13,7 @@
       </div>
       <div
         @click="showMenu = !showMenu"
-        class="flex flex-col order-1 mt-5 md:hidden"
+        class="flex flex-col order-1 mt-5 ml-6 md:hidden"
       >
         <button
           type="button"
@@ -39,7 +39,7 @@
           </li>
         </ul>
 
-        <router-link class="" to="/login">
+        <router-link class="mr-6" to="/login">
           <button
             v-if="!loggedIn"
             class="text-white hover:text-primary-700 border border-primary-700 hover:bg-white bg-primary-700 focus:ring-1 focus:outline-none focus:ring-primary-700 rounded-lg text-md font-semibold px-7 py-2 text-center"
@@ -51,21 +51,21 @@
       </div>
     </div>
 
-    <div class="flex md:hidden">
+    <div class="md:hidden w-full">
       <ul
-        :class="showMenu ? 'flex' : 'hidden'"
-        class="flex flex-col mt-5 space-y-4 mb-4 md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
-      >
-        <li
-          class="md:mx-4 font-semibold text-primary-600"
-          v-for="link in links"
-          :key="link.name"
+          :class="showMenu ? 'flex' : 'hidden'"
+          class="flex-col mt-3 bg-gray-100 space-y-4 mb-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
         >
-          <a :href="link.link" class="text-xl hover:text-primary-600">
-            {{ link.name }}
-          </a>
-        </li>
-      </ul>
+          <li
+            class="md:mx-4 text-center  font-semibold text-primary-600"
+            v-for="link in links"
+            :key="link.name"
+          >
+            <a :href="link.link" class="text-xl hover:text-primary-600">
+              {{ link.name }}
+            </a>
+          </li>
+        </ul>
     </div>
   </div>
 </template>
