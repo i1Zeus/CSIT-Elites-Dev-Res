@@ -11,7 +11,6 @@ export default function useSubCategory(id) {
       "content-type": "multipart/form-data",
     },
   };
-  
 
   //Fetch||Get Function => this must ne subcategories not subcategory
   const fetchSubCategory = async () => {
@@ -47,7 +46,8 @@ export default function useSubCategory(id) {
   const updateSubCategory = async () => {
     await axios.post(
       "http://127.0.0.1:8000/api/sub-sections/update/" + id,
-      subcategory.value 
+      subcategory.value,
+      config
     );
 
     // await router.push({path:''})
