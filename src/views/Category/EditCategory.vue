@@ -37,13 +37,13 @@
                     class="bg-primary-300"
                   /> -->
 
-                  <div>
+                  <!-- <div>
                     <input
                       type="file"
                       @change="onChange"
                       v-on="subcategory.image"
                     />
-                  </div>
+                  </div> -->
                 </div>
 
                 <!-- preview image -->
