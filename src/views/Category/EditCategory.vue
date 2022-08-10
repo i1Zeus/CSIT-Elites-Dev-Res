@@ -65,7 +65,7 @@
                     Cancel
                   </router-link>
                   <button
-                    type="button"
+                    type="submit"
                     class="bg-emerald-600 hover:bg-emerald-800 focus:ring-2 focus:outline-none focus:ring-emerald-300 duration-200 justify-center items-center w-full text-white px-4 py-3 rounded-lg"
                   >
                     Edit
