@@ -15,7 +15,7 @@
                 Edit Category
               </h3>
 
-              <form @submit.prevent="sendData" class="space-y-6">
+              <form @submit.prevent="sendData" class="space-y-6" enctype="multipart/form-data" >
                 <div>
                   <label class="leading-loose">Category Name</label>
                   <p>{{ category.name }}</p>

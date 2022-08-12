@@ -23,7 +23,7 @@
             :name="category.name"
             :subsections_count="category.subsections_count"
             :resources_count="category.resources_count"
-            :image="category.image"
+            :image="category.image_url"
           />
         </router-link>
 
